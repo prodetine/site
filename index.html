@@ -27,23 +27,28 @@
         .btn-main { display: inline-block; background: #a87c53; color: #ffffff; padding: 18px 40px; font-size: 18px; font-weight: 700; text-decoration: none; border-radius: 50px; box-shadow: 0 4px 15px rgba(168, 124, 83, 0.4); transition: 0.3s; cursor: pointer; border: none; }
         .btn-main:hover { background: #8f6540; transform: translateY(-2px); }
 
-        /* Каталог */
+        /* Каталог крупный */
         .catalog { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 32px; margin-bottom: 50px; color: #2c2520; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        .card { background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #f0eae4; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .card-img-wrapper { height: 240px; width: 100%; background: #eae3db; overflow: hidden; }
-        .card-img { width: 100%; height: 100%; object-fit: cover; }
-        .card-content { padding: 25px; }
-        .card-title { font-size: 22px; margin-bottom: 10px; color: #2c2520; }
-        .card-desc { font-size: 14px; color: #706257; margin-bottom: 20px; height: 44px; overflow: hidden; }
-        .card-meta { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f5ede6; padding-top: 15px; }
-        .price { font-size: 20px; font-weight: 700; color: #a87c53; }
-        .btn-sm { background: transparent; border: 2px solid #a87c53; color: #a87c53; padding: 8px 18px; border-radius: 20px; font-weight: 600; text-decoration: none; transition: 0.3s; cursor: pointer; }
-        .btn-sm:hover { background: #a87c53; color: #ffffff; }
-
-        /* Квиз (Модальное окно) */
+        .section-title { text-align: center; font-size: 34px; margin-bottom: 60px; color: #2c2520; font-weight: 700; }
+        .large-grid { display: flex; flex-direction: column; gap: 60px; }
+        .product-box { background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid #f0eae4; display: flex; flex-wrap: wrap; transition: 0.4s; }
+        .product-box:hover { transform: translateY(-4px); box-shadow: 0 15px 50px rgba(168,124,83,0.08); }
+        .product-gallery { flex: 1.2; min-width: 450px; height: 480px; background: #eae3db; overflow: hidden; position: relative; }
+        .product-img { width: 100%; height: 100%; object-fit: cover; }
+        .product-info { flex: 1; min-width: 350px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-tag { display: inline-block; background: #f5ede6; color: #a87c53; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; width: fit-content; margin-bottom: 15px; }
+        .product-title { font-size: 28px; color: #2c2520; margin-bottom: 15px; font-weight: 700; }
+        .product-desc { font-size: 15px; color: #706257; margin-bottom: 25px; line-height: 1.6; }
+        
+        .specs-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; background: #fdfcfb; padding: 20px; border-radius: 16px; border: 1px dashed #eae3db; }
+        .spec-item { font-size: 14px; color: #50443c; }
+        .spec-item strong { color: #2c2520; }
+        
+        .price-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f5ede6; padding-top: 25px; }
+        .price-block .old-price { font-size: 14px; color: #b0a398; text-decoration: line-through; display: block; }
+        .price-block .current-price { font-size: 26px; font-weight: 800; color: #a87c53; }
+        
+        /* Квиз */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(44,37,32,0.8); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
         .quiz-container { background: #ffffff; width: 100%; max-width: 600px; border-radius: 20px; padding: 40px; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
         .close-modal { position: absolute; top: 20px; right: 20px; font-size: 30px; color: #8c7d73; cursor: pointer; border: none; background: none; }
@@ -62,14 +67,17 @@
         .quiz-input { width: 100%; padding: 15px; border: 2px solid #f0eae4; border-radius: 12px; font-size: 16px; margin-bottom: 15px; outline: none; }
         .quiz-input:focus { border-color: #a87c53; }
 
-        /* Футер */
         footer { background: #2c2520; color: #eae3db; padding: 40px 20px; text-align: center; font-size: 14px; }
         footer p { color: #8c7d73; margin-top: 10px; }
 
+        @media (max-width: 900px) {
+            .product-box { flex-direction: column; }
+            .product-gallery { min-width: 100%; height: 320px; }
+        }
         @media (max-width: 600px) {
             .hero h2 { font-size: 28px; }
-            .hero .subtitle { font-size: 16px; }
-            .grid { grid-template-columns: 1fr; }
+            .specs-list { grid-template-columns: 1fr; gap: 10px; }
+            .product-info { padding: 25px; }
             .header-container { flex-direction: column; gap: 15px; text-align: center; }
             .phone-block p { text-align: center; }
         }
@@ -77,7 +85,6 @@
 </head>
 <body>
 
-    <!-- ШАПКА САЙТА -->
     <header>
         <div class="header-container">
             <div class="logo-block">
@@ -94,7 +101,6 @@
         </div>
     </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero">
         <div class="hero-container">
             <h2>Качественные бани <span>Квадро</span> и <span>Викинг</span> с доставкой по всей области</h2>
@@ -103,231 +109,121 @@
         </div>
     </section>
 
-    <!-- КАТАЛОГ -->
     <section class="catalog">
-        <h3 class="section-title">Наши популярные модели бань</h3>
-        <div class="grid">
+        <h3 class="section-title">Каталог моделей в максимальной комплектации</h3>
+        <div class="large-grid">
             
-            <!-- Баня Викинг -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="viking.jpg" alt="Баня Викинг" class="card-img">
+            <div class="product-box">
+                <div class="product-gallery">
+                    <img src="viking.jpg" alt="Баня Викинг" class="product-img">
                 </div>
-                <div class="card-content">
-                    <h4 class="card-title">Баня модель «Викинг»</h4>
-                    <p class="card-desc">Увеличенный объем за счет уникальной формы крыши. Просторная парная и комфортная комната отдыха.</p>
-                    <div class="card-meta">
-                        <span class="price">от 240 000 ₽</span>
-                        <button class="btn-sm" onclick="openQuiz()">Рассчитать</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Квадро Бочка Люкс -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="deluxe.jpg" alt="Квадро Бочка Люкс" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h4 class="card-title">Квадро Бочка «Люкс»</h4>
-                    <p class="card-desc">Максимальная комплектация: премиальная печь, улучшенная вентиляция и увеличенные липовые полки.</p>
-                    <div class="card-meta">
-                        <span class="price">от 290 000 ₽</span>
-                        <button class="btn-sm" onclick="openQuiz()">Рассчитать</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Квадро Овал -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="oval.jpg" alt="Баня Квадро Овал" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h4 class="card-title">Баня «Квадро Овал»</h4>
-                    <p class="card-desc">Эргономичная овальная форма. Идеальное распределение тепла и быстрый прогрев всего за 30 минут.</p>
-                    <div class="card-meta">
-                        <span class="price">от 215 000 ₽</span>
-                        <button class="btn-sm" onclick="openQuiz()">Рассчитать</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Классическая Квадро -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="kvadro.jpg" alt="Баня Квадро" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h4 class="card-title">Классическая «Квадро»</h4>
-                    <p class="card-desc">Строгая прямоугольная геометрия с закругленными углами. Полноценная высота потолка по всей ширине.</p>
-                    <div class="card-meta">
-                        <span class="price">от 195 000 ₽</span>
-                        <button class="btn-sm" onclick="openQuiz()">Рассчитать</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Круглая Бочка -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="round.jpg" alt="Круглая Баня-Бочка" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h4 class="card-title">Круглая «Баня-Бочка»</h4>
-                    <p class="card-desc">Легендарная классика. Компактная, экономичная по дровам и невероятно уютная баня для любого участка.</p>
-                    <div class="card-meta">
-                        <span class="price">от 160 000 ₽</span>
-                        <button class="btn-sm" onclick="openQuiz()">Рассчитать</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Баня Трейлер -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="trailer.jpg" alt="Баня Трейлер" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h4 class="card-title">Эксклюзивный «Трейлер»</h4>
-                    <p class="card-desc">Мобильная дизайнерская баня на прочной колесной базе. Идеально для путешествий или коммерческого проката.</p>
-                    <div class="card-meta">
-                        <span class="price">от 340 000 ₽</span>
-                        <button class="btn-sm" onclick="openQuiz()">Рассчитать</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- БЛОК ВЫСТАВКИ С ОБНОВЛЕННОЙ КАРТОЙ (д. Площево) -->
-    <section id="exhibition" style="padding: 60px 20px; background-color: #fcfbfa; border-top: 1px solid #eee;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="font-size: 32px; color: #2c2520; text-align: center; margin-bottom: 40px;">
-                Приезжайте на наше производство и выставочную площадку
-            </h2>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: stretch;">
-                <!-- Левая колонка: Контакты -->
-                <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
-                    <p style="font-size: 18px; color: #50443c; line-height: 1.6; margin-bottom: 25px;">
-                        Вживую оценить качество сборки, зайти внутрь моделей <strong>Квадро-Бочка</strong> и <strong>Викинг</strong>, выбрать материалы отделки и пообщаться с мастерами можно на нашей выставке.
-                    </p>
-                    
-                    <div style="background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #a87c53;">
-                        <div style="margin-bottom: 15px;">
-                            <span style="font-size: 14px; color: #8c7d73; display: block; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Адрес производства:</span>
-                            <strong style="font-size: 18px; color: #2c2520;">Владимирская область, д. Площево, Центральная ул., 23</strong>
-                        </div>
-                        
-                        <div style="margin-bottom: 15px;">
-                            <span style="font-size: 14px; color: #8c7d73; display: block; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">График работы:</span>
-                            <strong style="font-size: 16px; color: #2c2520;">Ежедневно с 9:00 до 20:00</strong>
-                        </div>
-                        
-                        <div>
-                            <span style="font-size: 14px; color: #8c7d73; display: block; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Телефон для связи:</span>
-                            <strong style="font-size: 20px; color: #a87c53;"><a href="tel:+79157750909" style="color: #a87c53; text-decoration: none;">+7 (915) 775-09-09</a></strong>
+                <div class="product-info">
+                    <div>
+                        <span class="product-tag">Хит продаж 2026</span>
+                        <h4 class="product-title">Баня-сказка модель «Викинг»</h4>
+                        <p class="product-desc">Уникальная скандинавская форма с увеличенным объёмом воздуха. За счет крутого наклона кровли потолки кажутся огромными, а тепло распределяется мягко и без «пирогов» горячего воздуха под потолком.</p>
+                        <div class="specs-list">
+                            <div class="spec-item">📐 Длина: <strong>от 4 до 6 метров</strong></div>
+                            <div class="spec-item">🌲 Материал: <strong>Кедр / Ель сушки</strong></div>
+                            <div class="spec-item">🔥 Печь: <strong>Костёр / Везувий</strong></div>
+                            <div class="spec-item">🛋 Мест: <strong>до 6 человек</strong></div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Правая колонка: Интерактивная Яндекс.Карта -->
-                <div style="flex: 1; min-width: 300px; min-height: 350px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative;">
-                    <iframe src="https://yandex.ru/map-widget/v1/?ll=38.487000%2C56.311400&z=14&mode=search&text=Владимирская%20область%2C%20деревня%20Площево%2C%20Центральная%20улица%2C%2023" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- КВИЗ (МОДАЛЬНОЕ ОКНО) -->
-    <div class="modal" id="quizModal">
-        <div class="quiz-container">
-            <button class="close-modal" onclick="closeQuiz()">&times;</button>
-            <div class="quiz-progress">
-                <div class="quiz-progress-bar" id="progressBar"></div>
-            </div>
-
-            <!-- Шаг 1: Форма бани -->
-            <div class="quiz-step active" id="step1">
-                <div class="quiz-question">1. Какая форма бани вам больше нравится?</div>
-                <div class="options-list">
-                    <label class="option-item"><input type="radio" name="shape" value="Квадро" checked> Квадро-бочка (более просторная)</label>
-                    <label class="option-item"><input type="radio" name="shape" value="Викинг"> Викинг (высокие потолки, стиль)</label>
-                    <label class="option-item"><input type="radio" name="shape" value="Круглая"> Классическая круглая бочка</label>
-                </div>
-                <div class="quiz-nav" style="justify-content: flex-end;">
-                    <button class="btn-nav next" onclick="nextStep(2)">Далее &rarr;</button>
+                    <div class="price-row">
+                        <div class="price-block">
+                            <span class="old-price">от 275 000 ₽</span>
+                            <span class="current-price">от 240 000 ₽</span>
+                        </div>
+                        <button class="btn-main" style="padding: 12px 28px; font-size: 15px; border-radius: 30px;" onclick="openQuiz()">Узнать цену</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Шаг 2: Длина -->
-            <div class="quiz-step" id="step2">
-                <div class="quiz-question">2. Какую длину бани рассматриваете?</div>
-                <div class="options-list">
-                    <label class="option-item"><input type="radio" name="length" value="2-3 метра" checked> Компактная (2 - 3 метра)</label>
-                    <label class="option-item"><input type="radio" name="length" value="4 метра"> Средняя (4 метра) — хит продаж</label>
-                    <label class="option-item"><input type="radio" name="length" value="5-6 метров"> Вместительная (5 - 6 метров) с комнатой отдыха</label>
+            <div class="product-box">
+                <div class="product-gallery">
+                    <img src="deluxe.jpg" alt="Квадро Люкс" class="product-img">
                 </div>
-                <div class="quiz-nav">
-                    <button class="btn-nav" onclick="prevStep(1)">Назад</button>
-                    <button class="btn-nav next" onclick="nextStep(3)">Далее &rarr;</button>
+                <div class="product-info">
+                    <div>
+                        <span class="product-tag">Премиум выбор</span>
+                        <h4 class="product-title">Квадро Бочка «Люкс»</h4>
+                        <p class="product-desc">Флагманская модель для ценителей бескомпромиссного комфорта. В базовую стоимость уже включены: панорамное окно в пол, липовая премиум-отделка, увеличенный бак для воды и скрытая дизайнерская проводка.</p>
+                        <div class="specs-list">
+                            <div class="spec-item">📐 Длина: <strong>5 - 6 метров</strong></div>
+                            <div class="spec-item">🌲 Материал: <strong>Отборный Сибирский кедр</strong></div>
+                            <div class="spec-item">🔥 Печь: <strong>Премиум с закрытой каменкой</strong></div>
+                            <div class="spec-item">🛋 Мест: <strong>до 8 человек</strong></div>
+                        </div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price-block">
+                            <span class="old-price">от 330 000 ₽</span>
+                            <span class="current-price">от 290 000 ₽</span>
+                        </div>
+                        <button class="btn-main" style="padding: 12px 28px; font-size: 15px; border-radius: 30px;" onclick="openQuiz()">Узнать цену</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-box">
+                <div class="product-gallery">
+                    <img src="oval.jpg" alt="Квадро Овал" class="product-img">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <span class="product-tag">Максимум пространства</span>
+                        <h4 class="product-title">Баня «Квадро Овал»</h4>
+                        <p class="product-desc">Умное решение для узких участков. Широкая овальная форма позволила разместить полки перпендикулярно, благодаря чему в парной можно полноценно лежать в полный рост сразу двум взрослым людям.</p>
+                        <div class="specs-list">
+                            <div class="spec-item">📐 Длина: <strong>от 3 до 5 метров</strong></div>
+                            <div class="spec-item">🌲 Материал: <strong>Камерная сушка 12%</strong></div>
+                            <div class="spec-item">🔥 Печь: <strong>С выносной топкой</strong></div>
+                            <div class="spec-item">🛋 Мест: <strong>4 - 6 человек</strong></div>
+                        </div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price-block">
+                            <span class="old-price">от 245 000 ₽</span>
+                            <span class="current-price">от 215 000 ₽</span>
+                        </div>
+                        <button class="btn-main" style="padding: 12px 28px; font-size: 15px; border-radius: 30px;" onclick="openQuiz()">Узнать цену</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Шаг 3: Контакты -->
-            <div class="quiz-step" id="step3">
-                <div class="quiz-question">Отлично! Расчет стоимости начался. Куда прислать смету и информацию о подарке?</div>
-                <input type="text" class="quiz-input" id="clientName" placeholder="Введите ваше имя">
-                <input type="tel" class="quiz-input" id="clientPhone" placeholder="Введите ваш телефон (например, +7 915...)" required>
-                <div class="quiz-nav">
-                    <button class="btn-nav" onclick="prevStep(2)">Назад</button>
-                    <button class="btn-main" style="padding: 12px 30px; font-size: 16px;" onclick="submitQuiz()">Получить расчет и подарок</button>
+            <div class="product-box">
+                <div class="product-gallery">
+                    <img src="kvadro.jpg" alt="Классическая Квадро" class="product-img">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <span class="product-tag">Оптимальный баланс</span>
+                        <h4 class="product-title">Классическая прямоугольная «Квадро»</h4>
+                        <p class="product-desc">Прямые стены и скругленные углы. Такая эргономика убирает лишний объем, который нужно протапливать, но сохраняет максимум полезной площади для человека. Самая практичная баня в линейке.</p>
+                        <div class="specs-list">
+                            <div class="spec-item">📐 Длина: <strong>от 2 до 6 метров</strong></div>
+                            <div class="spec-item">🌲 Материал: <strong>Профилированный брус</strong></div>
+                            <div class="spec-item">🔥 Печь: <strong>Везувий Оптима</strong></div>
+                            <div class="spec-item">🛋 Мест: <strong>2 - 6 человек</strong></div>
+                        </div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price-block">
+                            <span class="old-price">от 220 000 ₽</span>
+                            <span class="current-price">от 195 000 ₽</span>
+                        </div>
+                        <button class="btn-main" style="padding: 12px 28px; font-size: 15px; border-radius: 30px;" onclick="openQuiz()">Узнать цену</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- ПОДВАЛ САЙТА -->
-    <footer>
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <strong>&copy; 2026 Бани-Бочки Премиум. Все права защищены.</strong>
-            <p>Производство качественных бань-бочек в Александровском районе Владимирской области.</p>
-        </div>
-    </footer>
-
-    <!-- СКРИПТЫ УПРАВЛЕНИЯ КВИЗОМ -->
-    <script>
-        function openQuiz() { document.getElementById('quizModal').style.display = 'flex'; }
-        function closeQuiz() { document.getElementById('quizModal').style.display = 'none'; }
-        
-        function nextStep(step) {
-            document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
-            document.getElementById('step' + step).classList.add('active');
-            let progress = (step === 2) ? '50%' : (step === 3) ? '100%' : '25%';
-            document.getElementById('progressBar').style.width = progress;
-        }
-
-        function prevStep(step) {
-            document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
-            document.getElementById('step' + step).classList.add('active');
-            let progress = (step === 1) ? '25%' : (step === 2) ? '50%' : '100%';
-            document.getElementById('progressBar').style.width = progress;
-        }
-
-        function submitQuiz() {
-            const phone = document.getElementById('clientPhone').value;
-            const name = document.getElementById('clientName').value;
-            
-            if(!phone) {
-                alert('Пожалуйста, введите ваш номер телефона, чтобы мы могли связаться с вами!');
-                return;
-            }
-            
-            alert('Спасибо, ' + (name ? name : 'гость') + '! Ваша заявка принята. Мы свяжемся с вами в ближайшее время по номеру ' + phone);
-            closeQuiz();
-        }
-    </script>
-</body>
-</html>
+            <div class="product-box">
+                <div class="product-gallery">
+                    <img src="round.jpg" alt="Круглая бочка" class="product-img">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <span class="product-tag">Народный выбор</span>
+                        <h4 class="product-title">Круглая «Баня-Бочка»</h4>
+                        <p class="product-desc">Та самая классическая бочка, с которой началась история мобильных бань. Разогревается до 90 градусов буквально на одной охапке дров за счет полного отсутствия углов и идеальной циркуляции тепла.</p>
+                        <div class="specs-list">
+                            <div class="spec-item">📐
