@@ -90,7 +90,7 @@
             position: relative;
             background-color: #3e2723;
             
-            /* ВСТАВЬ НАЗВАНИЕ ФОТО СЮДА В КАВЫЧКИ (например: url('bg.jpg')). Оно появится и на ПК, и на телефоне. */
+            /* ФОН ЗАДАН АВТОМАТИЧЕСКИ */
             background-image: url('zadniyfon.jpg'); 
             
             background-size: cover;
@@ -145,22 +145,24 @@
             border: 1px solid rgba(255, 145, 0, 0.4);
         }
 
-        /* Квиз-блок */
+        /* Квиз-блок (ЭФФЕКТ МАТОВОГО СТЕКЛА) */
         .quiz-container {
             max-width: 750px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.85); /* Полупрозрачный белый фон */
+            backdrop-filter: blur(12px); /* Размытие заднего фона */
+            -webkit-backdrop-filter: blur(12px); /* Поддержка для Safari/iOS */
             border-radius: 20px;
             padding: 45px;
             margin: -60px auto 0 auto;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             position: relative;
             z-index: 10;
-            border: 1px solid #f3e9dc;
+            border: 1px solid rgba(255, 255, 255, 0.6); /* Легкая белая рамка для объема */
         }
 
         .quiz-header {
             margin-bottom: 35px;
-            border-bottom: 2px solid #fdf8f2;
+            border-bottom: 2px solid rgba(253, 248, 242, 0.6);
             padding-bottom: 20px;
         }
 
@@ -172,7 +174,7 @@
 
         .progress-bar {
             height: 8px;
-            background: #f5ebe0;
+            background: rgba(245, 235, 224, 0.8);
             border-radius: 4px;
             margin-top: 15px;
             overflow: hidden;
@@ -207,28 +209,29 @@
             margin-bottom: 35px;
         }
 
+        /* Карточки внутри квиза тоже слегка прозрачные */
         .option-card {
-            border: 2px solid #ebdccb;
+            border: 2px solid rgba(235, 220, 203, 0.8);
             border-radius: 12px;
             padding: 25px 20px;
             cursor: pointer;
             transition: all 0.25s ease;
             font-weight: 700;
             text-align: center;
-            background: #fffdfb;
+            background: rgba(255, 253, 251, 0.6);
             font-size: 16px;
             color: #5d4037;
         }
 
         .option-card:hover {
             border-color: #ff9100;
-            background: #fff8f0;
+            background: rgba(255, 248, 240, 0.8);
             transform: translateY(-2px);
         }
 
         .option-card.selected {
             border-color: #e65100;
-            background: #fff3e0;
+            background: rgba(255, 243, 224, 0.9);
             color: #e65100;
             box-shadow: 0 4px 12px rgba(230, 81, 0, 0.1);
         }
@@ -425,8 +428,8 @@
             text-decoration: none;
             display: inline-block;
         }
-        .btn-prev { background: #f5ebe0; color: #6d4c41; }
-        .btn-prev:hover { background: #e8dbcc; }
+        .btn-prev { background: rgba(245, 235, 224, 0.8); color: #6d4c41; }
+        .btn-prev:hover { background: rgba(232, 219, 204, 0.9); }
         .btn-next { background: #e65100; color: #fff; margin-left: auto; box-shadow: 0 4px 15px rgba(230, 81, 0, 0.25); }
         .btn-next:hover { background: #bf4300; transform: translateY(-1px); }
         .btn-submit { background: #ff9100; color: white; width: 100%; box-shadow: 0 5px 20px rgba(255, 145, 0, 0.3); }
@@ -505,7 +508,6 @@
         }
 
         @media (max-width: 650px) {
-            /* Скрываем текст "Собственное производство" в шапке */
             .logo-text { 
                 display: none !important; 
             }
@@ -514,7 +516,6 @@
             .logo-block { flex-direction: column; gap: 5px; }
             .header-contacts { text-align: center; width: 100%; }
 
-            /* Включаем и настраиваем кнопки связи только для телефонов */
             .mobile-actions {
                 display: flex;
                 flex-direction: column;
@@ -567,16 +568,22 @@
                 box-shadow: 0 4px 15px rgba(0, 119, 255, 0.25);
             }
 
-            /* Настройки остального сайта для мобилок */
             .catalog-image { height: 280px; } 
             .options-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 30px; }
             .catalog-title { font-size: 28px; }
+
+            /* Делаем отступы по краям у квиза на телефоне, чтобы было видно фон сзади */
+            .quiz-container {
+                padding: 30px 20px;
+                margin: -40px 15px 0 15px; 
+                width: auto;
+            }
         }
 
         .form-group { margin-bottom: 22px; text-align: left; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 14px; color: #5d4037; }
-        .form-input { width: 100%; padding: 16px; border: 2px solid #ebdccb; border-radius: 10px; font-size: 16px; font-weight: 600; background: #fffdfb; }
+        .form-input { width: 100%; padding: 16px; border: 2px solid rgba(235, 220, 203, 0.8); border-radius: 10px; font-size: 16px; font-weight: 600; background: rgba(255, 253, 251, 0.8); }
         .form-input:focus { border-color: #e65100; outline: none; background: #fff; }
     </style>
 </head>
@@ -619,7 +626,7 @@
             <div class="badge-geo">🔥 Премиум качество из Александрова</div>
         </section>
 
-        <!-- КВИЗ -->
+        <!-- КВИЗ (С ЭФФЕКТОМ СТЕКЛА) -->
         <div class="quiz-container">
             <div class="quiz-header">
                 <div class="quiz-title" id="quiz-title">Конфигуратор бани (Шаг 1 из 3)</div>
