@@ -17,6 +17,19 @@
         body {
             background-color: #fcf8f2;
             color: #3e2723;
+            overflow-x: hidden;
+        }
+
+        /* === АНИМАЦИИ ПРИ ПРОКРУТКЕ === */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-in-up.in-view {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Шапка сайта */
@@ -64,42 +77,48 @@
             gap: 30px;
         }
 
-        /* Десктопные соцсети */
+        /* Десктопные соцсети (в столбик) */
         .header-socials {
             display: flex;
-            gap: 15px;
-            border-right: 2px solid #e0d4c3; /* Красивый разделитель */
-            padding-right: 30px;
+            flex-direction: column;
+            gap: 8px;
+            border-right: 2px solid #e0d4c3;
+            padding-right: 25px;
+            justify-content: center;
         }
 
-        .social-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
+        .social-btn {
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
             transition: all 0.3s ease;
         }
 
-        .social-icon.tg {
+        .social-btn.tg {
             background-color: #27A5E7;
-            box-shadow: 0 4px 12px rgba(39, 165, 231, 0.3);
+            box-shadow: 0 4px 12px rgba(39, 165, 231, 0.25);
         }
-        .social-icon.tg:hover {
+        .social-btn.tg:hover {
             background-color: #1c8ec9;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(39, 165, 231, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(39, 165, 231, 0.35);
         }
 
-        .social-icon.vk {
+        .social-btn.vk {
             background-color: #0077FF;
-            box-shadow: 0 4px 12px rgba(0, 119, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 119, 255, 0.25);
         }
-        .social-icon.vk:hover {
+        .social-btn.vk:hover {
             background-color: #0062d6;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0, 119, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 119, 255, 0.35);
         }
 
         /* Блок с номером */
@@ -108,7 +127,7 @@
         }
 
         .phone-link {
-            font-size: 22px; /* Чуть увеличили для десктопа */
+            font-size: 22px; 
             font-weight: 800;
             color: #e65100;
             text-decoration: none;
@@ -126,7 +145,7 @@
             font-weight: 600;
         }
 
-        /* === МОБИЛЬНЫЕ КНОПКИ В ШАПКЕ (Скрыты на ПК) === */
+        /* === МОБИЛЬНЫЕ КНОПКИ В ШАПКЕ === */
         .mobile-actions {
             display: none; 
         }
@@ -135,10 +154,7 @@
         .top-bg-wrapper {
             position: relative;
             background-color: #3e2723;
-            
-            /* ФОН ЗАДАН АВТОМАТИЧЕСКИ (название, как ты просил) */
             background-image: url('zadniyfon.jpg'); 
-            
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -504,7 +520,6 @@
             padding: 35px;
             box-shadow: 0 25px 50px rgba(0,0,0,0.15);
             position: relative;
-            animation: fadeIn 0.3s ease;
         }
 
         .modal-close {
@@ -524,11 +539,6 @@
         .modal-content { font-size: 15px; color: #5d4037; line-height: 1.6; margin-bottom: 25px; text-align: left; }
         .modal-features { background: #fcf8f2; padding: 15px; border-radius: 10px; margin: 15px 0; border-left: 4px solid #ff9100; }
 
-        @keyframes fadeIn {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
         /* === АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ === */
         @media (max-width: 990px) {
             .catalog-row { flex-direction: column; display: flex; }
@@ -538,7 +548,6 @@
         }
 
         @media (max-width: 650px) {
-            /* Скрываем текст "Собственное производство" в шапке */
             .logo-text { display: none !important; }
             
             header { flex-direction: column; gap: 15px; text-align: center; }
@@ -623,13 +632,14 @@
         </div>
         
         <div class="header-right">
-            <!-- ДЕСКТОПНЫЕ СОЦСЕТИ (Скрыты на телефонах) -->
             <div class="header-socials">
-                <a href="https://t.me/banibothki" class="social-icon tg" target="_blank" title="Наш Telegram">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
+                <a href="https://t.me/banibothki" class="social-btn tg" target="_blank" title="Наш Telegram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
+                    Telegram
                 </a>
-                <a href="https://vk.com/id1087359257" class="social-icon vk" target="_blank" title="Мы ВКонтакте">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M15.077 23.994c-8.91 0-14.07-6.147-14.24-16.51h4.48c.115 7.822 3.633 11.134 6.398 11.782v-11.78h4.286v6.721c2.723-.298 5.626-3.411 6.556-6.722h4.286c-.732 4.14-3.766 7.21-5.836 8.243 2.07 1.034 5.405 3.86 6.442 8.266h-4.664c-.818-3.08-3.435-5.556-6.784-5.88v5.88h-1.024z"/></svg>
+                <a href="https://vk.com/id1087359257" class="social-btn vk" target="_blank" title="Мы ВКонтакте">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M15.077 23.994c-8.91 0-14.07-6.147-14.24-16.51h4.48c.115 7.822 3.633 11.134 6.398 11.782v-11.78h4.286v6.721c2.723-.298 5.626-3.411 6.556-6.722h4.286c-.732 4.14-3.766 7.21-5.836 8.243 2.07 1.034 5.405 3.86 6.442 8.266h-4.664c-.818-3.08-3.435-5.556-6.784-5.88v5.88h-1.024z"/></svg>
+                    ВКонтакте
                 </a>
             </div>
 
@@ -637,7 +647,6 @@
                 <a href="tel:+79157750909" class="phone-link">+7 (915) 775-09-09</a>
                 <div class="phone-desc">Производство в Александрове • Звоните ежедневно</div>
                 
-                <!-- МОБИЛЬНЫЕ КНОПКИ (Скрыты на ПК) -->
                 <div class="mobile-actions">
                     <a href="tel:+79157750909" class="btn-mobile-call">📞 Позвонить нам</a>
                     <div class="mobile-socials">
@@ -655,15 +664,13 @@
         </div>
     </header>
 
-    <!-- === ОБЕРТКА ДЛЯ ФОНА И КВИЗА === -->
     <div class="top-bg-wrapper">
-        <section class="hero">
+        <section class="hero fade-in-up">
             <h1>Бани-Бочки Премиум - Мы отвечаем за качество</h1>
             <div class="badge-geo">🔥 Премиум качество из Александрова</div>
         </section>
 
-        <!-- КВИЗ -->
-        <div class="quiz-container">
+        <div class="quiz-container fade-in-up">
             <div class="quiz-header">
                 <div class="quiz-title" id="quiz-title">Конфигуратор бани (Шаг 1 из 3)</div>
                 <div class="progress-bar">
@@ -718,19 +725,16 @@
             </div>
         </div>
     </div>
-    <!-- === КОНЕЦ ОБЕРТКИ ДЛЯ ФОНА === -->
 
-    <!-- КАТАЛОГ БАНЬ -->
     <section class="catalog-section">
-        <div class="catalog-header">
+        <div class="catalog-header fade-in-up">
             <h2>Наш Премиум Каталог</h2>
             <div class="subtitle">Популярные модели, производимые на нашей базе в г. Александров</div>
         </div>
 
         <div class="catalog-list">
             
-            <!-- 1. БАНЯ ВИКИНГ -->
-            <div class="catalog-row">
+            <div class="catalog-row fade-in-up">
                 <div class="catalog-image">
                     <img src="viking.jpg" alt="Баня Викинг">
                 </div>
@@ -743,8 +747,7 @@
                 </div>
             </div>
 
-            <!-- 2. КВАДРО ОВАЛ -->
-            <div class="catalog-row">
+            <div class="catalog-row fade-in-up">
                 <div class="catalog-image">
                     <img src="oval.jpg" alt="Баня Квадро-овал">
                 </div>
@@ -757,8 +760,7 @@
                 </div>
             </div>
 
-            <!-- 3. КВАДРО ДЕЛЮКС -->
-            <div class="catalog-row">
+            <div class="catalog-row fade-in-up">
                 <div class="catalog-image">
                     <img src="deluxe.jpg" alt="Баня Квадро Делюкс">
                 </div>
@@ -771,8 +773,7 @@
                 </div>
             </div>
 
-            <!-- 4. КВАДРО БОЧКА -->
-            <div class="catalog-row">
+            <div class="catalog-row fade-in-up">
                 <div class="catalog-image">
                     <img src="kvadro.jpg" alt="Баня Квадро-бочка">
                 </div>
@@ -785,8 +786,7 @@
                 </div>
             </div>
 
-            <!-- 5. БАНЯ БОЧКА КРУГЛАЯ -->
-            <div class="catalog-row">
+            <div class="catalog-row fade-in-up">
                 <div class="catalog-image">
                     <img src="round.jpg" alt="Баня-бочка Круглая">
                 </div>
@@ -799,8 +799,7 @@
                 </div>
             </div>
 
-            <!-- 6. БАНЯ НА ПРИЦЕПЕ -->
-            <div class="catalog-row">
+            <div class="catalog-row fade-in-up">
                 <div class="catalog-image">
                     <img src="trailer.jpg" alt="Баня на прицепе">
                 </div>
@@ -816,10 +815,9 @@
         </div>
     </section>
 
-    <!-- БЛОК ВЫСТАВКИ -->
     <section class="exhibition-section">
         <div class="exhibition-container">
-            <div class="exhibition-info">
+            <div class="exhibition-info fade-in-up">
                 <h2>Приезжайте на нашу выставочную площадку!</h2>
                 <p>Выбирать баню по интернету — хорошо, но потрогать её вживую — бесценно. Мы находимся прямо в Александрове и всегда рады гостям. Приезжайте всей семьей!</p>
                 <ul class="exhibition-features">
@@ -829,7 +827,7 @@
                     <li>Честные цены без накруток посредников</li>
                 </ul>
             </div>
-            <div class="exhibition-cta">
+            <div class="exhibition-cta fade-in-up">
                 <p style="margin: 0 0 15px 0; font-size: 16px; color: #5d4037; font-weight: 600; line-height: 1.5;">
                     🕒 <strong>Режим работы:</strong><br>
                     Среда - Воскресенье 10:00 - 17:00
@@ -846,12 +844,10 @@
         </div>
     </section>
 
-    <!-- ИНТЕРАКТИВНАЯ КАРТА ВО ВСЮ ШИРИНУ -->
-    <div class="map-section">
+    <div class="map-section fade-in-up">
         <iframe src="https://yandex.ru/map-widget/v1/?text=Владимирская+область,+деревня+Площево,+Центральная+улица,+23" width="100%" height="100%" frameborder="0" allowfullscreen="true"></iframe>
     </div>
 
-    <!-- ВСПЛЫВАЮЩИЕ ОКНА -->
     <div class="modal-overlay" id="modal-viking">
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('viking')">&times;</button>
@@ -949,6 +945,22 @@
     </div>
 
     <script>
+        // --- Анимация при скролле ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        // Если нужно, чтобы анимация проигрывалась только 1 раз:
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 }); // Срабатывает, когда показано 10% элемента
+
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+        });
+
+        // --- Логика Квиза ---
         let answers = { step1: '', step2: '' };
 
         function selectOption(step, value) {
@@ -989,6 +1001,7 @@
             alert('Заявка принята! Специалисты "Бани-Бочки Премиум" из Александрова уже начали расчет.');
         }
 
+        // --- Модальные окна ---
         function openModal(id) { document.getElementById(`modal-${id}`).style.display = 'flex'; }
         function closeModal(id) { document.getElementById(`modal-${id}`).style.display = 'none'; }
     </script>
