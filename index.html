@@ -80,37 +80,36 @@
             font-weight: 600;
         }
 
-        /* === ОБЩИЙ БЛОК ДЛЯ ФОНА ЗАГОЛОВКА И КВИЗА === */
+        /* === ОБЕРТКА ДЛЯ ФОНА ЗАГОЛОВКА И КВИЗА === */
         .top-bg-wrapper {
             position: relative;
-            background-color: #3e2723; /* Временный цвет, пока нет картинки */
+            background-color: #3e2723;
             
             /* ВСТАВЬ НАЗВАНИЕ ФОТО СЮДА В КАВЫЧКИ (например: url('bg.jpg')) */
-            background-image: url('zadniyfon.jpg'); 
+            background-image: url(''); 
             
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            padding-bottom: 80px; /* Отступ внизу за квизом */
+            padding-bottom: 80px; 
         }
 
-        /* Темное затемнение поверх фото для идеальной читаемости текста */
         .top-bg-wrapper::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(38, 18, 12, 0.65); /* Настрой прозрачность (0.65), если фото будет слишком темным или светлым */
+            background: rgba(38, 18, 12, 0.65);
             z-index: 1;
         }
 
         /* Главный экран */
         .hero {
-            background: transparent; /* Убрали старый градиент */
+            background: transparent;
             color: #fff;
             padding: 90px 5% 120px 5%;
             text-align: center;
             position: relative;
-            z-index: 2; /* Поверх затемнения */
+            z-index: 2;
         }
 
         .hero h1 {
@@ -147,10 +146,10 @@
             background: #fff;
             border-radius: 20px;
             padding: 45px;
-            margin: -60px auto 0 auto; /* Убрали нижний отступ, он теперь в top-bg-wrapper */
+            margin: -60px auto 0 auto;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             position: relative;
-            z-index: 10; /* Поверх затемнения */
+            z-index: 10;
             border: 1px solid #f3e9dc;
         }
 
@@ -229,7 +228,7 @@
             box-shadow: 0 4px 12px rgba(230, 81, 0, 0.1);
         }
 
-        /* Раздел каталога (Полноэкранный дизайн) */
+        /* Раздел каталога */
         .catalog-section {
             width: 100%;
             padding: 0;
@@ -276,9 +275,9 @@
             box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.15);
         }
 
-        /* Пропорция 60/40 */
+        /* Десктоп: Пропорция 60/40 */
         .catalog-image {
-            flex: 6; /* 60% ширины */
+            flex: 6; 
             position: relative;
             background-color: #ccc;
         }
@@ -293,7 +292,7 @@
         }
 
         .catalog-info {
-            flex: 4; /* 40% ширины */
+            flex: 4; 
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -480,17 +479,33 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* Адаптивность */
+        /* === АДАПТИВНОСТЬ (Здесь исправлено отображение на телефонах) === */
         @media (max-width: 990px) {
-            .catalog-row { flex-direction: column; min-height: auto; }
-            .catalog-image { height: 400px; width: 100%; }
-            .catalog-info { padding: 40px 5%; align-items: center; text-align: center; }
+            .catalog-row { 
+                flex-direction: column; 
+                display: flex;
+            }
+            .catalog-image { 
+                flex: none; 
+                width: 100%; 
+                height: 350px; /* Фиксированная высота картинки для мобилок */
+                display: block; 
+                position: relative;
+            }
+            .catalog-info { 
+                flex: none; 
+                width: 100%; 
+                padding: 40px 20px; 
+                align-items: center; 
+                text-align: center; 
+            }
             .exhibition-container { grid-template-columns: 1fr; gap: 30px; }
         }
         @media (max-width: 650px) {
+            .catalog-image { height: 280px; } /* Картинка чуть компактнее на маленьких экранах */
             .options-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 30px; }
-            .catalog-title { font-size: 32px; }
+            .catalog-title { font-size: 28px; }
             header { flex-direction: column; gap: 15px; text-align: center; }
             .logo-block { flex-direction: column; gap: 5px; }
             .logo-text { border-left: none; padding-left: 0; }
@@ -581,7 +596,7 @@
     </div>
     <!-- === КОНЕЦ ОБЕРТКИ ДЛЯ ФОНА === -->
 
-    <!-- КАТАЛОГ БАНЬ (Новый дизайн во всю ширину) -->
+    <!-- КАТАЛОГ БАНЬ -->
     <section class="catalog-section">
         <div class="catalog-header">
             <h2>Наш Премиум Каталог</h2>
