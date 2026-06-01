@@ -243,13 +243,13 @@
             min-height: 450px;
         }
 
-        /* Чередование фонов для правого блока, как на образце */
+        /* Чередование фонов для правого блока */
         .catalog-row:nth-child(odd) .catalog-info {
             background-color: #e6e6e6;
         }
         .catalog-row:nth-child(even) .catalog-info {
             background-color: #d1d1d1;
-            box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.15); /* Эффект тени сверху */
+            box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.15);
         }
 
         .catalog-image {
@@ -291,23 +291,27 @@
             font-weight: 400;
         }
 
-        .btn-blue {
-            background-color: #5b54e3;
-            color: #fff;
+        /* Светлая кнопка "Подробнее" */
+        .btn-light {
+            background-color: #f5ebe0;
+            color: #4e342e;
             padding: 16px 32px;
-            border-radius: 4px;
+            border-radius: 8px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 12px;
-            transition: background-color 0.2s ease;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(78, 52, 46, 0.05);
         }
 
-        .btn-blue:hover {
-            background-color: #4a44cc;
+        .btn-light:hover {
+            background-color: #e8dbcc;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(78, 52, 46, 0.1);
         }
 
         /* Блок выставки */
@@ -565,7 +569,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Викинг</h3>
                     <p class="catalog-price">Цена от 395 000 руб.</p>
-                    <button class="btn-blue" onclick="openModal('viking')">
+                    <button class="btn-light" onclick="openModal('viking')">
                         Посмотреть подробнее &rarr;
                     </button>
                 </div>
@@ -579,7 +583,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро-овал</h3>
                     <p class="catalog-price">Цена от 550 000 руб.</p>
-                    <button class="btn-blue" onclick="openModal('oval')">
+                    <button class="btn-light" onclick="openModal('oval')">
                         Посмотреть подробнее &rarr;
                     </button>
                 </div>
@@ -593,7 +597,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро Делюкс</h3>
                     <p class="catalog-price">Цена от 600 000 руб.</p>
-                    <button class="btn-blue" onclick="openModal('deluxe')">
+                    <button class="btn-light" onclick="openModal('deluxe')">
                         Посмотреть подробнее &rarr;
                     </button>
                 </div>
@@ -607,7 +611,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро-бочка</h3>
                     <p class="catalog-price">Цена от 210 000 руб.</p>
-                    <button class="btn-blue" onclick="openModal('kvadro')">
+                    <button class="btn-light" onclick="openModal('kvadro')">
                         Посмотреть подробнее &rarr;
                     </button>
                 </div>
@@ -621,7 +625,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня-бочка Круглая</h3>
                     <p class="catalog-price">Цена от 200 000 руб.</p>
-                    <button class="btn-blue" onclick="openModal('round')">
+                    <button class="btn-light" onclick="openModal('round')">
                         Посмотреть подробнее &rarr;
                     </button>
                 </div>
@@ -635,7 +639,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня на прицепе</h3>
                     <p class="catalog-price">Цена от 350 000 руб.</p>
-                    <button class="btn-blue" onclick="openModal('trailer')">
+                    <button class="btn-light" onclick="openModal('trailer')">
                         Посмотреть подробнее &rarr;
                     </button>
                 </div>
