@@ -57,12 +57,58 @@
             font-weight: 600;
         }
 
+        /* === ПРАВАЯ ЧАСТЬ ШАПКИ (Десктоп) === */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* Десктопные соцсети */
+        .header-socials {
+            display: flex;
+            gap: 15px;
+            border-right: 2px solid #e0d4c3; /* Красивый разделитель */
+            padding-right: 30px;
+        }
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon.tg {
+            background-color: #27A5E7;
+            box-shadow: 0 4px 12px rgba(39, 165, 231, 0.3);
+        }
+        .social-icon.tg:hover {
+            background-color: #1c8ec9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(39, 165, 231, 0.4);
+        }
+
+        .social-icon.vk {
+            background-color: #0077FF;
+            box-shadow: 0 4px 12px rgba(0, 119, 255, 0.3);
+        }
+        .social-icon.vk:hover {
+            background-color: #0062d6;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 119, 255, 0.4);
+        }
+
+        /* Блок с номером */
         .header-contacts {
             text-align: right;
         }
 
         .phone-link {
-            font-size: 20px;
+            font-size: 22px; /* Чуть увеличили для десктопа */
             font-weight: 800;
             color: #e65100;
             text-decoration: none;
@@ -90,7 +136,7 @@
             position: relative;
             background-color: #3e2723;
             
-            /* ФОН ЗАДАН АВТОМАТИЧЕСКИ */
+            /* ФОН ЗАДАН АВТОМАТИЧЕСКИ (название, как ты просил) */
             background-image: url('zadniyfon.jpg'); 
             
             background-size: cover;
@@ -148,16 +194,16 @@
         /* Квиз-блок (ЭФФЕКТ МАТОВОГО СТЕКЛА) */
         .quiz-container {
             max-width: 750px;
-            background: rgba(255, 255, 255, 0.85); /* Полупрозрачный белый фон */
-            backdrop-filter: blur(12px); /* Размытие заднего фона */
-            -webkit-backdrop-filter: blur(12px); /* Поддержка для Safari/iOS */
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 20px;
             padding: 45px;
             margin: -60px auto 0 auto;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             position: relative;
             z-index: 10;
-            border: 1px solid rgba(255, 255, 255, 0.6); /* Легкая белая рамка для объема */
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .quiz-header {
@@ -209,7 +255,6 @@
             margin-bottom: 35px;
         }
 
-        /* Карточки внутри квиза тоже слегка прозрачные */
         .option-card {
             border: 2px solid rgba(235, 220, 203, 0.8);
             border-radius: 12px;
@@ -486,36 +531,26 @@
 
         /* === АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ === */
         @media (max-width: 990px) {
-            .catalog-row { 
-                flex-direction: column; 
-                display: flex;
-            }
-            .catalog-image { 
-                flex: none; 
-                width: 100%; 
-                height: 350px; 
-                display: block; 
-                position: relative;
-            }
-            .catalog-info { 
-                flex: none; 
-                width: 100%; 
-                padding: 40px 20px; 
-                align-items: center; 
-                text-align: center; 
-            }
+            .catalog-row { flex-direction: column; display: flex; }
+            .catalog-image { flex: none; width: 100%; height: 350px; display: block; position: relative; }
+            .catalog-info { flex: none; width: 100%; padding: 40px 20px; align-items: center; text-align: center; }
             .exhibition-container { grid-template-columns: 1fr; gap: 30px; }
         }
 
         @media (max-width: 650px) {
-            .logo-text { 
-                display: none !important; 
-            }
+            /* Скрываем текст "Собственное производство" в шапке */
+            .logo-text { display: none !important; }
             
             header { flex-direction: column; gap: 15px; text-align: center; }
+            .header-right { flex-direction: column; width: 100%; gap: 0; }
             .logo-block { flex-direction: column; gap: 5px; }
             .header-contacts { text-align: center; width: 100%; }
+            .phone-link { font-size: 20px; }
+            
+            /* Скрываем десктопные соцсети */
+            .header-socials { display: none; }
 
+            /* Включаем мобильные кнопки связи */
             .mobile-actions {
                 display: flex;
                 flex-direction: column;
@@ -558,22 +593,14 @@
                 gap: 6px;
             }
 
-            .btn-mobile-tg {
-                background-color: #27A5E7;
-                box-shadow: 0 4px 15px rgba(39, 165, 231, 0.25);
-            }
-
-            .btn-mobile-vk {
-                background-color: #0077FF;
-                box-shadow: 0 4px 15px rgba(0, 119, 255, 0.25);
-            }
+            .btn-mobile-tg { background-color: #27A5E7; box-shadow: 0 4px 15px rgba(39, 165, 231, 0.25); }
+            .btn-mobile-vk { background-color: #0077FF; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.25); }
 
             .catalog-image { height: 280px; } 
             .options-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 30px; }
             .catalog-title { font-size: 28px; }
 
-            /* Делаем отступы по краям у квиза на телефоне, чтобы было видно фон сзади */
             .quiz-container {
                 padding: 30px 20px;
                 margin: -40px 15px 0 15px; 
@@ -594,28 +621,37 @@
             <img src="logo.png" alt="Бани-Бочки Премиум" class="logo-img">
             <div class="logo-text">Собственное производство<br>бань-бочек в г. Александров</div>
         </div>
-        <div class="header-contacts">
-            <a href="tel:+79157750909" class="phone-link">+7 (915) 775-09-09</a>
-            <div class="phone-desc">Производство в Александрове • Звоните ежедневно</div>
-            
-            <!-- МОБИЛЬНЫЕ КНОПКИ (Скрыты на ПК) -->
-            <div class="mobile-actions">
-                <a href="tel:+79157750909" class="btn-mobile-call">📞 Позвонить нам</a>
-                <div class="mobile-socials">
-                    <a href="https://t.me/banibothki" class="btn-mobile-tg" target="_blank">
-                        <!-- Иконка Telegram -->
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
-                        Telegram
-                    </a>
-                    <a href="https://vk.com/id1087359257" class="btn-mobile-vk" target="_blank">
-                        <!-- Иконка ВКонтакте -->
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M15.077 23.994c-8.91 0-14.07-6.147-14.24-16.51h4.48c.115 7.822 3.633 11.134 6.398 11.782v-11.78h4.286v6.721c2.723-.298 5.626-3.411 6.556-6.722h4.286c-.732 4.14-3.766 7.21-5.836 8.243 2.07 1.034 5.405 3.86 6.442 8.266h-4.664c-.818-3.08-3.435-5.556-6.784-5.88v5.88h-1.024z"/></svg>
-                        ВКонтакте
-                    </a>
+        
+        <div class="header-right">
+            <!-- ДЕСКТОПНЫЕ СОЦСЕТИ (Скрыты на телефонах) -->
+            <div class="header-socials">
+                <a href="https://t.me/banibothki" class="social-icon tg" target="_blank" title="Наш Telegram">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
+                </a>
+                <a href="https://vk.com/id1087359257" class="social-icon vk" target="_blank" title="Мы ВКонтакте">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M15.077 23.994c-8.91 0-14.07-6.147-14.24-16.51h4.48c.115 7.822 3.633 11.134 6.398 11.782v-11.78h4.286v6.721c2.723-.298 5.626-3.411 6.556-6.722h4.286c-.732 4.14-3.766 7.21-5.836 8.243 2.07 1.034 5.405 3.86 6.442 8.266h-4.664c-.818-3.08-3.435-5.556-6.784-5.88v5.88h-1.024z"/></svg>
+                </a>
+            </div>
+
+            <div class="header-contacts">
+                <a href="tel:+79157750909" class="phone-link">+7 (915) 775-09-09</a>
+                <div class="phone-desc">Производство в Александрове • Звоните ежедневно</div>
+                
+                <!-- МОБИЛЬНЫЕ КНОПКИ (Скрыты на ПК) -->
+                <div class="mobile-actions">
+                    <a href="tel:+79157750909" class="btn-mobile-call">📞 Позвонить нам</a>
+                    <div class="mobile-socials">
+                        <a href="https://t.me/banibothki" class="btn-mobile-tg" target="_blank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
+                            Telegram
+                        </a>
+                        <a href="https://vk.com/id1087359257" class="btn-mobile-vk" target="_blank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M15.077 23.994c-8.91 0-14.07-6.147-14.24-16.51h4.48c.115 7.822 3.633 11.134 6.398 11.782v-11.78h4.286v6.721c2.723-.298 5.626-3.411 6.556-6.722h4.286c-.732 4.14-3.766 7.21-5.836 8.243 2.07 1.034 5.405 3.86 6.442 8.266h-4.664c-.818-3.08-3.435-5.556-6.784-5.88v5.88h-1.024z"/></svg>
+                            ВКонтакте
+                        </a>
+                    </div>
                 </div>
             </div>
-            <!-- КОНЕЦ МОБИЛЬНЫХ КНОПОК -->
-
         </div>
     </header>
 
@@ -626,7 +662,7 @@
             <div class="badge-geo">🔥 Премиум качество из Александрова</div>
         </section>
 
-        <!-- КВИЗ (С ЭФФЕКТОМ СТЕКЛА) -->
+        <!-- КВИЗ -->
         <div class="quiz-container">
             <div class="quiz-header">
                 <div class="quiz-title" id="quiz-title">Конфигуратор бани (Шаг 1 из 3)</div>
