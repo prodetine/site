@@ -80,13 +80,37 @@
             font-weight: 600;
         }
 
+        /* === ОБЩИЙ БЛОК ДЛЯ ФОНА ЗАГОЛОВКА И КВИЗА === */
+        .top-bg-wrapper {
+            position: relative;
+            background-color: #3e2723; /* Временный цвет, пока нет картинки */
+            
+            /* ВСТАВЬ НАЗВАНИЕ ФОТО СЮДА В КАВЫЧКИ (например: url('bg.jpg')) */
+            background-image: url('zadniyfon.jpg'); 
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-bottom: 80px; /* Отступ внизу за квизом */
+        }
+
+        /* Темное затемнение поверх фото для идеальной читаемости текста */
+        .top-bg-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(38, 18, 12, 0.65); /* Настрой прозрачность (0.65), если фото будет слишком темным или светлым */
+            z-index: 1;
+        }
+
         /* Главный экран */
         .hero {
-            background: linear-gradient(135deg, #4e342e 0%, #26120c 100%);
+            background: transparent; /* Убрали старый градиент */
             color: #fff;
             padding: 90px 5% 120px 5%;
             text-align: center;
             position: relative;
+            z-index: 2; /* Поверх затемнения */
         }
 
         .hero h1 {
@@ -123,10 +147,10 @@
             background: #fff;
             border-radius: 20px;
             padding: 45px;
-            margin: -60px auto 60px auto;
-            box-shadow: 0 20px 40px rgba(78, 52, 46, 0.08);
+            margin: -60px auto 0 auto; /* Убрали нижний отступ, он теперь в top-bg-wrapper */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             position: relative;
-            z-index: 10;
+            z-index: 10; /* Поверх затемнения */
             border: 1px solid #f3e9dc;
         }
 
@@ -492,68 +516,72 @@
         </div>
     </header>
 
-    <section class="hero">
-        <h1>Бани-Бочки Премиум - Мы отвечаем за качество</h1>
-        <div class="badge-geo">🔥 Премиум качество из Александрова</div>
-    </section>
+    <!-- === ОБЕРТКА ДЛЯ ФОНА И КВИЗА === -->
+    <div class="top-bg-wrapper">
+        <section class="hero">
+            <h1>Бани-Бочки Премиум - Мы отвечаем за качество</h1>
+            <div class="badge-geo">🔥 Премиум качество из Александрова</div>
+        </section>
 
-    <!-- КВИЗ -->
-    <div class="quiz-container">
-        <div class="quiz-header">
-            <div class="quiz-title" id="quiz-title">Конфигуратор бани (Шаг 1 из 3)</div>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress-fill"></div>
+        <!-- КВИЗ -->
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <div class="quiz-title" id="quiz-title">Конфигуратор бани (Шаг 1 из 3)</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
             </div>
-        </div>
 
-        <div class="step active" id="step-1">
-            <h3>1. Какая форма бани вам ближе?</h3>
-            <div class="options-grid">
-                <div class="option-card" onclick="selectOption(1, 'Баня-Викинг')">Премиальная баня-Викинг</div>
-                <div class="option-card" onclick="selectOption(1, 'Квадро-Делюкс')">Квадро Делюкс (VIP)</div>
-                <div class="option-card" onclick="selectOption(1, 'Квадро Овал')">Просторный Квадро Овал</div>
-                <div class="option-card" onclick="selectOption(1, 'Другой вариант')">Посмотреть остальные модели</div>
+            <div class="step active" id="step-1">
+                <h3>1. Какая форма бани вам ближе?</h3>
+                <div class="options-grid">
+                    <div class="option-card" onclick="selectOption(1, 'Баня-Викинг')">Премиальная баня-Викинг</div>
+                    <div class="option-card" onclick="selectOption(1, 'Квадро-Делюкс')">Квадро Делюкс (VIP)</div>
+                    <div class="option-card" onclick="selectOption(1, 'Квадро Овал')">Просторный Квадро Овал</div>
+                    <div class="option-card" onclick="selectOption(1, 'Другой вариант')">Посмотреть остальные модели</div>
+                </div>
+                <div class="quiz-buttons">
+                    <button class="btn btn-next" onclick="nextStep(1)">Выбрать размер →</button>
+                </div>
             </div>
-            <div class="quiz-buttons">
-                <button class="btn btn-next" onclick="nextStep(1)">Выбрать размер →</button>
-            </div>
-        </div>
 
-        <div class="step" id="step-2">
-            <h3>2. Какая длина бани вам необходима?</h3>
-            <div class="options-grid">
-                <div class="option-card" onclick="selectOption(2, 'Компакт (до 3м)')">До 3 метров (Уютная на 2-4 человека)</div>
-                <div class="option-card" onclick="selectOption(2, 'Стандарт (4м)')">4 метра (Оптимальная с раздевалкой)</div>
-                <div class="option-card" onclick="selectOption(2, 'Люкс (6м)')">6 метров (С парной, мойкой и комнатой отдыха)</div>
-                <div class="option-card" onclick="selectOption(2, 'Нужен индивидуальный замер')">Нужен индивидуальный проект под участок</div>
+            <div class="step" id="step-2">
+                <h3>2. Какая длина бани вам необходима?</h3>
+                <div class="options-grid">
+                    <div class="option-card" onclick="selectOption(2, 'Компакт (до 3м)')">До 3 метров (Уютная на 2-4 человека)</div>
+                    <div class="option-card" onclick="selectOption(2, 'Стандарт (4м)')">4 метра (Оптимальная с раздевалкой)</div>
+                    <div class="option-card" onclick="selectOption(2, 'Люкс (6м)')">6 метров (С парной, мойкой и комнатой отдыха)</div>
+                    <div class="option-card" onclick="selectOption(2, 'Нужен индивидуальный замер')">Нужен индивидуальный проект под участок</div>
+                </div>
+                <div class="quiz-buttons">
+                    <button class="btn btn-prev" onclick="prevStep(2)">← Назад</button>
+                    <button class="btn btn-next" onclick="nextStep(2)">Забрать подарок →</button>
+                </div>
             </div>
-            <div class="quiz-buttons">
-                <button class="btn btn-prev" onclick="prevStep(2)">← Назад</button>
-                <button class="btn btn-next" onclick="nextStep(2)">Забрать подарок →</button>
-            </div>
-        </div>
 
-        <div class="step" id="step-3">
-            <h3>Подарок успешно зафиксирован! 🎁</h3>
-            <p style="color: #5d4037; margin-bottom: 25px; font-size: 15px; text-align: left; line-height: 1.5;">
-                Мы закрепили за вашим номером подарок к заказу: <b>комплект профессиональных камней для печи</b>. Оставьте контакты, чтобы получить расчет стоимости изготовления бани в Александрове.
-            </p>
-            <div class="form-group">
-                <label>Как вас зовут:</label>
-                <input type="text" class="form-input" placeholder="Дмитрий">
-            </div>
-            <div class="form-group">
-                <label>Ваш номер телефона (для связи по WhatsApp):</label>
-                <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__">
-            </div>
-            <div class="quiz-buttons">
-                <button class="btn btn-prev" onclick="prevStep(3)">← Назад</button>
-                <button class="btn btn-next btn-submit" onclick="submitQuiz()">Получить расчет и подарок 🔥</button>
+            <div class="step" id="step-3">
+                <h3>Подарок успешно зафиксирован! 🎁</h3>
+                <p style="color: #5d4037; margin-bottom: 25px; font-size: 15px; text-align: left; line-height: 1.5;">
+                    Мы закрепили за вашим номером подарок к заказу: <b>комплект профессиональных камней для печи</b>. Оставьте контакты, чтобы получить расчет стоимости изготовления бани в Александрове.
+                </p>
+                <div class="form-group">
+                    <label>Как вас зовут:</label>
+                    <input type="text" class="form-input" placeholder="Дмитрий">
+                </div>
+                <div class="form-group">
+                    <label>Ваш номер телефона (для связи по WhatsApp):</label>
+                    <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__">
+                </div>
+                <div class="quiz-buttons">
+                    <button class="btn btn-prev" onclick="prevStep(3)">← Назад</button>
+                    <button class="btn btn-next btn-submit" onclick="submitQuiz()">Получить расчет и подарок 🔥</button>
+                </div>
             </div>
         </div>
     </div>
+    <!-- === КОНЕЦ ОБЕРТКИ ДЛЯ ФОНА === -->
 
-    <!-- КАТАЛОГ БАНЬ -->
+    <!-- КАТАЛОГ БАНЬ (Новый дизайн во всю ширину) -->
     <section class="catalog-section">
         <div class="catalog-header">
             <h2>Наш Премиум Каталог</h2>
