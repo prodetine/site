@@ -399,6 +399,89 @@
             box-shadow: 0 6px 20px rgba(230, 81, 0, 0.35);
         }
 
+        /* === БЛОК КОМПЛЕКТАЦИИ === */
+        .equipment-section {
+            background-color: #fcf8f2;
+            padding: 90px 5%;
+        }
+
+        .equipment-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .equipment-images {
+            position: relative;
+            width: 100%;
+            min-height: 480px;
+        }
+
+        .equipment-images .img-1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 75%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 16px;
+            z-index: 1;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .equipment-images .img-2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 16px;
+            z-index: 2;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border: 8px solid #fcf8f2; /* Рамка в цвет фона для красивого наложения */
+        }
+
+        .equipment-info h2 {
+            font-size: 40px;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .equipment-info p {
+            font-size: 16px;
+            color: #5d4037;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #e65100;
+            background: transparent;
+            border: 2px solid #e65100;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .btn-outline:hover {
+            background: #e65100;
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(230, 81, 0, 0.2);
+        }
+
         /* Блок выставки */
         .exhibition-section {
             background: #fffdfa;
@@ -622,25 +705,6 @@
             color: #8d6e63;
         }
 
-        /* Кнопки */
-        .btn {
-            padding: 16px 35px;
-            border-radius: 10px;
-            border: none;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-prev { background: rgba(245, 235, 224, 0.8); color: #6d4c41; }
-        .btn-prev:hover { background: rgba(232, 219, 204, 0.9); }
-        .btn-next { background: #e65100; color: #fff; margin-left: auto; box-shadow: 0 4px 15px rgba(230, 81, 0, 0.25); }
-        .btn-next:hover { background: #bf4300; transform: translateY(-1px); }
-        .btn-submit { background: #ff9100; color: white; width: 100%; box-shadow: 0 5px 20px rgba(255, 145, 0, 0.3); }
-        .btn-submit:hover { background: #e68200; }
-
         /* Всплывающие окна (Модалки) */
         .modal-overlay {
             position: fixed;
@@ -680,14 +744,68 @@
 
         .modal-close:hover { color: #3e2723; }
         .modal-title { font-size: 26px; font-weight: 800; color: #4e342e; margin-bottom: 15px; }
-        .modal-content { font-size: 15px; color: #5d4037; line-height: 1.6; margin-bottom: 25px; text-align: left; }
+        
+        .modal-content { 
+            font-size: 15px; 
+            color: #5d4037; 
+            line-height: 1.6; 
+            margin-bottom: 25px; 
+            text-align: left; 
+        }
+
+        /* Настройка прокрутки внутри модального окна для комплектации */
+        .modal-content.scrollable {
+            max-height: 60vh;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .modal-content.scrollable::-webkit-scrollbar {
+            width: 6px;
+        }
+        .modal-content.scrollable::-webkit-scrollbar-thumb {
+            background-color: #ebdccb;
+            border-radius: 3px;
+        }
+
         .modal-features { background: #fcf8f2; padding: 15px; border-radius: 10px; margin: 15px 0; border-left: 4px solid #ff9100; }
+
+        /* Список в модалке комплектации */
+        .modal-list {
+            list-style: none;
+            margin: 10px 0;
+            padding: 0;
+        }
+        
+        .modal-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: #3e2723;
+            line-height: 1.4;
+        }
+        
+        .modal-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #e65100;
+            font-weight: 800;
+            font-size: 18px;
+            top: -2px;
+        }
 
         /* === АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ === */
         @media (max-width: 990px) {
             .catalog-row { flex-direction: column; display: flex; }
             .catalog-image { flex: none; width: 100%; height: 350px; display: block; position: relative; }
             .catalog-info { flex: none; width: 100%; padding: 40px 20px; align-items: center; text-align: center; }
+            
+            .equipment-container { grid-template-columns: 1fr; gap: 40px; }
+            .equipment-images { max-width: 500px; margin: 0 auto; min-height: 400px; }
+            .equipment-info { text-align: center; }
+            
             .exhibition-container { grid-template-columns: 1fr; gap: 30px; }
             .footer-container { flex-direction: column; text-align: center; }
             .footer-logo-block, .footer-contacts { align-items: center; text-align: center; }
@@ -759,6 +877,12 @@
                 margin: -40px 15px 0 15px; 
                 width: auto;
             }
+
+            .equipment-images { min-height: 320px; }
+            .equipment-images .img-1 { height: 260px; width: 80%; }
+            .equipment-images .img-2 { height: 180px; width: 65%; }
+            .equipment-info h2 { font-size: 28px; }
+            .btn-outline { width: 100%; justify-content: center; }
             
             .questions-container h2 { font-size: 28px; }
             .btn-call-large { font-size: 18px; padding: 15px 30px; width: 100%; text-align: center; }
@@ -970,6 +1094,25 @@
         </div>
     </section>
 
+    <!-- === БЛОК КОМПЛЕКТАЦИИ === -->
+    <section class="equipment-section">
+        <div class="equipment-container fade-in-up">
+            <div class="equipment-images">
+                <img src="komplekt1.jpg" alt="Внутри бани" class="img-1" loading="lazy">
+                <img src="komplekt2.jpg" alt="Печь для бани" class="img-2" loading="lazy">
+            </div>
+            <div class="equipment-info">
+                <h2>Комплектация</h2>
+                <p>Все бани полностью готовы к эксплуатации оснащены комплектом электрики и освещения, печью с камнями, баком для воды, сливом, дымоходом и мебелью. Все бани внутри обработаны антисептиком.</p>
+                <p>Каждая баня может оснащаться доп. опциями по желанию клиента.</p>
+                <p style="margin-bottom: 30px;">Например: увеличение мощности печи, вынос топки, душевая, защита печи от прикосновения, подспинники, шкаф вещевой, увеличение размера бани, уличное освещение, боковой вход и т.д.</p>
+                <button class="btn-outline" onclick="openModal('komplekt')">
+                    Стандартная комплектация бань &rarr;
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- БЛОК ВЫСТАВКИ -->
     <section class="exhibition-section">
         <div class="exhibition-container">
@@ -1005,7 +1148,7 @@
         <iframe src="https://yandex.ru/map-widget/v1/?text=Владимирская+область,+деревня+Площево,+Центральная+улица,+23" width="100%" height="100%" frameborder="0" allowfullscreen="true" loading="lazy"></iframe>
     </div>
 
-    <!-- === БЛОК ВОПРОСОВ (ПЕРЕД ФУТЕРОМ) === -->
+    <!-- === БЛОК ВОПРОСОВ === -->
     <section class="questions-section fade-in-up">
         <div class="questions-container">
             <h2>Остались вопросы?</h2>
@@ -1017,13 +1160,11 @@
     <!-- === ПОДВАЛ (ФУТЕР) === -->
     <footer class="site-footer fade-in-up">
         <div class="footer-container">
-            <!-- Логотип и домен -->
             <div class="footer-logo-block">
                 <img src="logo.png" alt="Бани-Бочки Премиум" class="footer-logo" loading="lazy">
                 <div class="footer-domain">банипремиум.рф</div>
             </div>
             
-            <!-- Соцсети -->
             <div class="footer-socials">
                 <a href="https://t.me/banibothki" class="footer-social-link tg" target="_blank">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
@@ -1035,19 +1176,50 @@
                 </a>
             </div>
 
-            <!-- Контакты -->
             <div class="footer-contacts">
                 <a href="tel:+79157750909" class="footer-phone">+7 (915) 775-09-09</a>
             </div>
         </div>
         
-        <!-- Копирайт -->
         <div class="footer-bottom">
             &copy; 2026 Бани бочки премиум
         </div>
     </footer>
 
     <!-- ВСПЛЫВАЮЩИЕ ОКНА -->
+    
+    <!-- МОДАЛКА: Комплектация -->
+    <div class="modal-overlay" id="modal-komplekt">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('komplekt')">&times;</button>
+            <div class="modal-title" style="text-transform: uppercase; font-size: 22px;">Стандартная комплектация бань бочек</div>
+            <div class="modal-content scrollable">
+                <ul class="modal-list">
+                    <li>Вход с торца</li>
+                    <li>Печь дровяная Термофор ОСА на 20 кг. камней с топкой, внутри парной</li>
+                    <li>Дымоход в сборе из нержавеющей стали</li>
+                    <li>Бак для воды на 50 л из нержавеющей стали</li>
+                    <li>Лежаки из осины в парной</li>
+                    <li>Трапик из осины в парной</li>
+                    <li>Комплект электрики и освещения</li>
+                    <li>2 скамейки и трапик в комнате отдыха</li>
+                    <li>Ступенька перед входом</li>
+                    <li>Защита от нагрева из минерита</li>
+                    <li>Обручи из нержавеющей стали с замками для стягивания</li>
+                    <li>Входная дверь глухая деревянная</li>
+                    <li>Дверь в парную и помывочную (закалённое стекло 8мм, 3 петли)</li>
+                    <li>Подспинники в комнате отдыха</li>
+                    <li>Слив</li>
+                    <li>Вентиляция</li>
+                    <li>Крыша из гибкой черепицы (цвет по желанию клиента)</li>
+                    <li>Баня снаружи пропитана защитным составом в два слоя (цвет по желанию клиента)</li>
+                    <li>Форточка в парном отделении 30x40 см</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ОСТАЛЬНЫЕ МОДАЛКИ КАТАЛОГА -->
     <div class="modal-overlay" id="modal-viking">
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('viking')">&times;</button>
@@ -1144,7 +1316,7 @@
         </div>
     </div>
 
-    <!-- Скрипт анимаций и квиза -->
+    <!-- Скрипт анимаций и логики -->
     <script>
         // Анимация при скролле
         document.addEventListener('DOMContentLoaded', () => {
