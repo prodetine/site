@@ -252,8 +252,9 @@
             box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.15);
         }
 
+        /* Пропорция 60/40 */
         .catalog-image {
-            flex: 1;
+            flex: 6; /* 60% ширины */
             position: relative;
             background-color: #ccc;
         }
@@ -268,12 +269,12 @@
         }
 
         .catalog-info {
-            flex: 1;
+            flex: 4; /* 40% ширины */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            padding: 40px 10%;
+            padding: 40px 8%;
         }
 
         .catalog-title {
@@ -291,10 +292,10 @@
             font-weight: 400;
         }
 
-        /* Светлая кнопка "Подробнее" */
-        .btn-light {
-            background-color: #f5ebe0;
-            color: #4e342e;
+        /* Оранжевая кнопка "Подробнее" */
+        .btn-catalog {
+            background-color: #e65100;
+            color: #fff;
             padding: 16px 32px;
             border-radius: 8px;
             font-size: 16px;
@@ -305,13 +306,13 @@
             align-items: center;
             gap: 12px;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 10px rgba(78, 52, 46, 0.05);
+            box-shadow: 0 4px 15px rgba(230, 81, 0, 0.25);
         }
 
-        .btn-light:hover {
-            background-color: #e8dbcc;
+        .btn-catalog:hover {
+            background-color: #bf4300;
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(78, 52, 46, 0.1);
+            box-shadow: 0 6px 20px rgba(230, 81, 0, 0.35);
         }
 
         /* Блок выставки */
@@ -458,7 +459,7 @@
         /* Адаптивность */
         @media (max-width: 990px) {
             .catalog-row { flex-direction: column; min-height: auto; }
-            .catalog-image { height: 350px; width: 100%; }
+            .catalog-image { height: 400px; width: 100%; }
             .catalog-info { padding: 40px 5%; align-items: center; text-align: center; }
             .exhibition-container { grid-template-columns: 1fr; gap: 30px; }
         }
@@ -552,7 +553,7 @@
         </div>
     </div>
 
-    <!-- КАТАЛОГ БАНЬ (Новый дизайн во всю ширину) -->
+    <!-- КАТАЛОГ БАНЬ -->
     <section class="catalog-section">
         <div class="catalog-header">
             <h2>Наш Премиум Каталог</h2>
@@ -569,7 +570,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Викинг</h3>
                     <p class="catalog-price">Цена от 395 000 руб.</p>
-                    <button class="btn-light" onclick="openModal('viking')">
+                    <button class="btn-catalog" onclick="openModal('viking')">
                         Посмотреть подробнее &rarr;
                     </button>
                 </div>
@@ -583,7 +584,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро-овал</h3>
                     <p class="catalog-price">Цена от 550 000 руб.</p>
-                    <button class="btn-light" onclick="openModal('oval')">
+                    <button class="btn-catalog" onclick="openModal('oval')">
                         Посмотреть подробнее &rarr;
                     </button>
                 </div>
@@ -597,7 +598,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро Делюкс</h3>
                     <p class="catalog-price">Цена от 600 000 руб.</p>
-                    <button class="btn-light" onclick="openModal('deluxe')">
+                    <button class="btn-catalog" onclick="openModal('deluxe')">
                         Посмотреть подробнее &rarr;
                     </button>
                 </div>
@@ -611,7 +612,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро-бочка</h3>
                     <p class="catalog-price">Цена от 210 000 руб.</p>
-                    <button class="btn-light" onclick="openModal('kvadro')">
+                    <button class="btn-catalog" onclick="openModal('kvadro')">
                         Посмотреть подробнее &rarr;
                     </button>
                 </div>
@@ -625,7 +626,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня-бочка Круглая</h3>
                     <p class="catalog-price">Цена от 200 000 руб.</p>
-                    <button class="btn-light" onclick="openModal('round')">
+                    <button class="btn-catalog" onclick="openModal('round')">
                         Посмотреть подробнее &rarr;
                     </button>
                 </div>
@@ -639,7 +640,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня на прицепе</h3>
                     <p class="catalog-price">Цена от 350 000 руб.</p>
-                    <button class="btn-light" onclick="openModal('trailer')">
+                    <button class="btn-catalog" onclick="openModal('trailer')">
                         Посмотреть подробнее &rarr;
                     </button>
                 </div>
