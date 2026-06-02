@@ -9,12 +9,10 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
         body { background-color: #fcf8f2; color: #3e2723; display: flex; flex-direction: column; min-height: 100vh; }
 
-        /* Шапка с логотипом по центру */
         header { display: flex; justify-content: center; align-items: center; padding: 15px 5%; background: #fffdfa; box-shadow: 0 4px 15px rgba(93, 64, 55, 0.06); border-bottom: 1px solid #f1e6d8; }
         .logo-block { display: flex; align-items: center; justify-content: center; }
         .logo-img { height: 100px; width: auto; object-fit: contain; background-color: #26120c; padding: 10px 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         
-        /* Основной контент */
         .page-container { flex: 1; max-width: 900px; margin: 60px auto; padding: 40px; background: #fff; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); border: 1px solid #f1e6d8; width: 90%; }
         .page-title { font-size: 32px; font-weight: 800; color: #4e342e; margin-bottom: 30px; text-transform: uppercase; text-align: center; border-bottom: 2px solid #fcf8f2; padding-bottom: 20px; }
         
@@ -25,7 +23,6 @@
         .btn-back { display: inline-block; margin-top: 40px; background-color: #e65100; color: #fff; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 700; text-decoration: none; text-align: center; width: 100%; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(230, 81, 0, 0.25); }
         .btn-back:hover { background-color: #bf4300; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(230, 81, 0, 0.35); }
 
-        /* Подвал */
         .site-footer { background-color: #1a0c08; color: #ebdccb; padding: 60px 5% 30px 5%; margin-top: 60px; }
         .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid rgba(235, 220, 203, 0.1); padding-bottom: 40px; }
         .footer-logo-block { display: flex; flex-direction: column; gap: 12px; }
@@ -59,7 +56,7 @@
 
     <header>
         <div class="logo-block">
-            <img src="logo.png" alt="Бани-Бочки Премиум" class="logo-img">
+            <img src="img/logo.png" alt="Бани-Бочки Премиум" class="logo-img">
         </div>
     </header>
 
@@ -89,11 +86,10 @@
         <a href="index.html" class="btn-back">← Вернуться на главную страницу</a>
     </div>
 
-    <!-- ПОДВАЛ -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-logo-block">
-                <img src="logo.png" alt="Бани-Бочки Премиум" class="footer-logo" loading="lazy">
+                <img src="img/logo.png" alt="Бани-Бочки Премиум" class="footer-logo" loading="lazy">
                 <div class="footer-domain">банипремиум.рф</div>
             </div>
             <div class="footer-socials">
