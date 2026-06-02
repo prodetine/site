@@ -6,7 +6,6 @@
     <title>Бани-Бочки Премиум в Александрове — Теплый уют под ключ</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
-
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
         body { background-color: #fcf8f2; color: #3e2723; overflow-x: hidden; }
 
@@ -32,7 +31,7 @@
         .phone-desc { font-size: 12px; color: #8d6e63; margin-top: 3px; font-weight: 600; }
         .mobile-actions { display: none; }
 
-        .top-bg-wrapper { position: relative; background-color: #3e2723; background-image: url('zadniyfon.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding-bottom: 80px; }
+        .top-bg-wrapper { position: relative; background-color: #3e2723; background-image: url('img/zadniyfon.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding-bottom: 80px; }
         .top-bg-wrapper::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(38, 18, 12, 0.65); z-index: 1; }
 
         .hero { background: transparent; color: #fff; padding: 90px 5% 120px 5%; text-align: center; position: relative; z-index: 2; }
@@ -70,7 +69,6 @@
         .btn-catalog { background-color: #e65100; color: #fff; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 700; border: none; cursor: pointer; display: flex; align-items: center; gap: 12px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(230, 81, 0, 0.25); text-decoration: none; }
         .btn-catalog:hover { background-color: #bf4300; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(230, 81, 0, 0.35); }
 
-        /* === БЛОК КОМПЛЕКТАЦИИ === */
         .equipment-section { background-color: #fcf8f2; padding: 90px 5%; }
         .equipment-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .equipment-images { position: relative; width: 100%; min-height: 480px; }
@@ -175,7 +173,7 @@
 
     <header>
         <div class="logo-block">
-            <img src="logo.png" alt="Бани-Бочки Премиум" class="logo-img">
+            <img src="img/logo.png" alt="Бани-Бочки Премиум" class="logo-img">
             <div class="logo-text">Собственное производство<br>бань-бочек в г. Александров</div>
         </div>
         <div class="header-right">
@@ -217,14 +215,12 @@
             <div class="step active" id="step-1">
                 <h3>1. Какая форма бани вам ближе?</h3>
                 <div class="options-grid">
-                    <!-- ИСПРАВЛЕНИЕ: Добавлен параметр "this" для корректной работы нажатий -->
                     <div class="option-card" onclick="selectOption(1, 'Баня-Викинг', this)">Премиальная баня-Викинг</div>
                     <div class="option-card" onclick="selectOption(1, 'Квадро-Делюкс', this)">Квадро Делюкс (VIP)</div>
                     <div class="option-card" onclick="selectOption(1, 'Квадро Овал', this)">Просторный Квадро Овал</div>
                     <div class="option-card" onclick="selectOption(1, 'Другой вариант', this)">Посмотреть остальные модели</div>
                 </div>
                 <div class="quiz-buttons">
-                    <!-- ИСПРАВЛЕНИЕ: Кнопка изначально скрыта (style="display:none") -->
                     <button class="btn btn-next" id="btn-next-1" onclick="nextStep(1)" style="display:none;">Выбрать размер →</button>
                 </div>
             </div>
@@ -239,7 +235,6 @@
                 </div>
                 <div class="quiz-buttons">
                     <button class="btn btn-prev" onclick="prevStep(2)">← Назад</button>
-                    <!-- ИСПРАВЛЕНИЕ: Кнопка изначально скрыта -->
                     <button class="btn btn-next" id="btn-next-2" onclick="nextStep(2)" style="display:none;">Забрать подарок →</button>
                 </div>
             </div>
@@ -274,7 +269,7 @@
 
         <div class="catalog-list">
             <div class="catalog-row fade-in-up">
-                <div class="catalog-image"><img src="viking.jpg" alt="Баня Викинг" loading="lazy"></div>
+                <div class="catalog-image"><img src="img/viking.jpg" alt="Баня Викинг" loading="lazy"></div>
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Викинг</h3>
                     <p class="catalog-price">Цена от 395 000 руб.</p>
@@ -283,7 +278,7 @@
             </div>
 
             <div class="catalog-row fade-in-up">
-                <div class="catalog-image"><img src="oval.jpg" alt="Баня Квадро-овал" loading="lazy"></div>
+                <div class="catalog-image"><img src="img/oval.jpg" alt="Баня Квадро-овал" loading="lazy"></div>
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро-овал</h3>
                     <p class="catalog-price">Цена от 550 000 руб.</p>
@@ -292,7 +287,7 @@
             </div>
 
             <div class="catalog-row fade-in-up">
-                <div class="catalog-image"><img src="deluxe.jpg" alt="Баня Квадро Делюкс" loading="lazy"></div>
+                <div class="catalog-image"><img src="img/deluxe.jpg" alt="Баня Квадро Делюкс" loading="lazy"></div>
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро Делюкс</h3>
                     <p class="catalog-price">Цена от 600 000 руб.</p>
@@ -301,7 +296,7 @@
             </div>
 
             <div class="catalog-row fade-in-up">
-                <div class="catalog-image"><img src="kvadro.jpg" alt="Баня Квадро-бочка" loading="lazy"></div>
+                <div class="catalog-image"><img src="img/kvadro.jpg" alt="Баня Квадро-бочка" loading="lazy"></div>
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро-бочка</h3>
                     <p class="catalog-price">Цена от 210 000 руб.</p>
@@ -310,7 +305,7 @@
             </div>
 
             <div class="catalog-row fade-in-up">
-                <div class="catalog-image"><img src="round.jpg" alt="Баня-бочка Круглая" loading="lazy"></div>
+                <div class="catalog-image"><img src="img/round.jpg" alt="Баня-бочка Круглая" loading="lazy"></div>
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня-бочка Круглая</h3>
                     <p class="catalog-price">Цена от 200 000 руб.</p>
@@ -319,7 +314,7 @@
             </div>
 
             <div class="catalog-row fade-in-up">
-                <div class="catalog-image"><img src="trailer.jpg" alt="Баня на прицепе" loading="lazy"></div>
+                <div class="catalog-image"><img src="img/trailer.jpg" alt="Баня на прицепе" loading="lazy"></div>
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня на прицепе</h3>
                     <p class="catalog-price">Цена от 350 000 руб.</p>
@@ -333,8 +328,8 @@
     <section class="equipment-section">
         <div class="equipment-container fade-in-up">
             <div class="equipment-images">
-                <img src="komplekt1.jpg" alt="Внутри бани" class="img-1" loading="lazy">
-                <img src="komplekt2.jpg" alt="Печь для бани" class="img-2" loading="lazy">
+                <img src="img/komplekt1.jpg" alt="Внутри бани" class="img-1" loading="lazy">
+                <img src="img/komplekt2.jpg" alt="Печь для бани" class="img-2" loading="lazy">
             </div>
             <div class="equipment-info">
                 <h2>Комплектация</h2>
@@ -391,7 +386,7 @@
     <footer class="site-footer fade-in-up">
         <div class="footer-container">
             <div class="footer-logo-block">
-                <img src="logo.png" alt="Бани-Бочки Премиум" class="footer-logo" loading="lazy">
+                <img src="img/logo.png" alt="Бани-Бочки Премиум" class="footer-logo" loading="lazy">
                 <div class="footer-domain">банипремиум.рф</div>
             </div>
             <div class="footer-socials">
@@ -405,7 +400,6 @@
         <div class="footer-bottom">&copy; 2026 Бани бочки премиум</div>
     </footer>
 
-    <!-- Скрипт анимаций и квиза -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
@@ -416,15 +410,12 @@
 
         let answers = { step1: '', step2: '' };
 
-        // ИСПРАВЛЕНИЕ БАГА: добавлена переменная element (this)
         function selectOption(step, value, element) {
             const stepDiv = document.getElementById(`step-${step}`);
             const cards = stepDiv.querySelectorAll('.option-card');
             cards.forEach(card => card.classList.remove('selected'));
             element.classList.add('selected');
             answers[`step${step}`] = value;
-            
-            // Показываем кнопку "Далее", только когда вариант выбран
             document.getElementById(`btn-next-${step}`).style.display = 'inline-block';
         }
 
