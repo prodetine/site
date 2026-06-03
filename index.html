@@ -53,38 +53,42 @@
         .option-card:hover { border-color: #ff9100; background: rgba(255, 248, 240, 0.8); transform: translateY(-2px); }
         .option-card.selected { border-color: #e65100; background: rgba(255, 243, 224, 0.9); color: #e65100; box-shadow: 0 4px 12px rgba(230, 81, 0, 0.1); }
 
-        .catalog-section { width: 100%; padding: 0; margin: 80px 0; background-color: #fff; }
-        .catalog-header { text-align: center; padding: 0 20px; margin-bottom: 60px; }
+        /* === КАТАЛОГ С КАРТОЧКАМИ === */
+        .catalog-section { width: 100%; padding: 0 5%; margin: 80px 0; background-color: transparent; }
+        .catalog-header { text-align: center; max-width: 800px; margin: 0 auto 50px auto; }
         .catalog-header h2 { font-size: 36px; font-weight: 800; margin-bottom: 15px; color: #111; }
         .catalog-header .subtitle { font-size: 16px; color: #666; font-weight: 600; }
-        .catalog-list { display: flex; flex-direction: column; }
-        .catalog-row { display: flex; width: 100%; min-height: 450px; }
-        .catalog-row:nth-child(odd) .catalog-info { background-color: #e6e6e6; }
-        .catalog-row:nth-child(even) .catalog-info { background-color: #d1d1d1; box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.15); }
-        .catalog-image { flex: 6; position: relative; background-color: #ccc; }
+        
+        .catalog-list { display: flex; flex-direction: column; gap: 50px; max-width: 1200px; margin: 0 auto; }
+        .catalog-row { display: flex; width: 100%; min-height: 400px; background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 15px 40px rgba(93, 64, 55, 0.06); border: 1px solid #f1e6d8; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .catalog-row:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(93, 64, 55, 0.12); }
+        
+        /* Чередование фото слева/справа */
+        .catalog-row:nth-child(even) { flex-direction: row-reverse; }
+        
+        .catalog-image { flex: 5; position: relative; min-height: 300px; background-color: #f5ebe0; }
         .catalog-image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
-        .catalog-info { flex: 4; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px 8%; }
-        .catalog-title { font-size: 42px; font-weight: 800; color: #000; margin-bottom: 15px; line-height: 1.1; }
-        .catalog-price { font-size: 20px; color: #333; margin-bottom: 40px; font-weight: 400; }
+        .catalog-info { flex: 5; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 50px 8%; background-color: #fff; }
+        .catalog-title { font-size: 38px; font-weight: 800; color: #000; margin-bottom: 15px; line-height: 1.1; }
+        .catalog-price { font-size: 22px; color: #e65100; margin-bottom: 35px; font-weight: 800; }
         
         .btn-catalog { background-color: #e65100; color: #fff; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 700; border: none; cursor: pointer; display: flex; align-items: center; gap: 12px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(230, 81, 0, 0.25); text-decoration: none; }
         .btn-catalog:hover { background-color: #bf4300; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(230, 81, 0, 0.35); }
 
-        /* Стили для текстовых блоков в каталоге */
-        .catalog-text-details { font-size: 17px; color: #333; line-height: 1.6; margin-bottom: 15px; font-weight: 600; }
-        .catalog-text-prices { font-size: 18px; color: #e65100; line-height: 1.6; font-weight: 700; }
+        .catalog-text-details { font-size: 16px; color: #5d4037; line-height: 1.6; margin-bottom: 15px; font-weight: 600; }
+        .catalog-text-prices { font-size: 17px; color: #e65100; line-height: 1.6; font-weight: 700; background: #fffdfa; padding: 15px; border-radius: 12px; border: 1px dashed #ffb74d; width: 100%; }
 
-        .equipment-section { background-color: #fcf8f2; padding: 90px 5%; }
+        .equipment-section { background-color: #fff; border-top: 1px solid #f1e6d8; border-bottom: 1px solid #f1e6d8; padding: 90px 5%; }
         .equipment-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .equipment-images { position: relative; width: 100%; min-height: 480px; }
         .equipment-images .img-1 { position: absolute; top: 0; left: 0; width: 75%; height: 380px; object-fit: cover; border-radius: 16px; z-index: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .equipment-images .img-2 { position: absolute; bottom: 0; right: 0; width: 60%; height: 280px; object-fit: cover; border-radius: 16px; z-index: 2; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border: 8px solid #fcf8f2; }
+        .equipment-images .img-2 { position: absolute; bottom: 0; right: 0; width: 60%; height: 280px; object-fit: cover; border-radius: 16px; z-index: 2; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border: 8px solid #fff; }
         .equipment-info h2 { font-size: 40px; font-weight: 800; color: #111; margin-bottom: 25px; line-height: 1.2; }
         .equipment-info p { font-size: 16px; color: #5d4037; line-height: 1.6; margin-bottom: 20px; }
         .btn-outline { display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 8px; font-size: 16px; font-weight: 700; color: #e65100; background: transparent; border: 2px solid #e65100; cursor: pointer; transition: all 0.3s ease; margin-top: 15px; text-decoration: none; }
         .btn-outline:hover { background: #e65100; color: #fff; box-shadow: 0 6px 15px rgba(230, 81, 0, 0.2); }
 
-        .steps-section { background-color: #fff; padding: 80px 5%; text-align: center; margin-bottom: 0; border-top: 1px solid #f1e6d8; }
+        .steps-section { background-color: transparent; padding: 80px 5%; text-align: center; margin-bottom: 0; }
         .steps-container { max-width: 800px; margin: 0 auto; }
         .steps-header h2 { font-size: 36px; font-weight: 800; color: #111; margin-bottom: 15px; }
         .steps-header p { font-size: 16px; color: #666; font-weight: 600; margin-bottom: 50px; }
@@ -137,8 +141,8 @@
         .btn-submit:hover { background: #e68200; }
 
         @media (max-width: 990px) {
-            .catalog-row { flex-direction: column; display: flex; }
-            .catalog-image { flex: none; width: 100%; height: 350px; display: block; position: relative; }
+            .catalog-row, .catalog-row:nth-child(even) { flex-direction: column; }
+            .catalog-image { flex: none; width: 100%; height: 350px; }
             .catalog-info { flex: none; width: 100%; padding: 40px 20px; align-items: center; text-align: center; }
             .equipment-container { grid-template-columns: 1fr; gap: 40px; }
             .equipment-images { max-width: 500px; margin: 0 auto; min-height: 400px; }
@@ -162,11 +166,13 @@
             .btn-mobile-tg, .btn-mobile-vk { flex: 1; padding: 12px; border-radius: 10px; color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; display: flex; justify-content: center; align-items: center; gap: 6px; }
             .btn-mobile-tg { background-color: #27A5E7; box-shadow: 0 4px 15px rgba(39, 165, 231, 0.25); }
             .btn-mobile-vk { background-color: #0077FF; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.25); }
+            
             .catalog-image { height: 280px; } 
+            .catalog-title { font-size: 28px; }
             .options-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 30px; }
-            .catalog-title { font-size: 28px; }
             .quiz-container { padding: 30px 20px; margin: -40px 15px 0 15px; width: auto; }
+            
             .equipment-images { min-height: 320px; }
             .equipment-images .img-1 { height: 260px; width: 80%; }
             .equipment-images .img-2 { height: 180px; width: 65%; }
@@ -228,7 +234,6 @@
             <div class="badge-geo">🔥 Премиум качество из Александрова</div>
         </section>
 
-        <!-- КВИЗ -->
         <div class="quiz-container fade-in-up">
             <div class="quiz-header">
                 <div class="quiz-title" id="quiz-title">Конфигуратор бани (Шаг 1 из 3)</div>
@@ -283,7 +288,6 @@
         </div>
     </div>
 
-    <!-- КАТАЛОГ БАНЬ -->
     <section class="catalog-section" id="catalog">
         <div class="catalog-header fade-in-up">
             <h2>Наш Премиум Каталог</h2>
@@ -327,7 +331,6 @@
                 </div>
             </div>
 
-            <!-- ИЗМЕНЕННЫЙ БЛОК: Баня-бочка Круглая -->
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/round.jpg" alt="Баня-бочка Круглая" loading="lazy"></div>
                 <div class="catalog-info">
@@ -346,7 +349,6 @@
                 </div>
             </div>
 
-            <!-- ИЗМЕНЕННЫЙ БЛОК: Баня на прицепе -->
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/trailer.jpg" alt="Баня на прицепе" loading="lazy"></div>
                 <div class="catalog-info">
@@ -361,7 +363,6 @@
         </div>
     </section>
 
-    <!-- === БЛОК КОМПЛЕКТАЦИИ === -->
     <section class="equipment-section" id="equipment">
         <div class="equipment-container fade-in-up">
             <div class="equipment-images">
@@ -376,148 +377,3 @@
                 <a href="komplekt.html" class="btn-outline">Стандартная комплектация бань &rarr;</a>
             </div>
         </div>
-    </section>
-
-    <!-- === ЭТАПЫ РАБОТ === -->
-    <section class="steps-section fade-in-up">
-        <div class="steps-container">
-            <div class="steps-header">
-                <h2>Этапы работ</h2>
-                <p>Все этапы работ с нами легко укладываются в три шага:</p>
-            </div>
-            <div class="steps-list">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Оформление заказа</h3>
-                        <p class="step-desc">Выбор комплектации бани и оформление договора на изготовление</p>
-                    </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Изготовление</h3>
-                        <p class="step-desc">Изготовление бани от 3 недель до 2 месяцев</p>
-                    </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3 class="step-title">Доставка и установка</h3>
-                        <p class="step-desc">Доставка бани клиенту на участок в полностью собранном виде или в разобранном состоянии со сборкой на участке клиента</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- БЛОК ВЫСТАВКИ -->
-    <section class="exhibition-section">
-        <div class="exhibition-container">
-            <div class="exhibition-info fade-in-up">
-                <h2>Приезжайте на нашу выставочную площадку!</h2>
-                <p>Выбирать баню по интернету — хорошо, но потрогать её вживую — бесценно. Мы находимся прямо в Александрове и всегда рады гостям. Приезжайте всей семьей!</p>
-                <ul class="exhibition-features">
-                    <li>Все популярные модели (Викинг, Квадро, Классика) стоят в собранном виде</li>
-                    <li>Можно зайти внутрь, оценить качество сборки, ширину полков и запах кедра</li>
-                    <li>Консультация от технолога производства прямо на месте</li>
-                    <li>Честные цены без накруток посредников</li>
-                </ul>
-            </div>
-            <div class="exhibition-cta fade-in-up">
-                <p style="margin: 0 0 15px 0; font-size: 16px; color: #5d4037; font-weight: 600; line-height: 1.5;">
-                    🕒 <strong>Режим работы:</strong><br>Среда - Воскресенье 10:00 - 17:00
-                </p>
-                <p style="margin: 0 0 15px 0; font-size: 16px; color: #5d4037; font-weight: 600; line-height: 1.5;">
-                    📍 <strong>Наш адрес:</strong><br>Владимирская область, д. Площево, Центральная ул., 23
-                </p>
-                <p style="margin: 0; font-size: 14px; color: #5d4037; font-weight: 600;">
-                    📞 Телефон для связи:<br><a href="tel:+79157750909" style="color: #e65100; font-size: 18px; text-decoration: none; display: inline-block; margin-top: 5px;">+7 (915) 775-09-09</a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- КАРТА -->
-    <div class="map-section fade-in-up">
-        <iframe src="https://yandex.ru/map-widget/v1/?text=Владимирская+область,+деревня+Площево,+Центральная+улица,+23" width="100%" height="100%" frameborder="0" allowfullscreen="true" loading="lazy"></iframe>
-    </div>
-
-    <!-- БЛОК ВОПРОСОВ -->
-    <section class="questions-section fade-in-up">
-        <div class="questions-container">
-            <h2>Остались вопросы?</h2>
-            <p>Звоните нам и мы с удовольствием на них ответим</p>
-            <a href="tel:+79157750909" class="btn-call-large">📞 +7 (915) 775-09-09</a>
-        </div>
-    </section>
-
-    <!-- ПОДВАЛ -->
-    <footer class="site-footer fade-in-up">
-        <div class="footer-container">
-            <div class="footer-logo-block">
-                <img src="img/logo.png" alt="Бани-Бочки Премиум" class="footer-logo" loading="lazy">
-                <div class="footer-domain">банипремиум.рф</div>
-            </div>
-            <div class="footer-socials">
-                <a href="https://t.me/banibothki" class="footer-social-link tg" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>Telegram</a>
-                <a href="https://vk.com/id1087359257" class="footer-social-link vk" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.077 23.994c-8.91 0-14.07-6.147-14.24-16.51h4.48c.115 7.822 3.633 11.134 6.398 11.782v-11.78h4.286v6.721c2.723-.298 5.626-3.411 6.556-6.722h4.286c-.732 4.14-3.766 7.21-5.836 8.243 2.07 1.034 5.405 3.86 6.442 8.266h-4.664c-.818-3.08-3.435-5.556-6.784-5.88v5.88h-1.024z"/></svg>ВКонтакте</a>
-            </div>
-            <div class="footer-contacts">
-                <a href="tel:+79157750909" class="footer-phone">+7 (915) 775-09-09</a>
-            </div>
-        </div>
-        <div class="footer-bottom">&copy; 2026 Бани бочки премиум</div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in-view'); });
-            }, { threshold: 0.1 }); 
-            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
-        });
-
-        let answers = { step1: '', step2: '' };
-
-        function selectOption(step, value, element) {
-            const stepDiv = document.getElementById(`step-${step}`);
-            const cards = stepDiv.querySelectorAll('.option-card');
-            cards.forEach(card => card.classList.remove('selected'));
-            element.classList.add('selected');
-            answers[`step${step}`] = value;
-            document.getElementById(`btn-next-${step}`).style.display = 'inline-block';
-        }
-
-        function nextStep(currentStep) {
-            if (currentStep === 1 && !answers.step1) { alert('Пожалуйста, выберите модель бани!'); return; }
-            if (currentStep === 2 && !answers.step2) { alert('Пожалуйста, укажите желаемую длину!'); return; }
-            document.getElementById(`step-${currentStep}`).classList.remove('active');
-            document.getElementById(`step-${currentStep + 1}`).classList.add('active');
-            updateHeader(currentStep + 1);
-        }
-
-        function prevStep(currentStep) {
-            document.getElementById(`step-${currentStep}`).classList.remove('active');
-            document.getElementById(`step-${currentStep - 1}`).classList.add('active');
-            updateHeader(currentStep - 1);
-        }
-
-        function updateHeader(step) {
-            const title = document.getElementById('quiz-title');
-            const fill = document.getElementById('progress-fill');
-            if (step === 3) {
-                title.innerText = "Расчет стоимости и бронь подарка";
-                fill.style.width = "100%";
-            } else {
-                title.innerText = `Конфигуратор бани (Шаг ${step} из 3)`;
-                fill.style.width = step === 1 ? "33%" : "66%";
-            }
-        }
-
-        function submitQuiz() {
-            alert('Заявка принята! Специалисты "Бани-Бочки Премиум" из Александрова уже начали расчет.');
-        }
-    </script>
-</body>
-</html>
