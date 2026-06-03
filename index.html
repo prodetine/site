@@ -79,6 +79,18 @@
         .btn-outline { display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 8px; font-size: 16px; font-weight: 700; color: #e65100; background: transparent; border: 2px solid #e65100; cursor: pointer; transition: all 0.3s ease; margin-top: 15px; text-decoration: none; }
         .btn-outline:hover { background: #e65100; color: #fff; box-shadow: 0 6px 15px rgba(230, 81, 0, 0.2); }
 
+        /* === ЭТАПЫ РАБОТ === */
+        .steps-section { background-color: #fff; padding: 80px 5%; text-align: center; }
+        .steps-container { max-width: 1100px; margin: 0 auto; }
+        .steps-header h2 { font-size: 36px; font-weight: 800; color: #111; margin-bottom: 15px; }
+        .steps-header p { font-size: 16px; color: #666; font-weight: 600; margin-bottom: 50px; }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .step-card { background: #fcf8f2; padding: 40px 30px; border-radius: 16px; position: relative; border: 1px solid #f1e6d8; transition: transform 0.3s ease; text-align: left; }
+        .step-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .step-number { font-size: 80px; font-weight: 800; color: rgba(230, 81, 0, 0.08); position: absolute; top: 10px; right: 20px; line-height: 1; z-index: 1; }
+        .step-title { font-size: 20px; font-weight: 800; color: #4e342e; margin-bottom: 15px; position: relative; z-index: 2; display: flex; align-items: center; gap: 10px; }
+        .step-desc { font-size: 15px; color: #5d4037; line-height: 1.6; position: relative; z-index: 2; }
+
         .exhibition-section { background: #fffdfa; border-top: 1px solid #f1e6d8; padding: 80px 5% 60px 5%; text-align: center; }
         .exhibition-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; text-align: left; }
         .exhibition-info h2 { font-size: 32px; font-weight: 800; color: #4e342e; margin-bottom: 20px; line-height: 1.2; }
@@ -131,6 +143,7 @@
             .exhibition-container { grid-template-columns: 1fr; gap: 30px; }
             .footer-container { flex-direction: column; text-align: center; }
             .footer-logo-block, .footer-contacts { align-items: center; text-align: center; }
+            .steps-grid { grid-template-columns: 1fr; gap: 20px; }
         }
 
         @media (max-width: 650px) {
@@ -161,6 +174,8 @@
             .btn-call-large { font-size: 18px; padding: 15px 30px; width: 100%; text-align: center; }
             .footer-socials { flex-direction: column; width: 100%; gap: 10px; }
             .footer-social-link { justify-content: center; }
+            .steps-section { padding: 60px 5%; }
+            .steps-header h2 { font-size: 28px; }
         }
 
         .form-group { margin-bottom: 22px; text-align: left; }
@@ -337,6 +352,33 @@
                 <p>Каждая баня может оснащаться доп. опциями по желанию клиента.</p>
                 <p style="margin-bottom: 30px;">Например: увеличение мощности печи, вынос топки, душевая, защита печи от прикосновения, подспинники, шкаф вещевой, увеличение размера бани, уличное освещение, боковой вход и т.д.</p>
                 <a href="komplekt.html" class="btn-outline">Стандартная комплектация бань &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- === ЭТАПЫ РАБОТ === -->
+    <section class="steps-section fade-in-up">
+        <div class="steps-container">
+            <div class="steps-header">
+                <h2>Этапы работ</h2>
+                <p>Все этапы работ с нами легко укладываются в три шага:</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Оформление заказа</h3>
+                    <p class="step-desc">Выбор комплектации бани и оформление договора на изготовление</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Изготовление</h3>
+                    <p class="step-desc">Изготовление бани от 3 недель до 2 месяцев</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Доставка и установка</h3>
+                    <p class="step-desc">Доставка бани клиенту на участок в полностью собранном виде или в разобранном состоянии со сборкой на участке клиента</p>
+                </div>
             </div>
         </div>
     </section>
