@@ -6,6 +6,7 @@
     <title>Бани-Бочки Премиум в Александрове — Теплый уют под ключ</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+        html { scroll-behavior: smooth; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
         body { background-color: #fcf8f2; color: #3e2723; overflow-x: hidden; }
 
@@ -79,17 +80,16 @@
         .btn-outline { display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 8px; font-size: 16px; font-weight: 700; color: #e65100; background: transparent; border: 2px solid #e65100; cursor: pointer; transition: all 0.3s ease; margin-top: 15px; text-decoration: none; }
         .btn-outline:hover { background: #e65100; color: #fff; box-shadow: 0 6px 15px rgba(230, 81, 0, 0.2); }
 
-        /* === ЭТАПЫ РАБОТ === */
-        .steps-section { background-color: #fff; padding: 80px 5%; text-align: center; }
-        .steps-container { max-width: 1100px; margin: 0 auto; }
+        /* === ЭТАПЫ РАБОТ (ВЕРТИКАЛЬНО) === */
+        .steps-section { background-color: #fff; padding: 80px 5%; text-align: center; margin-bottom: 0; }
+        .steps-container { max-width: 800px; margin: 0 auto; }
         .steps-header h2 { font-size: 36px; font-weight: 800; color: #111; margin-bottom: 15px; }
         .steps-header p { font-size: 16px; color: #666; font-weight: 600; margin-bottom: 50px; }
-        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .step-card { background: #fcf8f2; padding: 40px 30px; border-radius: 16px; position: relative; border: 1px solid #f1e6d8; transition: transform 0.3s ease; text-align: left; }
-        .step-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        .step-number { font-size: 80px; font-weight: 800; color: rgba(230, 81, 0, 0.08); position: absolute; top: 10px; right: 20px; line-height: 1; z-index: 1; }
-        .step-title { font-size: 20px; font-weight: 800; color: #4e342e; margin-bottom: 15px; position: relative; z-index: 2; display: flex; align-items: center; gap: 10px; }
-        .step-desc { font-size: 15px; color: #5d4037; line-height: 1.6; position: relative; z-index: 2; }
+        .steps-list { display: flex; flex-direction: column; gap: 40px; text-align: left; }
+        .step-item { display: flex; align-items: flex-start; gap: 25px; }
+        .step-number { font-size: 50px; font-weight: 800; color: #e65100; line-height: 0.8; flex-shrink: 0; }
+        .step-title { font-size: 22px; font-weight: 800; color: #4e342e; margin-bottom: 10px; }
+        .step-desc { font-size: 16px; color: #5d4037; line-height: 1.6; }
 
         .exhibition-section { background: #fffdfa; border-top: 1px solid #f1e6d8; padding: 80px 5% 60px 5%; text-align: center; }
         .exhibition-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; text-align: left; }
@@ -143,7 +143,6 @@
             .exhibition-container { grid-template-columns: 1fr; gap: 30px; }
             .footer-container { flex-direction: column; text-align: center; }
             .footer-logo-block, .footer-contacts { align-items: center; text-align: center; }
-            .steps-grid { grid-template-columns: 1fr; gap: 20px; }
         }
 
         @media (max-width: 650px) {
@@ -170,12 +169,18 @@
             .equipment-images .img-2 { height: 180px; width: 65%; }
             .equipment-info h2 { font-size: 28px; }
             .btn-outline { width: 100%; justify-content: center; }
+            
+            .steps-section { padding: 60px 5%; }
+            .steps-header h2 { font-size: 28px; }
+            .steps-list { gap: 30px; }
+            .step-item { flex-direction: row; gap: 15px; }
+            .step-number { font-size: 40px; }
+            .step-title { font-size: 18px; }
+
             .questions-container h2 { font-size: 28px; }
             .btn-call-large { font-size: 18px; padding: 15px 30px; width: 100%; text-align: center; }
             .footer-socials { flex-direction: column; width: 100%; gap: 10px; }
             .footer-social-link { justify-content: center; }
-            .steps-section { padding: 60px 5%; }
-            .steps-header h2 { font-size: 28px; }
         }
 
         .form-group { margin-bottom: 22px; text-align: left; }
@@ -220,7 +225,6 @@
             <div class="badge-geo">🔥 Премиум качество из Александрова</div>
         </section>
 
-        <!-- КВИЗ -->
         <div class="quiz-container fade-in-up">
             <div class="quiz-header">
                 <div class="quiz-title" id="quiz-title">Конфигуратор бани (Шаг 1 из 3)</div>
@@ -275,8 +279,7 @@
         </div>
     </div>
 
-    <!-- КАТАЛОГ БАНЬ -->
-    <section class="catalog-section">
+    <section class="catalog-section" id="catalog">
         <div class="catalog-header fade-in-up">
             <h2>Наш Премиум Каталог</h2>
             <div class="subtitle">Популярные модели, производимые на нашей базе в г. Александров</div>
@@ -291,7 +294,6 @@
                     <a href="viking.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
                 </div>
             </div>
-
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/oval.jpg" alt="Баня Квадро-овал" loading="lazy"></div>
                 <div class="catalog-info">
@@ -300,7 +302,6 @@
                     <a href="oval.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
                 </div>
             </div>
-
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/deluxe.jpg" alt="Баня Квадро Делюкс" loading="lazy"></div>
                 <div class="catalog-info">
@@ -309,7 +310,6 @@
                     <a href="deluxe.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
                 </div>
             </div>
-
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/kvadro.jpg" alt="Баня Квадро-бочка" loading="lazy"></div>
                 <div class="catalog-info">
@@ -318,7 +318,6 @@
                     <a href="kvadro.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
                 </div>
             </div>
-
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/round.jpg" alt="Баня-бочка Круглая" loading="lazy"></div>
                 <div class="catalog-info">
@@ -327,7 +326,6 @@
                     <a href="round.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
                 </div>
             </div>
-
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/trailer.jpg" alt="Баня на прицепе" loading="lazy"></div>
                 <div class="catalog-info">
@@ -339,8 +337,7 @@
         </div>
     </section>
 
-    <!-- === БЛОК КОМПЛЕКТАЦИИ === -->
-    <section class="equipment-section">
+    <section class="equipment-section" id="equipment">
         <div class="equipment-container fade-in-up">
             <div class="equipment-images">
                 <img src="img/komplekt1.jpg" alt="Внутри бани" class="img-1" loading="lazy">
@@ -363,27 +360,32 @@
                 <h2>Этапы работ</h2>
                 <p>Все этапы работ с нами легко укладываются в три шага:</p>
             </div>
-            <div class="steps-grid">
-                <div class="step-card">
+            <div class="steps-list">
+                <div class="step-item">
                     <div class="step-number">1</div>
-                    <h3 class="step-title">Оформление заказа</h3>
-                    <p class="step-desc">Выбор комплектации бани и оформление договора на изготовление</p>
+                    <div class="step-content">
+                        <h3 class="step-title">Оформление заказа</h3>
+                        <p class="step-desc">Выбор комплектации бани и оформление договора на изготовление</p>
+                    </div>
                 </div>
-                <div class="step-card">
+                <div class="step-item">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">Изготовление</h3>
-                    <p class="step-desc">Изготовление бани от 3 недель до 2 месяцев</p>
+                    <div class="step-content">
+                        <h3 class="step-title">Изготовление</h3>
+                        <p class="step-desc">Изготовление бани от 3 недель до 2 месяцев</p>
+                    </div>
                 </div>
-                <div class="step-card">
+                <div class="step-item">
                     <div class="step-number">3</div>
-                    <h3 class="step-title">Доставка и установка</h3>
-                    <p class="step-desc">Доставка бани клиенту на участок в полностью собранном виде или в разобранном состоянии со сборкой на участке клиента</p>
+                    <div class="step-content">
+                        <h3 class="step-title">Доставка и установка</h3>
+                        <p class="step-desc">Доставка бани клиенту на участок в полностью собранном виде или в разобранном состоянии со сборкой на участке клиента</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- БЛОК ВЫСТАВКИ -->
     <section class="exhibition-section">
         <div class="exhibition-container">
             <div class="exhibition-info fade-in-up">
@@ -410,12 +412,10 @@
         </div>
     </section>
 
-    <!-- КАРТА -->
     <div class="map-section fade-in-up">
         <iframe src="https://yandex.ru/map-widget/v1/?text=Владимирская+область,+деревня+Площево,+Центральная+улица,+23" width="100%" height="100%" frameborder="0" allowfullscreen="true" loading="lazy"></iframe>
     </div>
 
-    <!-- БЛОК ВОПРОСОВ -->
     <section class="questions-section fade-in-up">
         <div class="questions-container">
             <h2>Остались вопросы?</h2>
@@ -424,7 +424,6 @@
         </div>
     </section>
 
-    <!-- ПОДВАЛ -->
     <footer class="site-footer fade-in-up">
         <div class="footer-container">
             <div class="footer-logo-block">
