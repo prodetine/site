@@ -70,6 +70,10 @@
         .btn-catalog { background-color: #e65100; color: #fff; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 700; border: none; cursor: pointer; display: flex; align-items: center; gap: 12px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(230, 81, 0, 0.25); text-decoration: none; }
         .btn-catalog:hover { background-color: #bf4300; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(230, 81, 0, 0.35); }
 
+        /* Стили для текстовых блоков в каталоге */
+        .catalog-text-details { font-size: 17px; color: #333; line-height: 1.6; margin-bottom: 15px; font-weight: 600; }
+        .catalog-text-prices { font-size: 18px; color: #e65100; line-height: 1.6; font-weight: 700; }
+
         .equipment-section { background-color: #fcf8f2; padding: 90px 5%; }
         .equipment-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .equipment-images { position: relative; width: 100%; min-height: 480px; }
@@ -80,8 +84,7 @@
         .btn-outline { display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 8px; font-size: 16px; font-weight: 700; color: #e65100; background: transparent; border: 2px solid #e65100; cursor: pointer; transition: all 0.3s ease; margin-top: 15px; text-decoration: none; }
         .btn-outline:hover { background: #e65100; color: #fff; box-shadow: 0 6px 15px rgba(230, 81, 0, 0.2); }
 
-        /* === ЭТАПЫ РАБОТ (ВЕРТИКАЛЬНО) === */
-        .steps-section { background-color: #fff; padding: 80px 5%; text-align: center; margin-bottom: 0; }
+        .steps-section { background-color: #fff; padding: 80px 5%; text-align: center; margin-bottom: 0; border-top: 1px solid #f1e6d8; }
         .steps-container { max-width: 800px; margin: 0 auto; }
         .steps-header h2 { font-size: 36px; font-weight: 800; color: #111; margin-bottom: 15px; }
         .steps-header p { font-size: 16px; color: #666; font-weight: 600; margin-bottom: 50px; }
@@ -225,6 +228,7 @@
             <div class="badge-geo">🔥 Премиум качество из Александрова</div>
         </section>
 
+        <!-- КВИЗ -->
         <div class="quiz-container fade-in-up">
             <div class="quiz-header">
                 <div class="quiz-title" id="quiz-title">Конфигуратор бани (Шаг 1 из 3)</div>
@@ -279,6 +283,7 @@
         </div>
     </div>
 
+    <!-- КАТАЛОГ БАНЬ -->
     <section class="catalog-section" id="catalog">
         <div class="catalog-header fade-in-up">
             <h2>Наш Премиум Каталог</h2>
@@ -294,6 +299,7 @@
                     <a href="viking.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
                 </div>
             </div>
+
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/oval.jpg" alt="Баня Квадро-овал" loading="lazy"></div>
                 <div class="catalog-info">
@@ -302,6 +308,7 @@
                     <a href="oval.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
                 </div>
             </div>
+
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/deluxe.jpg" alt="Баня Квадро Делюкс" loading="lazy"></div>
                 <div class="catalog-info">
@@ -310,6 +317,7 @@
                     <a href="deluxe.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
                 </div>
             </div>
+
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/kvadro.jpg" alt="Баня Квадро-бочка" loading="lazy"></div>
                 <div class="catalog-info">
@@ -318,25 +326,42 @@
                     <a href="kvadro.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
                 </div>
             </div>
+
+            <!-- ИЗМЕНЕННЫЙ БЛОК: Баня-бочка Круглая -->
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/round.jpg" alt="Баня-бочка Круглая" loading="lazy"></div>
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня-бочка Круглая</h3>
-                    <p class="catalog-price">Цена от 200 000 руб.</p>
-                    <a href="round.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
+                    
+                    <p class="catalog-text-details">
+                        Размеры:<br>Ширина бани от 2,1 до 2,4 м<br>Длина бани от 2 до 6 м
+                    </p>
+                    <div class="catalog-text-prices">
+                        2x2,1 - 200 000 руб.<br>
+                        3x2,1 - 280 000 руб.<br>
+                        4x2,1 - 320 000 руб.<br>
+                        5x2,1 - 390 000 руб.<br>
+                        6x2,1 - 435 000 руб.
+                    </div>
                 </div>
             </div>
+
+            <!-- ИЗМЕНЕННЫЙ БЛОК: Баня на прицепе -->
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/trailer.jpg" alt="Баня на прицепе" loading="lazy"></div>
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня на прицепе</h3>
-                    <p class="catalog-price">Цена от 350 000 руб.</p>
-                    <a href="trailer.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
+                    <p class="catalog-price" style="margin-bottom: 15px; font-weight: 800; color: #e65100;">Цена от 350 000 руб.</p>
+                    
+                    <p class="catalog-text-details" style="margin-bottom: 0;">
+                        Размеры:<br>Ширина бани от 2,1 до 2,4 м<br>Длина бани от 2 до 4 м
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- === БЛОК КОМПЛЕКТАЦИИ === -->
     <section class="equipment-section" id="equipment">
         <div class="equipment-container fade-in-up">
             <div class="equipment-images">
@@ -386,6 +411,7 @@
         </div>
     </section>
 
+    <!-- БЛОК ВЫСТАВКИ -->
     <section class="exhibition-section">
         <div class="exhibition-container">
             <div class="exhibition-info fade-in-up">
@@ -412,10 +438,12 @@
         </div>
     </section>
 
+    <!-- КАРТА -->
     <div class="map-section fade-in-up">
         <iframe src="https://yandex.ru/map-widget/v1/?text=Владимирская+область,+деревня+Площево,+Центральная+улица,+23" width="100%" height="100%" frameborder="0" allowfullscreen="true" loading="lazy"></iframe>
     </div>
 
+    <!-- БЛОК ВОПРОСОВ -->
     <section class="questions-section fade-in-up">
         <div class="questions-container">
             <h2>Остались вопросы?</h2>
@@ -424,6 +452,7 @@
         </div>
     </section>
 
+    <!-- ПОДВАЛ -->
     <footer class="site-footer fade-in-up">
         <div class="footer-container">
             <div class="footer-logo-block">
