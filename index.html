@@ -8,222 +8,201 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
         html { scroll-behavior: smooth; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
-        body { background-color: #fcf8f2; color: #3e2723; overflow-x: hidden; }
+        
+        /* === НОВАЯ ПРЕМИУМ ПАЛИТРА (DARK MODE) === */
+        body { background-color: #121212; color: #e0e0e0; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
 
         .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
         .fade-in-up.in-view { opacity: 1; transform: translateY(0); }
 
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fffdfa; box-shadow: 0 4px 15px rgba(93, 64, 55, 0.06); position: relative; z-index: 100; border-bottom: 1px solid #f1e6d8; }
+        /* === ШАПКА === */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #0a0a0a; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); position: relative; z-index: 100; border-bottom: 1px solid #222; }
         .logo-block { display: flex; align-items: center; gap: 15px; }
-        .logo-img { height: 100px; width: auto; object-fit: contain; background-color: #26120c; padding: 10px 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .logo-text { font-size: 13px; color: #6d4c41; line-height: 1.3; border-left: 2px solid #e0d4c3; padding-left: 15px; font-weight: 600; }
-
+        .logo-img { height: 90px; width: auto; object-fit: contain; }
+        .logo-text { font-size: 13px; color: #aaa; line-height: 1.3; border-left: 2px solid #333; padding-left: 15px; font-weight: 600; }
+        
         .header-right { display: flex; align-items: center; gap: 30px; }
-        .header-socials { display: flex; flex-direction: column; gap: 8px; border-right: 2px solid #e0d4c3; padding-right: 25px; justify-content: center; }
+        .header-socials { display: flex; flex-direction: column; gap: 8px; border-right: 2px solid #333; padding-right: 25px; justify-content: center; }
         .social-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 16px; border-radius: 20px; text-decoration: none; color: #fff; font-size: 13px; font-weight: 700; transition: all 0.3s ease; }
-        .social-btn.tg { background-color: #27A5E7; box-shadow: 0 4px 12px rgba(39, 165, 231, 0.25); }
-        .social-btn.tg:hover { background-color: #1c8ec9; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(39, 165, 231, 0.35); }
-        .social-btn.vk { background-color: #0077FF; box-shadow: 0 4px 12px rgba(0, 119, 255, 0.25); }
-        .social-btn.vk:hover { background-color: #0062d6; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0, 119, 255, 0.35); }
-
+        .social-btn.tg { background-color: #1E88E5; }
+        .social-btn.tg:hover { background-color: #1565C0; transform: translateY(-2px); }
+        .social-btn.vk { background-color: #0077FF; }
+        .social-btn.vk:hover { background-color: #005bb5; transform: translateY(-2px); }
+        
         .header-contacts { text-align: right; }
-        .phone-link { font-size: 22px; font-weight: 800; color: #e65100; text-decoration: none; transition: color 0.2s; }
-        .phone-link:hover { color: #ff6d00; }
-        .phone-desc { font-size: 12px; color: #8d6e63; margin-top: 3px; font-weight: 600; }
-        .mobile-actions { display: none; }
+        .btn-nav-contacts { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; background-color: #d97706; color: #fff !important; font-weight: 800; font-size: 14px; text-transform: uppercase; border-radius: 10px; text-decoration: none; transition: 0.3s; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); margin-bottom: 10px; width: 100%; }
+        .btn-nav-contacts:hover { background-color: #b45309; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(217, 119, 6, 0.5); }
+        .phone-link { font-size: 22px; font-weight: 800; color: #d97706; text-decoration: none; transition: color 0.2s; }
+        .phone-link:hover { color: #f59e0b; }
+        .phone-desc { font-size: 12px; color: #777; margin-top: 3px; font-weight: 600; }
 
-        .top-bg-wrapper { position: relative; background-color: #3e2723; background-image: url('img/zadniyfon.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding-bottom: 80px; }
-        .top-bg-wrapper::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(38, 18, 12, 0.65); z-index: 1; }
-
+        /* === ГЛАВНЫЙ ЭКРАН (HERO) === */
+        .top-bg-wrapper { position: relative; background-image: url('img/zadniyfon.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding-bottom: 80px; background-color: #000; }
+        .top-bg-wrapper::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); z-index: 1; }
         .hero { background: transparent; color: #fff; padding: 90px 5% 120px 5%; text-align: center; position: relative; z-index: 2; }
-        .hero h1 { font-size: 46px; font-weight: 800; margin-bottom: 25px; line-height: 1.25; max-width: 900px; margin-left: auto; margin-right: auto; }
-        .hero h1 span { color: #ff9100; }
-        .badge-geo { display: inline-block; background: rgba(255, 145, 0, 0.2); padding: 6px 16px; border-radius: 50px; font-size: 14px; font-weight: 700; margin-bottom: 0; text-transform: uppercase; letter-spacing: 1px; color: #ffb74d; border: 1px solid rgba(255, 145, 0, 0.4); }
+        .hero h1 { font-size: 46px; font-weight: 800; margin-bottom: 25px; line-height: 1.25; max-width: 900px; margin-left: auto; margin-right: auto; text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
+        .badge-geo { display: inline-block; background: rgba(217, 119, 6, 0.15); padding: 6px 16px; border-radius: 50px; font-size: 14px; font-weight: 700; margin-bottom: 0; text-transform: uppercase; letter-spacing: 1px; color: #f59e0b; border: 1px solid rgba(217, 119, 6, 0.4); }
 
-        .quiz-container { max-width: 750px; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 20px; padding: 45px; margin: -60px auto 0 auto; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); position: relative; z-index: 10; border: 1px solid rgba(255, 255, 255, 0.6); transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); }
-        .quiz-header { margin-bottom: 35px; border-bottom: 2px solid rgba(253, 248, 242, 0.6); padding-bottom: 20px; }
-        .quiz-title { font-size: 24px; font-weight: 800; color: #4e342e; }
-        .progress-bar { height: 8px; background: rgba(245, 235, 224, 0.8); border-radius: 4px; margin-top: 15px; overflow: hidden; }
-        .progress-fill { height: 100%; background: #ff9100; width: 33%; transition: width 0.4s ease; }
+        /* === КВИЗ === */
+        .quiz-container { max-width: 750px; background: #1a1a1a; border-radius: 20px; padding: 45px; margin: -60px auto 0 auto; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); position: relative; z-index: 10; border: 1px solid #333; }
+        .quiz-header { margin-bottom: 35px; border-bottom: 2px solid #2a2a2a; padding-bottom: 20px; }
+        .quiz-title { font-size: 24px; font-weight: 800; color: #fff; }
+        .progress-bar { height: 8px; background: #333; border-radius: 4px; margin-top: 15px; overflow: hidden; }
+        .progress-fill { height: 100%; background: #d97706; width: 33%; transition: width 0.4s ease; }
         .step { display: none; }
         .step.active { display: block; }
-        .step h3 { font-size: 19px; margin-bottom: 25px; font-weight: 700; color: #3e2723; }
+        .step h3 { font-size: 19px; margin-bottom: 25px; font-weight: 700; color: #ddd; }
         .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 35px; }
-        .option-card { border: 2px solid rgba(235, 220, 203, 0.8); border-radius: 12px; padding: 25px 20px; cursor: pointer; transition: all 0.25s ease; font-weight: 700; text-align: center; background: rgba(255, 253, 251, 0.6); font-size: 16px; color: #5d4037; }
-        .option-card:hover { border-color: #ff9100; background: rgba(255, 248, 240, 0.8); transform: translateY(-2px); }
-        .option-card.selected { border-color: #e65100; background: rgba(255, 243, 224, 0.9); color: #e65100; box-shadow: 0 4px 12px rgba(230, 81, 0, 0.1); }
+        .option-card { border: 2px solid #333; border-radius: 12px; padding: 25px 20px; cursor: pointer; transition: all 0.25s ease; font-weight: 700; text-align: center; background: #222; font-size: 16px; color: #bbb; }
+        .option-card:hover { border-color: #d97706; background: #2a2a2a; transform: translateY(-2px); color: #fff; }
+        .option-card.selected { border-color: #d97706; background: rgba(217, 119, 6, 0.1); color: #d97706; }
+        
+        .form-group { margin-bottom: 22px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 14px; color: #ccc; }
+        .form-input { width: 100%; padding: 16px; border: 2px solid #444; border-radius: 10px; font-size: 16px; font-weight: 600; background: #222; color: #fff; }
+        .form-input:focus { border-color: #d97706; outline: none; background: #1a1a1a; }
+        .btn { padding: 16px 35px; border-radius: 10px; border: none; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s ease; text-decoration: none; display: inline-block; }
+        .btn-prev { background: #333; color: #ccc; }
+        .btn-prev:hover { background: #444; color: #fff; }
+        .btn-next, .btn-submit { background: #d97706; color: #fff; margin-left: auto; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); }
+        .btn-next:hover, .btn-submit:hover { background: #b45309; transform: translateY(-1px); }
 
-        /* === КАТАЛОГ С КАРТОЧКАМИ === */
-        .catalog-section { width: 100%; padding: 0 5%; margin: 80px 0; background-color: transparent; }
-        .catalog-header { text-align: center; max-width: 800px; margin: 0 auto 50px auto; }
-        .catalog-header h2 { font-size: 36px; font-weight: 800; margin-bottom: 15px; color: #111; }
-        .catalog-header .subtitle { font-size: 16px; color: #666; font-weight: 600; }
+        /* === НОВЫЙ КАТАЛОГ (80-90% ШИРИНЫ, 60/40) === */
+        .catalog-section { width: 100%; padding: 0; margin: 100px 0; background-color: transparent; }
+        .catalog-header { text-align: center; margin-bottom: 60px; }
+        .catalog-header h2 { font-size: 40px; font-weight: 800; margin-bottom: 15px; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
+        .catalog-header .subtitle { font-size: 18px; color: #888; font-weight: 600; }
         
-        .catalog-list { display: flex; flex-direction: column; gap: 50px; max-width: 1200px; margin: 0 auto; }
-        .catalog-row { display: flex; width: 100%; min-height: 400px; background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 15px 40px rgba(93, 64, 55, 0.06); border: 1px solid #f1e6d8; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .catalog-row:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(93, 64, 55, 0.12); }
-        
-        /* Чередование фото слева/справа */
+        .catalog-list { display: flex; flex-direction: column; gap: 80px; max-width: 90%; margin: 0 auto; }
+        .catalog-row { display: flex; width: 100%; min-height: 500px; background: #1a1a1a; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid #2a2a2a; }
         .catalog-row:nth-child(even) { flex-direction: row-reverse; }
         
-        .catalog-image { flex: 5; position: relative; min-height: 300px; background-color: #f5ebe0; }
+        .catalog-image { flex: 0 0 60%; width: 60%; position: relative; background-color: #111; }
         .catalog-image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
-        .catalog-info { flex: 5; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 50px 8%; background-color: #fff; }
-        .catalog-title { font-size: 38px; font-weight: 800; color: #000; margin-bottom: 15px; line-height: 1.1; }
-        .catalog-price { font-size: 22px; color: #e65100; margin-bottom: 35px; font-weight: 800; }
         
-        .btn-catalog { background-color: #e65100; color: #fff; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 700; border: none; cursor: pointer; display: flex; align-items: center; gap: 12px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(230, 81, 0, 0.25); text-decoration: none; }
-        .btn-catalog:hover { background-color: #bf4300; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(230, 81, 0, 0.35); }
+        .catalog-info { flex: 0 0 40%; width: 40%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 50px 5%; background-color: #1a1a1a; }
+        .catalog-title { font-size: 46px; font-weight: 800; color: #fff; margin-bottom: 20px; line-height: 1.1; }
+        .catalog-price { font-size: 24px; color: #d97706; margin-bottom: 30px; font-weight: 800; }
+        .catalog-text-details { font-size: 16px; color: #aaa; line-height: 1.6; margin-bottom: 20px; font-weight: 600; }
+        .catalog-text-prices { font-size: 18px; color: #d97706; line-height: 1.8; font-weight: 700; background: #222; padding: 20px; border-radius: 12px; border: 1px dashed #d97706; width: 100%; margin-bottom: 20px;}
+        
+        .btn-catalog { background-color: #d97706; color: #fff; padding: 18px 36px; border-radius: 10px; font-size: 16px; font-weight: 700; border: none; cursor: pointer; display: flex; align-items: center; gap: 12px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;}
+        .btn-catalog:hover { background-color: #b45309; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(217, 119, 6, 0.5); }
 
-        .catalog-text-details { font-size: 16px; color: #5d4037; line-height: 1.6; margin-bottom: 15px; font-weight: 600; }
-        .catalog-text-prices { font-size: 17px; color: #e65100; line-height: 1.6; font-weight: 700; background: #fffdfa; padding: 15px; border-radius: 12px; border: 1px dashed #ffb74d; width: 100%; }
+        /* === ОСТАЛЬНЫЕ БЛОКИ === */
+        .equipment-section { background-color: #161616; padding: 100px 5%; border-top: 1px solid #222; border-bottom: 1px solid #222; }
+        .equipment-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .equipment-images { position: relative; width: 100%; min-height: 500px; }
+        .equipment-images .img-1 { position: absolute; top: 0; left: 0; width: 75%; height: 400px; object-fit: cover; border-radius: 16px; z-index: 1; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .equipment-images .img-2 { position: absolute; bottom: 0; right: 0; width: 60%; height: 300px; object-fit: cover; border-radius: 16px; z-index: 2; box-shadow: 0 20px 50px rgba(0,0,0,0.6); border: 8px solid #161616; }
+        .equipment-info h2 { font-size: 42px; font-weight: 800; color: #fff; margin-bottom: 25px; line-height: 1.2; text-transform: uppercase; }
+        .equipment-info p { font-size: 16px; color: #bbb; line-height: 1.7; margin-bottom: 20px; }
+        .btn-outline { display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 8px; font-size: 16px; font-weight: 700; color: #d97706; background: transparent; border: 2px solid #d97706; cursor: pointer; transition: all 0.3s ease; margin-top: 15px; text-decoration: none; text-transform: uppercase; }
+        .btn-outline:hover { background: #d97706; color: #fff; box-shadow: 0 6px 15px rgba(217, 119, 6, 0.3); }
 
-        .equipment-section { background-color: #fff; border-top: 1px solid #f1e6d8; border-bottom: 1px solid #f1e6d8; padding: 90px 5%; }
-        .equipment-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .equipment-images { position: relative; width: 100%; min-height: 480px; }
-        .equipment-images .img-1 { position: absolute; top: 0; left: 0; width: 75%; height: 380px; object-fit: cover; border-radius: 16px; z-index: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .equipment-images .img-2 { position: absolute; bottom: 0; right: 0; width: 60%; height: 280px; object-fit: cover; border-radius: 16px; z-index: 2; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border: 8px solid #fff; }
-        .equipment-info h2 { font-size: 40px; font-weight: 800; color: #111; margin-bottom: 25px; line-height: 1.2; }
-        .equipment-info p { font-size: 16px; color: #5d4037; line-height: 1.6; margin-bottom: 20px; }
-        .btn-outline { display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 8px; font-size: 16px; font-weight: 700; color: #e65100; background: transparent; border: 2px solid #e65100; cursor: pointer; transition: all 0.3s ease; margin-top: 15px; text-decoration: none; }
-        .btn-outline:hover { background: #e65100; color: #fff; box-shadow: 0 6px 15px rgba(230, 81, 0, 0.2); }
+        .steps-section { background-color: transparent; padding: 100px 5%; text-align: center; }
+        .steps-container { max-width: 900px; margin: 0 auto; }
+        .steps-header h2 { font-size: 42px; font-weight: 800; color: #fff; margin-bottom: 15px; text-transform: uppercase; }
+        .steps-header p { font-size: 18px; color: #888; font-weight: 600; margin-bottom: 60px; }
+        .steps-list { display: flex; flex-direction: column; gap: 50px; text-align: left; }
+        .step-item { display: flex; align-items: flex-start; gap: 30px; background: #1a1a1a; padding: 40px; border-radius: 20px; border: 1px solid #2a2a2a; transition: transform 0.3s; }
+        .step-item:hover { transform: translateY(-5px); border-color: #333; }
+        .step-number { font-size: 60px; font-weight: 800; color: #d97706; line-height: 0.8; flex-shrink: 0; text-shadow: 0 4px 15px rgba(217, 119, 6, 0.2); }
+        .step-title { font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 15px; }
+        .step-desc { font-size: 16px; color: #aaa; line-height: 1.6; }
 
-        .steps-section { background-color: transparent; padding: 80px 5%; text-align: center; margin-bottom: 0; }
-        .steps-container { max-width: 800px; margin: 0 auto; }
-        .steps-header h2 { font-size: 36px; font-weight: 800; color: #111; margin-bottom: 15px; }
-        .steps-header p { font-size: 16px; color: #666; font-weight: 600; margin-bottom: 50px; }
-        .steps-list { display: flex; flex-direction: column; gap: 40px; text-align: left; }
-        .step-item { display: flex; align-items: flex-start; gap: 25px; }
-        .step-number { font-size: 50px; font-weight: 800; color: #e65100; line-height: 0.8; flex-shrink: 0; }
-        .step-title { font-size: 22px; font-weight: 800; color: #4e342e; margin-bottom: 10px; }
-        .step-desc { font-size: 16px; color: #5d4037; line-height: 1.6; }
-
-        .exhibition-section { background: #fffdfa; border-top: 1px solid #f1e6d8; padding: 80px 5% 60px 5%; text-align: center; }
-        .exhibition-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; text-align: left; }
-        .exhibition-info h2 { font-size: 32px; font-weight: 800; color: #4e342e; margin-bottom: 20px; line-height: 1.2; }
-        .exhibition-info p { font-size: 16px; color: #5d4037; line-height: 1.6; margin-bottom: 25px; }
+        .exhibition-section { background: #161616; border-top: 1px solid #222; padding: 100px 5% 80px 5%; }
+        .exhibition-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .exhibition-info h2 { font-size: 38px; font-weight: 800; color: #fff; margin-bottom: 25px; line-height: 1.2; text-transform: uppercase; }
+        .exhibition-info p { font-size: 16px; color: #bbb; line-height: 1.6; margin-bottom: 30px; }
         .exhibition-features { list-style: none; margin-bottom: 30px; }
-        .exhibition-features li { position: relative; padding-left: 30px; margin-bottom: 12px; font-weight: 600; color: #3e2723; font-size: 15px; }
-        .exhibition-features li::before { content: "✓"; position: absolute; left: 0; color: #e65100; font-weight: 800; font-size: 18px; }
-        .exhibition-cta { background: #fff3e0; border: 1px dashed #ff9100; padding: 30px; border-radius: 12px; text-align: left; }
+        .exhibition-features li { position: relative; padding-left: 35px; margin-bottom: 15px; font-weight: 600; color: #ddd; font-size: 16px; }
+        .exhibition-features li::before { content: "✓"; position: absolute; left: 0; color: #d97706; font-weight: 800; font-size: 20px; }
+        .exhibition-cta { background: #1a1a1a; border: 1px dashed #d97706; padding: 40px; border-radius: 16px; }
+        .exhibition-cta p { color: #ccc !important; font-size: 16px; margin-bottom: 15px; line-height: 1.6; }
 
-        .map-section { width: 100%; height: 450px; border-top: 1px solid #f1e6d8; line-height: 0; }
+        .map-section { width: 100%; height: 500px; border-top: 1px solid #222; line-height: 0; filter: grayscale(20%) contrast(110%); }
         
-        .questions-section { background: linear-gradient(135deg, #4e342e 0%, #26120c 100%); padding: 70px 20px; text-align: center; color: #fff; }
+        .questions-section { background: linear-gradient(135deg, #111 0%, #000 100%); padding: 80px 20px; text-align: center; border-top: 1px solid #222; border-bottom: 1px solid #222; }
         .questions-container { max-width: 800px; margin: 0 auto; }
-        .questions-container h2 { font-size: 36px; font-weight: 800; margin-bottom: 15px; }
-        .questions-container p { font-size: 18px; color: #f5ebe0; margin-bottom: 35px; }
-        .btn-call-large { display: inline-block; background-color: #e65100; color: #fff; padding: 18px 40px; border-radius: 12px; font-size: 22px; font-weight: 800; text-decoration: none; box-shadow: 0 6px 20px rgba(230, 81, 0, 0.3); transition: all 0.3s ease; }
-        .btn-call-large:hover { background-color: #ff6d00; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(230, 81, 0, 0.4); }
+        .questions-container h2 { font-size: 42px; font-weight: 800; margin-bottom: 20px; color: #fff; text-transform: uppercase; }
+        .questions-container p { font-size: 18px; color: #aaa; margin-bottom: 40px; }
+        .btn-call-large { display: inline-block; background-color: #d97706; color: #fff; padding: 20px 50px; border-radius: 12px; font-size: 24px; font-weight: 800; text-decoration: none; box-shadow: 0 6px 25px rgba(217, 119, 6, 0.4); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;}
+        .btn-call-large:hover { background-color: #b45309; transform: translateY(-3px); }
 
-        .site-footer { background-color: #1a0c08; color: #ebdccb; padding: 60px 5% 30px 5%; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid rgba(235, 220, 203, 0.1); padding-bottom: 40px; }
+        .site-footer { background-color: #0a0a0a; color: #ccc; padding: 60px 5% 30px 5%; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid #222; padding-bottom: 40px; }
         .footer-logo-block { display: flex; flex-direction: column; gap: 12px; }
-        .footer-logo { height: 60px; object-fit: contain; background-color: #26120c; padding: 8px 12px; border-radius: 8px; }
-        .footer-domain { font-size: 16px; font-weight: 800; color: #ff9100; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-logo { height: 60px; object-fit: contain; }
+        .footer-domain { font-size: 16px; font-weight: 800; color: #d97706; text-transform: uppercase; letter-spacing: 1px; }
         .footer-socials { display: flex; gap: 15px; }
         .footer-social-link { display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 10px; transition: all 0.3s ease; }
-        .footer-social-link.tg { background-color: rgba(39, 165, 231, 0.1); border: 1px solid #27A5E7; color: #27A5E7; }
-        .footer-social-link.tg:hover { background-color: #27A5E7; color: #fff; box-shadow: 0 4px 15px rgba(39, 165, 231, 0.3); }
-        .footer-social-link.vk { background-color: rgba(0, 119, 255, 0.1); border: 1px solid #0077FF; color: #0077FF; }
-        .footer-social-link.vk:hover { background-color: #0077FF; color: #fff; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3); }
+        .footer-social-link.tg { background-color: rgba(30, 136, 229, 0.15); border: 1px solid #1E88E5; color: #1E88E5; }
+        .footer-social-link.tg:hover { background-color: #1E88E5; color: #fff; box-shadow: 0 4px 15px rgba(30, 136, 229, 0.4); }
+        .footer-social-link.vk { background-color: rgba(0, 119, 255, 0.15); border: 1px solid #0077FF; color: #0077FF; }
+        .footer-social-link.vk:hover { background-color: #0077FF; color: #fff; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.4); }
         .footer-contacts { text-align: right; }
         .footer-phone { display: block; font-size: 26px; font-weight: 800; color: #fff; text-decoration: none; transition: color 0.3s ease; }
-        .footer-phone:hover { color: #ff9100; }
-        .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 14px; color: #8d6e63; }
+        .footer-phone:hover { color: #d97706; }
+        .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 14px; color: #666; }
 
-        .btn { padding: 16px 35px; border-radius: 10px; border: none; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s ease; text-decoration: none; display: inline-block; }
-        .btn-prev { background: rgba(245, 235, 224, 0.8); color: #6d4c41; }
-        .btn-prev:hover { background: rgba(232, 219, 204, 0.9); }
-        .btn-next { background: #e65100; color: #fff; margin-left: auto; box-shadow: 0 4px 15px rgba(230, 81, 0, 0.25); }
-        .btn-next:hover { background: #bf4300; transform: translateY(-1px); }
-        .btn-submit { background: #ff9100; color: white; width: 100%; box-shadow: 0 5px 20px rgba(255, 145, 0, 0.3); }
-        .btn-submit:hover { background: #e68200; }
-
-        @media (max-width: 990px) {
-            .catalog-row, .catalog-row:nth-child(even) { flex-direction: column; }
-            .catalog-image { flex: none; width: 100%; height: 350px; }
+        @media (max-width: 1100px) {
+            .catalog-row, .catalog-row:nth-child(even) { flex-direction: column; height: auto; }
+            .catalog-image { flex: none; width: 100%; height: 400px; }
             .catalog-info { flex: none; width: 100%; padding: 40px 20px; align-items: center; text-align: center; }
             .equipment-container { grid-template-columns: 1fr; gap: 40px; }
-            .equipment-images { max-width: 500px; margin: 0 auto; min-height: 400px; }
+            .equipment-images { max-width: 600px; margin: 0 auto; min-height: 450px; }
             .equipment-info { text-align: center; }
-            .exhibition-container { grid-template-columns: 1fr; gap: 30px; }
+            .exhibition-container { grid-template-columns: 1fr; gap: 40px; }
+            .exhibition-info, .exhibition-cta { text-align: center; }
+            .exhibition-features li { text-align: left; display: inline-block; }
+            header { flex-direction: column; text-align: center; gap: 15px; }
+            .header-right { flex-direction: column; gap: 15px; }
+            .header-socials { border-right: none; padding-right: 0; flex-direction: row; }
+            .logo-text { border-left: none; padding-left: 0; border-top: 1px solid #333; padding-top: 10px; margin-top: 5px; }
+            .header-contacts { text-align: center; }
             .footer-container { flex-direction: column; text-align: center; }
             .footer-logo-block, .footer-contacts { align-items: center; text-align: center; }
         }
 
         @media (max-width: 650px) {
-            .logo-text { display: none !important; }
-            header { flex-direction: column; gap: 15px; text-align: center; }
-            .header-right { flex-direction: column; width: 100%; gap: 0; }
-            .logo-block { flex-direction: column; gap: 5px; }
-            .header-contacts { text-align: center; width: 100%; }
-            .phone-link { font-size: 20px; }
-            .header-socials { display: none; }
-            .mobile-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; width: 100%; }
-            .btn-mobile-call { background-color: #e65100; color: #fff; padding: 14px; border-radius: 10px; font-size: 16px; font-weight: 800; text-decoration: none; display: flex; justify-content: center; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(230, 81, 0, 0.25); }
-            .mobile-socials { display: flex; gap: 12px; }
-            .btn-mobile-tg, .btn-mobile-vk { flex: 1; padding: 12px; border-radius: 10px; color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; display: flex; justify-content: center; align-items: center; gap: 6px; }
-            .btn-mobile-tg { background-color: #27A5E7; box-shadow: 0 4px 15px rgba(39, 165, 231, 0.25); }
-            .btn-mobile-vk { background-color: #0077FF; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.25); }
-            
-            .catalog-image { height: 280px; } 
-            .catalog-title { font-size: 28px; }
+            .catalog-list { max-width: 100%; padding: 0 10px; }
+            .catalog-image { height: 300px; }
+            .catalog-title { font-size: 32px; }
             .options-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 30px; }
-            .quiz-container { padding: 30px 20px; margin: -40px 15px 0 15px; width: auto; }
-            
-            .equipment-images { min-height: 320px; }
-            .equipment-images .img-1 { height: 260px; width: 80%; }
-            .equipment-images .img-2 { height: 180px; width: 65%; }
-            .equipment-info h2 { font-size: 28px; }
+            .hero h1 { font-size: 32px; }
+            .quiz-container { padding: 30px 20px; margin: -40px 10px 0 10px; width: auto; }
+            .equipment-images { min-height: 350px; }
+            .equipment-images .img-1 { height: 280px; width: 85%; }
+            .equipment-images .img-2 { height: 200px; width: 70%; }
+            .equipment-info h2 { font-size: 32px; }
             .btn-outline { width: 100%; justify-content: center; }
-            
-            .steps-section { padding: 60px 5%; }
-            .steps-header h2 { font-size: 28px; }
-            .steps-list { gap: 30px; }
-            .step-item { flex-direction: row; gap: 15px; }
-            .step-number { font-size: 40px; }
-            .step-title { font-size: 18px; }
-
-            .questions-container h2 { font-size: 28px; }
-            .btn-call-large { font-size: 18px; padding: 15px 30px; width: 100%; text-align: center; }
+            .steps-section { padding: 60px 15px; }
+            .steps-header h2 { font-size: 32px; }
+            .step-item { flex-direction: column; text-align: center; align-items: center; padding: 30px 20px; }
+            .questions-container h2 { font-size: 32px; }
+            .btn-call-large { font-size: 18px; padding: 18px 30px; width: 100%; }
             .footer-socials { flex-direction: column; width: 100%; gap: 10px; }
             .footer-social-link { justify-content: center; }
         }
-
-        .form-group { margin-bottom: 22px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 14px; color: #5d4037; }
-        .form-input { width: 100%; padding: 16px; border: 2px solid rgba(235, 220, 203, 0.8); border-radius: 10px; font-size: 16px; font-weight: 600; background: rgba(255, 253, 251, 0.8); }
-        .form-input:focus { border-color: #e65100; outline: none; background: #fff; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-block">
-            <img src="img/logo.png" alt="Бани-Бочки Премиум" class="logo-img">
+            <a href="index.html#catalog"><img src="img/logo.png" alt="Бани-Бочки Премиум" class="logo-img"></a>
             <div class="logo-text">Собственное производство<br>бань-бочек в г. Александров</div>
         </div>
         <div class="header-right">
             <div class="header-socials">
-                <a href="https://t.me/banibothki" class="social-btn tg" target="_blank" title="Наш Telegram">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg> Telegram
-                </a>
-                <a href="https://vk.com/id1087359257" class="social-btn vk" target="_blank" title="Мы ВКонтакте">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M15.077 23.994c-8.91 0-14.07-6.147-14.24-16.51h4.48c.115 7.822 3.633 11.134 6.398 11.782v-11.78h4.286v6.721c2.723-.298 5.626-3.411 6.556-6.722h4.286c-.732 4.14-3.766 7.21-5.836 8.243 2.07 1.034 5.405 3.86 6.442 8.266h-4.664c-.818-3.08-3.435-5.556-6.784-5.88v5.88h-1.024z"/></svg> ВКонтакте
-                </a>
+                <a href="https://t.me/banibothki" class="social-btn tg" target="_blank">Telegram</a>
+                <a href="https://vk.com/id1087359257" class="social-btn vk" target="_blank">ВКонтакте</a>
             </div>
             <div class="header-contacts">
+                <a href="contacts.html" class="btn-nav-contacts">Все Контакты</a>
                 <a href="tel:+79157750909" class="phone-link">+7 (915) 775-09-09</a>
-                <div class="phone-desc">Производство в Александрове • Звоните ежедневно</div>
-                <div class="mobile-actions">
-                    <a href="tel:+79157750909" class="btn-mobile-call">📞 Позвонить нам</a>
-                    <div class="mobile-socials">
-                        <a href="https://t.me/banibothki" class="btn-mobile-tg" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg> Telegram</a>
-                        <a href="https://vk.com/id1087359257" class="btn-mobile-vk" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M15.077 23.994c-8.91 0-14.07-6.147-14.24-16.51h4.48c.115 7.822 3.633 11.134 6.398 11.782v-11.78h4.286v6.721c2.723-.298 5.626-3.411 6.556-6.722h4.286c-.732 4.14-3.766 7.21-5.836 8.243 2.07 1.034 5.405 3.86 6.442 8.266h-4.664c-.818-3.08-3.435-5.556-6.784-5.88v5.88h-1.024z"/></svg> ВКонтакте</a>
-                    </div>
-                </div>
+                <div class="phone-desc">Производство в Александрове</div>
             </div>
         </div>
     </header>
@@ -234,6 +213,7 @@
             <div class="badge-geo">🔥 Премиум качество из Александрова</div>
         </section>
 
+        <!-- КВИЗ -->
         <div class="quiz-container fade-in-up">
             <div class="quiz-header">
                 <div class="quiz-title" id="quiz-title">Конфигуратор бани (Шаг 1 из 3)</div>
@@ -259,7 +239,7 @@
                     <div class="option-card" onclick="selectOption(2, 'Компакт (до 3м)', this)">До 3 метров (Уютная на 2-4 человека)</div>
                     <div class="option-card" onclick="selectOption(2, 'Стандарт (4м)', this)">4 метра (Оптимальная с раздевалкой)</div>
                     <div class="option-card" onclick="selectOption(2, 'Люкс (6м)', this)">6 метров (С парной, мойкой и комнатой отдыха)</div>
-                    <div class="option-card" onclick="selectOption(2, 'Нужен индивидуальный замер', this)">Нужен индивидуальный проект под участок</div>
+                    <div class="option-card" onclick="selectOption(2, 'Нужен индивидуальный замер', this)">Индивидуальный проект</div>
                 </div>
                 <div class="quiz-buttons">
                     <button class="btn btn-prev" onclick="prevStep(2)">← Назад</button>
@@ -269,7 +249,7 @@
 
             <div class="step" id="step-3">
                 <h3>Подарок успешно зафиксирован! 🎁</h3>
-                <p style="color: #5d4037; margin-bottom: 25px; font-size: 15px; text-align: left; line-height: 1.5;">
+                <p style="color: #bbb; margin-bottom: 25px; font-size: 15px; text-align: left; line-height: 1.5;">
                     Мы закрепили за вашим номером подарок к заказу: <b>комплект профессиональных камней для печи</b>. Оставьте контакты, чтобы получить расчет стоимости изготовления бани в Александрове.
                 </p>
                 <div class="form-group">
@@ -282,12 +262,13 @@
                 </div>
                 <div class="quiz-buttons">
                     <button class="btn btn-prev" onclick="prevStep(3)">← Назад</button>
-                    <button class="btn btn-next btn-submit" onclick="submitQuiz()">Получить расчет и подарок 🔥</button>
+                    <button class="btn btn-next btn-submit" onclick="submitQuiz()">Получить расчет 🔥</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- КАТАЛОГ БАНЬ -->
     <section class="catalog-section" id="catalog">
         <div class="catalog-header fade-in-up">
             <h2>Наш Премиум Каталог</h2>
@@ -300,7 +281,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Викинг</h3>
                     <p class="catalog-price">Цена от 395 000 руб.</p>
-                    <a href="viking.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
+                    <a href="viking.html" class="btn-catalog">Посмотреть портфолио &rarr;</a>
                 </div>
             </div>
 
@@ -309,7 +290,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро-овал</h3>
                     <p class="catalog-price">Цена от 550 000 руб.</p>
-                    <a href="oval.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
+                    <a href="oval.html" class="btn-catalog">Посмотреть портфолио &rarr;</a>
                 </div>
             </div>
 
@@ -318,7 +299,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро Делюкс</h3>
                     <p class="catalog-price">Цена от 600 000 руб.</p>
-                    <a href="deluxe.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
+                    <a href="deluxe.html" class="btn-catalog">Посмотреть портфолио &rarr;</a>
                 </div>
             </div>
 
@@ -327,7 +308,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро-бочка</h3>
                     <p class="catalog-price">Цена от 210 000 руб.</p>
-                    <a href="kvadro.html" class="btn-catalog">Посмотреть подробнее &rarr;</a>
+                    <a href="kvadro.html" class="btn-catalog">Посмотреть портфолио &rarr;</a>
                 </div>
             </div>
 
@@ -335,7 +316,6 @@
                 <div class="catalog-image"><img src="img/round.jpg" alt="Баня-бочка Круглая" loading="lazy"></div>
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня-бочка Круглая</h3>
-                    
                     <p class="catalog-text-details">
                         Размеры:<br>Ширина бани от 2,1 до 2,4 м<br>Длина бани от 2 до 6 м
                     </p>
@@ -353,8 +333,7 @@
                 <div class="catalog-image"><img src="img/trailer.jpg" alt="Баня на прицепе" loading="lazy"></div>
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня на прицепе</h3>
-                    <p class="catalog-price" style="margin-bottom: 15px; font-weight: 800; color: #e65100;">Цена от 350 000 руб.</p>
-                    
+                    <p class="catalog-price" style="margin-bottom: 15px;">Цена от 350 000 руб.</p>
                     <p class="catalog-text-details" style="margin-bottom: 0;">
                         Размеры:<br>Ширина бани от 2,1 до 2,4 м<br>Длина бани от 2 до 4 м
                     </p>
@@ -363,6 +342,7 @@
         </div>
     </section>
 
+    <!-- === БЛОК КОМПЛЕКТАЦИИ === -->
     <section class="equipment-section" id="equipment">
         <div class="equipment-container fade-in-up">
             <div class="equipment-images">
@@ -379,6 +359,7 @@
         </div>
     </section>
 
+    <!-- === ЭТАПЫ РАБОТ === -->
     <section class="steps-section fade-in-up">
         <div class="steps-container">
             <div class="steps-header">
@@ -411,36 +392,39 @@
         </div>
     </section>
 
+    <!-- БЛОК ВЫСТАВКИ -->
     <section class="exhibition-section">
         <div class="exhibition-container">
             <div class="exhibition-info fade-in-up">
                 <h2>Приезжайте на нашу выставочную площадку!</h2>
                 <p>Выбирать баню по интернету — хорошо, но потрогать её вживую — бесценно. Мы находимся прямо в Александрове и всегда рады гостям. Приезжайте всей семьей!</p>
                 <ul class="exhibition-features">
-                    <li>Все популярные модели (Викинг, Квадро, Классика) стоят в собранном виде</li>
-                    <li>Можно зайти внутрь, оценить качество сборки, ширину полков и запах кедра</li>
+                    <li>Все популярные модели стоят в собранном виде</li>
+                    <li>Можно зайти внутрь, оценить качество сборки и запах кедра</li>
                     <li>Консультация от технолога производства прямо на месте</li>
                     <li>Честные цены без накруток посредников</li>
                 </ul>
             </div>
             <div class="exhibition-cta fade-in-up">
-                <p style="margin: 0 0 15px 0; font-size: 16px; color: #5d4037; font-weight: 600; line-height: 1.5;">
+                <p style="margin: 0 0 15px 0;">
                     🕒 <strong>Режим работы:</strong><br>Среда - Воскресенье 10:00 - 17:00
                 </p>
-                <p style="margin: 0 0 15px 0; font-size: 16px; color: #5d4037; font-weight: 600; line-height: 1.5;">
+                <p style="margin: 0 0 15px 0;">
                     📍 <strong>Наш адрес:</strong><br>Владимирская область, д. Площево, Центральная ул., 23
                 </p>
-                <p style="margin: 0; font-size: 14px; color: #5d4037; font-weight: 600;">
-                    📞 Телефон для связи:<br><a href="tel:+79157750909" style="color: #e65100; font-size: 18px; text-decoration: none; display: inline-block; margin-top: 5px;">+7 (915) 775-09-09</a>
+                <p style="margin: 0;">
+                    📞 Телефон для связи:<br><a href="tel:+79157750909" style="color: #d97706; font-size: 20px; font-weight: 800; text-decoration: none; display: inline-block; margin-top: 5px;">+7 (915) 775-09-09</a>
                 </p>
             </div>
         </div>
     </section>
 
+    <!-- КАРТА -->
     <div class="map-section fade-in-up">
         <iframe src="https://yandex.ru/map-widget/v1/?text=Владимирская+область,+деревня+Площево,+Центральная+улица,+23" width="100%" height="100%" frameborder="0" allowfullscreen="true" loading="lazy"></iframe>
     </div>
 
+    <!-- БЛОК ВОПРОСОВ -->
     <section class="questions-section fade-in-up">
         <div class="questions-container">
             <h2>Остались вопросы?</h2>
@@ -449,17 +433,19 @@
         </div>
     </section>
 
+    <!-- ПОДВАЛ -->
     <footer class="site-footer fade-in-up">
         <div class="footer-container">
             <div class="footer-logo-block">
-                <img src="img/logo.png" alt="Бани-Бочки Премиум" class="footer-logo" loading="lazy">
+                <a href="index.html#catalog"><img src="img/logo.png" alt="Бани-Бочки Премиум" class="footer-logo" loading="lazy"></a>
                 <div class="footer-domain">банипремиум.рф</div>
             </div>
             <div class="footer-socials">
-                <a href="https://t.me/banibothki" class="footer-social-link tg" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>Telegram</a>
-                <a href="https://vk.com/id1087359257" class="footer-social-link vk" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.077 23.994c-8.91 0-14.07-6.147-14.24-16.51h4.48c.115 7.822 3.633 11.134 6.398 11.782v-11.78h4.286v6.721c2.723-.298 5.626-3.411 6.556-6.722h4.286c-.732 4.14-3.766 7.21-5.836 8.243 2.07 1.034 5.405 3.86 6.442 8.266h-4.664c-.818-3.08-3.435-5.556-6.784-5.88v5.88h-1.024z"/></svg>ВКонтакте</a>
+                <a href="https://t.me/banibothki" class="footer-social-link tg" target="_blank">Telegram</a>
+                <a href="https://vk.com/id1087359257" class="footer-social-link vk" target="_blank">ВКонтакте</a>
             </div>
             <div class="footer-contacts">
+                <a href="contacts.html" class="btn-nav-contacts" style="margin-bottom: 15px;">Все Контакты</a>
                 <a href="tel:+79157750909" class="footer-phone">+7 (915) 775-09-09</a>
             </div>
         </div>
