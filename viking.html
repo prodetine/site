@@ -13,47 +13,63 @@
         .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
         .fade-in-up.in-view { opacity: 1; transform: translateY(0); }
 
-        /* === ЧЕРНАЯ ШАПКА === */
-        header { display: flex; justify-content: center; align-items: center; padding: 15px 5%; background: #000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); position: relative; z-index: 100; border-bottom: 1px solid #1a1a1a; }
-        .logo-block { display: flex; align-items: center; justify-content: center; }
-        .logo-img { height: 100px; width: auto; object-fit: contain; background-color: #111; padding: 10px 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); border: 1px solid #333; }
+        /* === ЧЕРНАЯ ШАПКА КАК НА ГЛАВНОЙ === */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #181818; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); position: relative; z-index: 100; border-bottom: 1px solid #2a2a2a; }
+        .logo-block { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 90px; width: auto; object-fit: contain; }
+        .logo-text { font-size: 13px; color: #ccc; line-height: 1.3; border-left: 2px solid #333; padding-left: 15px; font-weight: 600; }
         
-        /* === ЧЕРНЫЙ ФОН ГЛАВНОГО БЛОКА === */
-        .hero-product { position: relative; background-image: url('img/vikingfon.jpg'); background-size: cover; background-position: center; background-color: #000; padding: 140px 5%; text-align: center; color: white; }
-        .hero-product::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.85); z-index: 1; }
-        .hero-product-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
-        .hero-product-content h1 { font-size: 52px; font-weight: 800; margin-bottom: 20px; line-height: 1.2; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        .hero-product-content p { font-size: 18px; line-height: 1.6; margin-bottom: 40px; font-weight: 600; color: #f5ebe0; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .header-right { display: flex; align-items: center; gap: 30px; }
+        .header-socials { display: flex; flex-direction: column; gap: 8px; border-right: 2px solid #333; padding-right: 25px; justify-content: center; }
+        .social-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 16px; border-radius: 20px; text-decoration: none; color: #fff; font-size: 13px; font-weight: 700; transition: all 0.3s ease; }
+        .social-btn.tg { background-color: #27A5E7; box-shadow: 0 4px 12px rgba(39, 165, 231, 0.25); }
+        .social-btn.tg:hover { background-color: #1c8ec9; transform: translateY(-2px); }
+        .social-btn.vk { background-color: #0077FF; box-shadow: 0 4px 12px rgba(0, 119, 255, 0.25); }
+        .social-btn.vk:hover { background-color: #0062d6; transform: translateY(-2px); }
+        .header-contacts { text-align: right; }
+        .phone-link { font-size: 22px; font-weight: 800; color: #ff9100; text-decoration: none; transition: color 0.2s; }
+        .phone-link:hover { color: #ffab40; }
+        .phone-desc { font-size: 12px; color: #999; margin-top: 3px; font-weight: 600; }
+
+        /* === ГЛАВНЫЙ ЭКРАН (НА ВСЮ ВЫСОТУ) === */
+        .hero-product { position: relative; background-image: url('img/vikingfon.jpg'); background-size: cover; background-position: center; background-color: #000; height: calc(100vh - 120px); min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; }
+        .hero-product::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.65); z-index: 1; }
+        .hero-product-content { position: relative; z-index: 2; max-width: 1000px; padding: 0 20px; margin-top: -40px; }
+        .hero-product-content h1 { font-size: 68px; font-weight: 800; margin-bottom: 25px; line-height: 1.1; text-transform: none; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
+        .hero-product-content p { font-size: 22px; line-height: 1.6; font-weight: 500; color: #eee; text-shadow: 0 2px 15px rgba(0,0,0,0.8); margin: 0; }
         
-        .btn-main { display: inline-block; background-color: #e65100; color: #fff; padding: 18px 45px; border-radius: 10px; font-size: 18px; font-weight: 800; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(230, 81, 0, 0.3); text-transform: uppercase; letter-spacing: 1px; }
-        .btn-main:hover { background-color: #ff6d00; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(230, 81, 0, 0.4); }
+        .scroll-arrow { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; color: #fff; opacity: 0.7; transition: opacity 0.3s; cursor: pointer; text-decoration: none; }
+        .scroll-arrow:hover { opacity: 1; }
+        .scroll-arrow svg { width: 50px; height: 50px; animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-15px); } 60% { transform: translateY(-7px); } }
 
         .gallery-section { padding: 80px 5%; text-align: center; }
-        .gallery-title { font-size: 22px; font-weight: 700; color: #4e342e; margin-bottom: 30px; }
+        .gallery-title { font-size: 24px; font-weight: 800; color: #4e342e; margin-bottom: 30px; }
         
-        /* === УВЕЛИЧЕННЫЕ ГАЛЕРЕИ === */
-        .slider-wrapper { max-width: 90%; margin: 0 auto; position: relative; }
-        .slider-wrapper.full-width { max-width: 96%; } 
-        .slider-main { position: relative; width: 100%; height: 75vh; min-height: 600px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.15); background: #000; }
-        .slider-wrapper.full-width .slider-main { height: 85vh; }
+        /* === УВЕЛИЧЕННЫЕ ГАЛЕРЕИ (ПОЧТИ НА ВЕСЬ ЭКРАН) === */
+        .slider-wrapper { max-width: 96%; margin: 0 auto; position: relative; }
+        .slider-wrapper.full-width { max-width: 98%; } 
+        .slider-main { position: relative; width: 100%; height: 85vh; min-height: 600px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.2); background: #000; }
+        .slider-wrapper.full-width .slider-main { height: 90vh; }
         .slider-main img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
         .slider-main img.active { opacity: 1; pointer-events: auto; }
         
-        .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: none; font-size: 24px; color: #3e2723; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 10; transition: 0.3s; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: none; font-size: 24px; color: #3e2723; width: 60px; height: 60px; border-radius: 50%; cursor: pointer; z-index: 10; transition: 0.3s; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .slider-arrow:hover { background: #e65100; color: #fff; }
-        .slider-arrow.prev { left: 20px; }
-        .slider-arrow.next { right: 20px; }
+        .slider-arrow.prev { left: 30px; }
+        .slider-arrow.next { right: 30px; }
         
-        .slider-thumbs { display: flex; gap: 12px; justify-content: center; margin-top: 20px; overflow-x: auto; padding-bottom: 10px; }
-        .slider-thumbs img { width: 120px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer; opacity: 0.5; transition: 0.3s; border: 3px solid transparent; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .slider-thumbs { display: flex; gap: 12px; justify-content: center; margin-top: 20px; overflow-x: auto; padding-bottom: 15px; }
+        .slider-thumbs img { width: 140px; height: 90px; object-fit: cover; border-radius: 8px; cursor: pointer; opacity: 0.5; transition: 0.3s; border: 3px solid transparent; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .slider-thumbs img:hover { opacity: 0.8; }
         .slider-thumbs img.active { opacity: 1; border-color: #e65100; }
 
-        .pricing-section { background: #fff; padding: 60px; margin: 0 auto 80px auto; max-width: 900px; border-radius: 24px; box-shadow: 0 15px 50px rgba(93, 64, 55, 0.08); border: 1px solid #f1e6d8; }
-        .pricing-content { font-size: 20px; color: #3e2723; line-height: 1.8; text-align: center; margin-bottom: 30px; font-weight: 600; }
-        .pricing-list { font-size: 22px; font-weight: 800; color: #e65100; text-align: center; line-height: 2; margin-bottom: 30px; }
-        .pricing-disclaimer { font-size: 16px; font-weight: 600; color: #8d6e63; text-align: center; padding-top: 20px; border-top: 1px dashed #e0d4c3; }
+        .pricing-section { background: #fff; padding: 50px; margin: 0 auto 80px auto; max-width: 800px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .pricing-content { font-size: 22px; color: #333; line-height: 1.6; text-align: center; margin-bottom: 25px; font-weight: 700; }
+        .pricing-list { font-size: 20px; font-weight: 600; color: #e65100; text-align: center; line-height: 1.8; margin-bottom: 25px; }
+        .pricing-disclaimer { font-size: 15px; font-weight: 600; color: #888; text-align: center; padding-top: 20px; border-top: 1px dashed #ddd; }
 
+        /* === ЭТАПЫ РАБОТ === */
         .steps-section { background-color: transparent; padding: 80px 5%; text-align: center; margin-bottom: 0; }
         .steps-container { max-width: 800px; margin: 0 auto; }
         .steps-header h2 { font-size: 36px; font-weight: 800; color: #111; margin-bottom: 15px; }
@@ -72,36 +88,40 @@
         .footer-socials { display: flex; gap: 15px; }
         .footer-social-link { display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 10px; transition: all 0.3s ease; }
         .footer-social-link.tg { background-color: rgba(39, 165, 231, 0.1); border: 1px solid #27A5E7; color: #27A5E7; }
-        .footer-social-link.tg:hover { background-color: #27A5E7; color: #fff; box-shadow: 0 4px 15px rgba(39, 165, 231, 0.3); }
         .footer-social-link.vk { background-color: rgba(0, 119, 255, 0.1); border: 1px solid #0077FF; color: #0077FF; }
-        .footer-social-link.vk:hover { background-color: #0077FF; color: #fff; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3); }
         .footer-contacts { text-align: right; }
         .footer-phone { display: block; font-size: 26px; font-weight: 800; color: #fff; text-decoration: none; transition: color 0.3s ease; }
         .footer-phone:hover { color: #ff9100; }
         .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 14px; color: #8d6e63; }
 
         @media (max-width: 990px) {
-            .hero-product-content h1 { font-size: 38px; }
+            header { flex-direction: column; text-align: center; gap: 15px; }
+            .header-right { flex-direction: column; gap: 15px; }
+            .header-socials { border-right: none; padding-right: 0; flex-direction: row; }
+            .logo-text { border-left: none; padding-left: 0; border-top: 1px solid #333; padding-top: 10px; margin-top: 5px; }
+            .header-contacts { text-align: center; }
+            .hero-product-content h1 { font-size: 48px; }
             .pricing-section { padding: 40px 20px; margin: 0 20px 60px 20px; }
             .footer-container { flex-direction: column; text-align: center; }
             .footer-logo-block, .footer-contacts { align-items: center; }
-            .slider-wrapper { max-width: 95%; }
-            .slider-main { height: 50vh; min-height: 400px; }
-            .slider-wrapper.full-width .slider-main { height: 60vh; }
+            .slider-wrapper { max-width: 100%; }
+            .slider-main { height: 60vh; min-height: 400px; }
+            .slider-wrapper.full-width .slider-main { height: 70vh; }
         }
         @media (max-width: 650px) {
-            .hero-product { padding: 100px 20px; }
-            .hero-product-content h1 { font-size: 28px; }
-            .slider-wrapper { max-width: 100%; }
-            .slider-wrapper.full-width { max-width: 100%; }
-            .slider-main { height: 40vh; min-height: 300px; border-radius: 12px; }
-            .slider-wrapper.full-width .slider-main { height: 50vh; }
+            .hero-product { min-height: 400px; height: 80vh; }
+            .hero-product-content h1 { font-size: 32px; }
+            .hero-product-content p { font-size: 16px; }
+            .slider-wrapper, .slider-wrapper.full-width { max-width: 100%; }
+            .slider-main { height: 50vh; min-height: 350px; border-radius: 12px; }
+            .slider-wrapper.full-width .slider-main { height: 55vh; }
             .slider-thumbs img { width: 80px; height: 60px; }
-            .slider-arrow { width: 40px; height: 40px; font-size: 18px; }
-            .pricing-content, .pricing-list { font-size: 18px; }
-            .step-item { flex-direction: row; gap: 15px; }
-            .step-number { font-size: 40px; }
-            .step-title { font-size: 18px; }
+            .slider-arrow { width: 40px; height: 40px; font-size: 18px; left: 10px; }
+            .slider-arrow.next { right: 10px; left: auto; }
+            .pricing-content { font-size: 18px; }
+            .pricing-list { font-size: 18px; }
+            .step-item { flex-direction: column; gap: 10px; text-align: center; align-items: center; }
+            .step-number { font-size: 40px; margin-bottom: 0; }
             .footer-socials { flex-direction: column; width: 100%; gap: 10px; }
             .footer-social-link { justify-content: center; }
         }
@@ -111,6 +131,17 @@
     <header>
         <div class="logo-block">
             <a href="index.html#catalog"><img src="img/logo.png" alt="Бани-Бочки Премиум" class="logo-img"></a>
+            <div class="logo-text">Собственное производство<br>бань-бочек в г. Александров</div>
+        </div>
+        <div class="header-right">
+            <div class="header-socials">
+                <a href="https://t.me/banibothki" class="social-btn tg" target="_blank">Telegram</a>
+                <a href="https://vk.com/id1087359257" class="social-btn vk" target="_blank">ВКонтакте</a>
+            </div>
+            <div class="header-contacts">
+                <a href="tel:+79157750909" class="phone-link">+7 (915) 775-09-09</a>
+                <div class="phone-desc">Производство в Александрове • Звоните ежедневно</div>
+            </div>
         </div>
     </header>
 
@@ -118,19 +149,20 @@
         <div class="hero-product-content">
             <h1>Баня-Викинг</h1>
             <p>Выполнена из ели камерной сушки, лунный паз толщиной 45мм, мебель вручную изготовлена из осины</p>
-            <a href="tel:+79157750909" class="btn-main">Связаться с нами</a>
         </div>
+        <a href="#gallery" class="scroll-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
     </div>
 
-    <section class="gallery-section fade-in-up">
+    <!-- ВЕРХНЯЯ ГАЛЕРЕЯ (3 фото) -->
+    <section id="gallery" class="gallery-section fade-in-up">
         <h2 class="gallery-title">Данный экземпляр - это один из вариантов как может выглядеть ваша баня</h2>
-        
         <div class="slider-wrapper">
             <div class="slider-main">
                 <img src="img/viking1.jpg" class="active" loading="lazy">
                 <img src="img/viking2.jpg" loading="lazy">
                 <img src="img/viking3.jpg" loading="lazy">
-                
                 <button class="slider-arrow prev">&#10094;</button>
                 <button class="slider-arrow next">&#10095;</button>
             </div>
@@ -142,20 +174,18 @@
         </div>
     </section>
 
+    <!-- РАЗМЕРЫ И ЦЕНЫ -->
     <div class="pricing-section fade-in-up">
-        <div class="pricing-content">
-            Размеры: 4x2,4 , 5x2,4 , 6x2,4
-        </div>
+        <div class="pricing-content">Размеры: 4x2,4 , 5x2,4 , 6x2,4</div>
         <div class="pricing-list">
             4x2,4 - 395 000 руб.<br>
             5x2,4 - 525 000 руб.<br>
             6x2,4 - 545 000 руб.
         </div>
-        <div class="pricing-disclaimer">
-            *В стоимость входит сборка бани на участке
-        </div>
+        <div class="pricing-disclaimer">*В стоимость входит сборка бани на участке</div>
     </div>
 
+    <!-- НИЖНЯЯ ГАЛЕРЕЯ (10 фото) -->
     <section class="gallery-section fade-in-up" style="padding-top: 0;">
         <div class="slider-wrapper full-width">
             <div class="slider-main">
@@ -169,7 +199,6 @@
                 <img src="img/viking11.jpg" loading="lazy">
                 <img src="img/viking12.jpg" loading="lazy">
                 <img src="img/viking13.jpg" loading="lazy">
-                
                 <button class="slider-arrow prev">&#10094;</button>
                 <button class="slider-arrow next">&#10095;</button>
             </div>
@@ -188,6 +217,7 @@
         </div>
     </section>
 
+    <!-- ЭТАПЫ РАБОТ -->
     <section class="steps-section fade-in-up">
         <div class="steps-container">
             <div class="steps-header">
@@ -227,8 +257,8 @@
                 <div class="footer-domain">банипремиум.рф</div>
             </div>
             <div class="footer-socials">
-                <a href="https://t.me/banibothki" class="footer-social-link tg" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>Telegram</a>
-                <a href="https://vk.com/id1087359257" class="footer-social-link vk" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.077 23.994c-8.91 0-14.07-6.147-14.24-16.51h4.48c.115 7.822 3.633 11.134 6.398 11.782v-11.78h4.286v6.721c2.723-.298 5.626-3.411 6.556-6.722h4.286c-.732 4.14-3.766 7.21-5.836 8.243 2.07 1.034 5.405 3.86 6.442 8.266h-4.664c-.818-3.08-3.435-5.556-6.784-5.88v5.88h-1.024z"/></svg>ВКонтакте</a>
+                <a href="https://t.me/banibothki" class="footer-social-link tg" target="_blank">Telegram</a>
+                <a href="https://vk.com/id1087359257" class="footer-social-link vk" target="_blank">ВКонтакте</a>
             </div>
             <div class="footer-contacts">
                 <a href="tel:+79157750909" class="footer-phone">+7 (915) 775-09-09</a>
