@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бани-Бочки Премиум в Александрове — Теплый уют под ключ</title>
     <style>
-        /* Более интересный и плотный шрифт Montserrat */
+        /* Элегантный шрифт Montserrat */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
         
         html { scroll-behavior: smooth; }
-        /* Базовая жирность теперь 500 вместо 400 */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; font-weight: 500; }
         
         body { background-color: #f7f5f0; color: #313131; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
@@ -69,7 +68,7 @@
         .btn-next, .btn-submit { background: #ba8654; color: #fff; margin-left: auto; }
         .btn-next:hover, .btn-submit:hover { background: #a07043; }
 
-        /* === КАТАЛОГ EDGE-TO-EDGE (100% ширина, 50vh высота, пропорция 60/40) === */
+        /* === КАТАЛОГ EDGE-TO-EDGE === */
         .catalog-section { width: 100%; padding: 0; margin: 0; background-color: transparent; }
         .catalog-header { text-align: center; margin: 80px auto 40px auto; padding: 0 20px; }
         .catalog-header h2 { font-size: 38px; font-weight: 700; margin-bottom: 12px; color: #242b27; letter-spacing: -0.5px; }
@@ -114,20 +113,20 @@
         .step-title { font-size: 20px; font-weight: 700; color: #242b27; margin-bottom: 10px; }
         .step-desc { font-size: 15px; color: #6b6b6b; line-height: 1.6; font-weight: 500; }
 
-        /* === ВЫСТАВКА === */
-        .exhibition-section { background: #242b27; padding: 80px 5% 60px 5%; color: #f7f5f0; }
+        /* === ВЫСТАВКА (СВЕТЛЫЙ, ЧИСТЫЙ СТИЛЬ) === */
+        .exhibition-section { background: #fff; padding: 80px 5% 60px 5%; border-top: 1px solid #ebe8e0; }
         .exhibition-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .exhibition-info h2 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.5px; }
-        .exhibition-info p { font-size: 15px; color: #c4cdc8; line-height: 1.6; margin-bottom: 25px; font-weight: 500; }
+        .exhibition-info h2 { font-size: 32px; font-weight: 700; color: #242b27; margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.5px; }
+        .exhibition-info p { font-size: 16px; color: #6b6b6b; line-height: 1.6; margin-bottom: 25px; font-weight: 500; }
         .exhibition-features { list-style: none; margin-bottom: 30px; }
-        .exhibition-features li { position: relative; padding-left: 25px; margin-bottom: 12px; font-weight: 500; color: #e0e5e2; font-size: 15px; }
+        .exhibition-features li { position: relative; padding-left: 25px; margin-bottom: 12px; font-weight: 500; color: #313131; font-size: 15px; }
         .exhibition-features li::before { content: "✓"; position: absolute; left: 0; color: #ba8654; font-weight: 700; font-size: 16px; }
-        .exhibition-cta { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(186, 134, 84, 0.3); padding: 35px; border-radius: 12px; text-align: left; }
-        .exhibition-cta p { color: #c4cdc8 !important; font-size: 15px; margin-bottom: 12px; line-height: 1.6; font-weight: 500; }
+        .exhibition-cta { background: #faf9f6; border: 1px solid #e0dbce; padding: 35px; border-radius: 12px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .exhibition-cta p { color: #5a5a5a !important; font-size: 15px; margin-bottom: 12px; line-height: 1.6; font-weight: 500; }
 
         .map-section { width: 100%; height: 400px; line-height: 0; }
         
-        /* === ВОПРОСЫ (СПОКОЙНЫЙ МИНИМАЛИЗМ) === */
+        /* === ВОПРОСЫ === */
         .questions-section { background: #eae6de; padding: 70px 20px; text-align: center; }
         .questions-container { max-width: 800px; margin: 0 auto; }
         .questions-container h2 { font-size: 32px; font-weight: 700; margin-bottom: 15px; color: #242b27; letter-spacing: -0.5px; }
@@ -410,7 +409,7 @@
                 <p>Выбирать баню по интернету — хорошо, но потрогать её вживую — бесценно. Мы находимся прямо в Александрове и всегда рады гостям. Приезжайте всей семьей!</p>
                 <ul class="exhibition-features">
                     <li>Все популярные модели стоят в собранном виде</li>
-                    <li>Можно зайти внутрь, оценить качество сборки и запах кедра</li>
+                    <li>Можно зайти внутрь, оценить качество сборки и запах ели</li>
                     <li>Консультация от технолога производства прямо на месте</li>
                     <li>Честные цены без накруток посредников</li>
                 </ul>
@@ -429,7 +428,7 @@
         <iframe src="https://yandex.ru/map-widget/v1/?text=Владимирская+область,+деревня+Площево,+Центральная+улица,+23" width="100%" height="100%" frameborder="0" allowfullscreen="true" loading="lazy"></iframe>
     </div>
 
-    <!-- БЛОК ВОПРОСОВ (СПОКОЙНЫЙ СТИЛЬ) -->
+    <!-- БЛОК ВОПРОСОВ -->
     <section class="questions-section fade-in-up">
         <div class="questions-container">
             <h2>Остались вопросы?</h2>
