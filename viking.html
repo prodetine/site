@@ -40,6 +40,13 @@
         .hero-product-content h1 { font-size: 68px; font-weight: 800; margin-bottom: 25px; line-height: 1.1; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
         .hero-product-content p { font-size: 22px; line-height: 1.6; font-weight: 500; color: #eee; text-shadow: 0 2px 15px rgba(0,0,0,0.8); margin: 0; }
         
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; margin-top: 35px; }
+        .hero-btn { padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; transition: 0.3s; letter-spacing: 0.5px; }
+        .hero-btn-primary { background: #ba8654; color: #fff; box-shadow: 0 4px 15px rgba(186, 134, 84, 0.4); }
+        .hero-btn-primary:hover { background: #a07043; transform: translateY(-2px); }
+        .hero-btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(5px); }
+        .hero-btn-secondary:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+
         .scroll-arrow { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; color: #fff; opacity: 0.7; transition: opacity 0.3s; cursor: pointer; text-decoration: none; }
         .scroll-arrow:hover { opacity: 1; }
         .scroll-arrow svg { width: 50px; height: 50px; animation: bounce 2s infinite; }
@@ -48,7 +55,7 @@
         .gallery-section { padding: 0; text-align: center; background: #000; position: relative; }
         .slider-wrapper { width: 100%; position: relative; line-height: 0; }
         .slider-main { position: relative; width: 100%; height: 100vh; overflow: hidden; background: #000; }
-        .slider-main::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 250px; background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); pointer-events: none; z-index: 5; }
+        .slider-main::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 250px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); pointer-events: none; z-index: 5; }
         .slider-main img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease; pointer-events: none; z-index: 1; }
         .slider-main img.active { opacity: 1; pointer-events: auto; z-index: 2; }
         
@@ -57,10 +64,10 @@
         .slider-arrow.prev { left: 30px; }
         .slider-arrow.next { right: 30px; }
         
-        .slider-thumbs { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 20; display: flex; gap: 15px; width: 90%; max-width: 1200px; overflow-x: auto; padding: 10px; }
+        .slider-thumbs { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 20; display: flex; gap: 15px; width: 90%; max-width: 1200px; overflow-x: auto; padding: 15px 10px; }
         @media (min-width: 900px) { .slider-thumbs { justify-content: center; } }
-        .slider-thumbs img { width: 120px; height: 80px; object-fit: cover; border-radius: 10px; cursor: pointer; opacity: 0.4; transition: 0.3s; border: 2px solid transparent; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
-        .slider-thumbs img:hover { opacity: 0.9; }
+        .slider-thumbs img { width: 120px; height: 80px; object-fit: cover; border-radius: 10px; cursor: pointer; opacity: 0.5; transition: 0.3s; border: 2px solid transparent; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .slider-thumbs img:hover { opacity: 1; }
         .slider-thumbs img.active { opacity: 1; border-color: #ba8654; transform: scale(1.05); box-shadow: 0 6px 20px rgba(0,0,0,0.8); }
         .slider-thumbs::-webkit-scrollbar { height: 0px; background: transparent; }
 
@@ -104,13 +111,14 @@
             .logo-text { border-left: none; padding-left: 0; border-top: 1px solid #333d38; padding-top: 10px; margin-top: 5px; }
             .header-contacts, .footer-container { text-align: center; }
             .footer-container { flex-direction: column; }
-            .footer-logo-block, .footer-contacts { align-items: center; }
+            .footer-logo-block, .footer-contacts { align-items: center; text-align: center; }
             .hero-product-content h1 { font-size: 48px; }
             .pricing-box { padding: 40px 20px; }
         }
         @media (max-width: 650px) {
             .hero-product-content h1 { font-size: 32px; }
             .hero-product-content p { font-size: 16px; }
+            .hero-buttons { flex-direction: column; gap: 15px; }
             .slider-thumbs img { width: 80px; height: 60px; }
             .slider-arrow { width: 45px; height: 45px; font-size: 18px; left: 15px; }
             .slider-arrow.next { right: 15px; left: auto; }
@@ -145,6 +153,10 @@
         <div class="hero-product-content">
             <h1>Баня-Викинг</h1>
             <p>Выполнена из ели камерной сушки, лунный паз толщиной 45мм, мебель вручную изготовлена из осины</p>
+            <div class="hero-buttons">
+                <a href="tel:+79157750909" class="hero-btn hero-btn-primary">Связаться с нами</a>
+                <a href="index.html#catalog" class="hero-btn hero-btn-secondary">Вернуться в каталог</a>
+            </div>
         </div>
         <a href="#gallery" class="scroll-arrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -159,12 +171,11 @@
                 <img src="img/viking3.jpg" loading="lazy">
                 <button class="slider-arrow prev">&#10094;</button>
                 <button class="slider-arrow next">&#10095;</button>
-                
-                <div class="slider-thumbs">
-                    <img src="img/viking1.jpg" class="active" loading="lazy">
-                    <img src="img/viking2.jpg" loading="lazy">
-                    <img src="img/viking3.jpg" loading="lazy">
-                </div>
+            </div>
+            <div class="slider-thumbs">
+                <img src="img/viking1.jpg" class="active" loading="lazy">
+                <img src="img/viking2.jpg" loading="lazy">
+                <img src="img/viking3.jpg" loading="lazy">
             </div>
         </div>
     </section>
@@ -196,19 +207,18 @@
                 <img src="img/viking13.jpg" loading="lazy">
                 <button class="slider-arrow prev">&#10094;</button>
                 <button class="slider-arrow next">&#10095;</button>
-                
-                <div class="slider-thumbs">
-                    <img src="img/viking4.jpg" class="active" loading="lazy">
-                    <img src="img/viking5.jpg" loading="lazy">
-                    <img src="img/viking6.jpg" loading="lazy">
-                    <img src="img/viking7.jpg" loading="lazy">
-                    <img src="img/viking8.jpg" loading="lazy">
-                    <img src="img/viking9.jpg" loading="lazy">
-                    <img src="img/viking10.jpg" loading="lazy">
-                    <img src="img/viking11.jpg" loading="lazy">
-                    <img src="img/viking12.jpg" loading="lazy">
-                    <img src="img/viking13.jpg" loading="lazy">
-                </div>
+            </div>
+            <div class="slider-thumbs">
+                <img src="img/viking4.jpg" class="active" loading="lazy">
+                <img src="img/viking5.jpg" loading="lazy">
+                <img src="img/viking6.jpg" loading="lazy">
+                <img src="img/viking7.jpg" loading="lazy">
+                <img src="img/viking8.jpg" loading="lazy">
+                <img src="img/viking9.jpg" loading="lazy">
+                <img src="img/viking10.jpg" loading="lazy">
+                <img src="img/viking11.jpg" loading="lazy">
+                <img src="img/viking12.jpg" loading="lazy">
+                <img src="img/viking13.jpg" loading="lazy">
             </div>
         </div>
     </section>
