@@ -5,158 +5,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бани-Бочки Премиум в Александрове — Теплый уют под ключ</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
-        html { scroll-behavior: smooth; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+        /* Новый элегантный шрифт Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
-        /* === ПРЕМИУМ ЭКО-ДИЗАЙН === */
-        body { background-color: #FAF8F5; color: #2D2422; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
+        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        
+        /* === ПРЕМИУМ СКАНДИ-ПАЛИТРА === */
+        body { background-color: #f7f5f0; color: #313131; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
 
         .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
         .fade-in-up.in-view { opacity: 1; transform: translateY(0); }
 
-        /* === ШАПКА (ТЕМНАЯ И ДОРОГАЯ) === */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #2A2421; box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2); position: relative; z-index: 100; border-bottom: 1px solid #3d3430; }
+        /* === ШАПКА === */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #242b27; position: relative; z-index: 100; border-bottom: 1px solid #333d38; }
         .logo-block { display: flex; align-items: center; gap: 15px; text-decoration: none; }
-        .logo-img { height: 90px; width: auto; object-fit: contain; }
-        .logo-text { font-size: 13px; color: #e0d5ce; line-height: 1.3; border-left: 2px solid #4a403c; padding-left: 15px; font-weight: 600; }
+        .logo-img { height: 80px; width: auto; object-fit: contain; }
+        .logo-text { font-size: 13px; color: #c4cdc8; line-height: 1.4; border-left: 1px solid #4a5751; padding-left: 15px; font-weight: 400; letter-spacing: 0.5px; }
         
         .header-right { display: flex; align-items: center; gap: 30px; }
-        .header-socials { display: flex; flex-direction: column; gap: 8px; border-right: 2px solid #4a403c; padding-right: 25px; justify-content: center; }
-        .social-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 16px; border-radius: 20px; text-decoration: none; color: #fff; font-size: 13px; font-weight: 700; transition: all 0.3s ease; }
-        .social-btn.tg { background-color: #1E88E5; }
-        .social-btn.tg:hover { background-color: #1565C0; transform: translateY(-2px); }
+        .header-socials { display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #4a5751; padding-right: 25px; justify-content: center; }
+        .social-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 7px 14px; border-radius: 6px; text-decoration: none; color: #fff; font-size: 13px; font-weight: 500; transition: all 0.2s ease; }
+        .social-btn.tg { background-color: #27A5E7; }
+        .social-btn.tg:hover { background-color: #1c8ec9; }
         .social-btn.vk { background-color: #0077FF; }
-        .social-btn.vk:hover { background-color: #005bb5; transform: translateY(-2px); }
+        .social-btn.vk:hover { background-color: #0062d6; }
         
         .header-contacts { text-align: right; }
-        .btn-nav-contacts { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; background-color: #D97706; color: #fff !important; font-weight: 800; font-size: 14px; text-transform: uppercase; border-radius: 10px; text-decoration: none; transition: 0.3s; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); margin-bottom: 10px; width: 100%; }
-        .btn-nav-contacts:hover { background-color: #B45309; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(217, 119, 6, 0.5); }
-        .phone-link { font-size: 22px; font-weight: 800; color: #D97706; text-decoration: none; transition: color 0.2s; }
-        .phone-link:hover { color: #f59e0b; }
-        .phone-desc { font-size: 12px; color: #b3a49e; margin-top: 3px; font-weight: 600; }
+        .btn-nav-contacts { display: inline-flex; align-items: center; justify-content: center; padding: 8px 16px; background-color: #ba8654; color: #fff !important; font-weight: 500; font-size: 13px; letter-spacing: 0.5px; border-radius: 6px; text-decoration: none; transition: 0.3s; margin-bottom: 8px; width: 100%; }
+        .btn-nav-contacts:hover { background-color: #a07043; }
+        .phone-link { font-size: 20px; font-weight: 600; color: #ba8654; text-decoration: none; transition: color 0.2s; }
+        .phone-link:hover { color: #d69f68; }
+        .phone-desc { font-size: 12px; color: #9da8a3; margin-top: 4px; font-weight: 400; }
 
-        /* === ГЛАВНЫЙ ФОН === */
-        .top-bg-wrapper { position: relative; background-image: url('img/zadniyfon.jpg'); background-size: cover; background-position: center; padding-bottom: 80px; }
-        .top-bg-wrapper::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(42, 36, 33, 0.85); z-index: 1; }
-        .hero { background: transparent; color: #fff; padding: 90px 5% 120px 5%; text-align: center; position: relative; z-index: 2; }
-        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 25px; line-height: 1.25; max-width: 900px; margin-left: auto; margin-right: auto; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        .badge-geo { display: inline-block; background: rgba(217, 119, 6, 0.2); padding: 8px 20px; border-radius: 50px; font-size: 14px; font-weight: 700; margin-bottom: 0; text-transform: uppercase; letter-spacing: 1px; color: #f59e0b; border: 1px solid rgba(217, 119, 6, 0.5); }
+        /* === ГЛАВНЫЙ ЭКРАН (HERO) === */
+        .top-bg-wrapper { position: relative; background-image: url('img/zadniyfon.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding-bottom: 80px; }
+        .top-bg-wrapper::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(29, 38, 35, 0.75); z-index: 1; }
+        .hero { background: transparent; color: #fff; padding: 80px 5% 100px 5%; text-align: center; position: relative; z-index: 2; }
+        .hero h1 { font-size: 40px; font-weight: 600; margin-bottom: 20px; line-height: 1.3; max-width: 900px; margin-left: auto; margin-right: auto; letter-spacing: -0.5px; }
+        .badge-geo { display: inline-block; background: rgba(186, 134, 84, 0.15); padding: 8px 20px; border-radius: 30px; font-size: 13px; font-weight: 500; margin-bottom: 0; letter-spacing: 0.5px; color: #d69f68; border: 1px solid rgba(186, 134, 84, 0.3); }
 
         /* === КВИЗ === */
-        .quiz-container { max-width: 750px; background: #fff; border-radius: 20px; padding: 45px; margin: -60px auto 0 auto; box-shadow: 0 20px 40px rgba(42, 36, 33, 0.15); position: relative; z-index: 10; border: 1px solid #EBE5DF; }
-        .quiz-header { margin-bottom: 35px; border-bottom: 2px solid #FAF8F5; padding-bottom: 20px; }
-        .quiz-title { font-size: 24px; font-weight: 800; color: #2A2421; }
-        .progress-bar { height: 8px; background: #FAF8F5; border-radius: 4px; margin-top: 15px; overflow: hidden; }
-        .progress-fill { height: 100%; background: #D97706; width: 33%; transition: width 0.4s ease; }
+        .quiz-container { max-width: 700px; background: #fff; border-radius: 12px; padding: 40px; margin: -50px auto 0 auto; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); position: relative; z-index: 10; border: 1px solid #ebe8e0; }
+        .quiz-header { margin-bottom: 30px; border-bottom: 1px solid #f0eee6; padding-bottom: 20px; }
+        .quiz-title { font-size: 20px; font-weight: 600; color: #242b27; }
+        .progress-bar { height: 6px; background: #f0eee6; border-radius: 3px; margin-top: 15px; overflow: hidden; }
+        .progress-fill { height: 100%; background: #ba8654; width: 33%; transition: width 0.4s ease; }
         .step { display: none; }
         .step.active { display: block; }
-        .step h3 { font-size: 19px; margin-bottom: 25px; font-weight: 700; color: #2D2422; }
-        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 35px; }
-        .option-card { border: 2px solid #EBE5DF; border-radius: 12px; padding: 25px 20px; cursor: pointer; transition: all 0.25s ease; font-weight: 700; text-align: center; background: #FAF8F5; font-size: 16px; color: #554a46; }
-        .option-card:hover { border-color: #D97706; background: #fff; transform: translateY(-2px); color: #2A2421; box-shadow: 0 10px 20px rgba(217, 119, 6, 0.08); }
-        .option-card.selected { border-color: #D97706; background: #fff8f0; color: #D97706; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.1); }
+        .step h3 { font-size: 17px; margin-bottom: 20px; font-weight: 500; color: #313131; }
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
+        .option-card { border: 1px solid #e0dbce; border-radius: 8px; padding: 20px 15px; cursor: pointer; transition: all 0.2s ease; font-weight: 500; text-align: center; background: #faf9f6; font-size: 15px; color: #5a5a5a; }
+        .option-card:hover { border-color: #ba8654; background: #fff; color: #313131; }
+        .option-card.selected { border-color: #ba8654; background: #fdfaf7; color: #ba8654; }
         
-        .form-group { margin-bottom: 22px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 14px; color: #554a46; }
-        .form-input { width: 100%; padding: 16px; border: 2px solid #EBE5DF; border-radius: 10px; font-size: 16px; font-weight: 600; background: #FAF8F5; color: #2A2421; transition: 0.3s; }
-        .form-input:focus { border-color: #D97706; outline: none; background: #fff; }
-        .btn { padding: 16px 35px; border-radius: 10px; border: none; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s ease; text-decoration: none; display: inline-block; }
-        .btn-prev { background: #EBE5DF; color: #554a46; }
-        .btn-prev:hover { background: #dfd7d0; }
-        .btn-next, .btn-submit { background: #D97706; color: #fff; margin-left: auto; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); }
-        .btn-next:hover, .btn-submit:hover { background: #B45309; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4); }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 13px; color: #5a5a5a; }
+        .form-input { width: 100%; padding: 14px; border: 1px solid #e0dbce; border-radius: 8px; font-size: 15px; font-weight: 400; background: #faf9f6; color: #313131; transition: 0.3s; }
+        .form-input:focus { border-color: #ba8654; outline: none; background: #fff; }
+        .btn { padding: 14px 28px; border-radius: 8px; border: none; font-size: 15px; font-weight: 500; cursor: pointer; transition: all 0.2s ease; text-decoration: none; display: inline-block; }
+        .btn-prev { background: #e0dbce; color: #5a5a5a; }
+        .btn-prev:hover { background: #d3cdbe; }
+        .btn-next, .btn-submit { background: #ba8654; color: #fff; margin-left: auto; }
+        .btn-next:hover, .btn-submit:hover { background: #a07043; }
 
-        /* === КАТАЛОГ 90% (60/40) === */
-        .catalog-section { width: 100%; padding: 0; margin: 100px 0; background-color: transparent; }
-        .catalog-header { text-align: center; margin-bottom: 60px; }
-        .catalog-header h2 { font-size: 40px; font-weight: 800; margin-bottom: 15px; color: #2A2421; text-transform: uppercase; letter-spacing: 1px; }
-        .catalog-header .subtitle { font-size: 18px; color: #7a6b65; font-weight: 600; }
+        /* === КАТАЛОГ (УМЕНЬШЕННЫЙ, АККУРАТНЫЙ) === */
+        .catalog-section { width: 100%; padding: 0 5%; margin: 80px 0; background-color: transparent; }
+        .catalog-header { text-align: center; margin-bottom: 50px; }
+        .catalog-header h2 { font-size: 32px; font-weight: 600; margin-bottom: 12px; color: #242b27; letter-spacing: -0.5px; }
+        .catalog-header .subtitle { font-size: 16px; color: #6b6b6b; font-weight: 400; }
         
-        .catalog-list { display: flex; flex-direction: column; gap: 80px; width: 90%; max-width: 1500px; margin: 0 auto; }
-        .catalog-row { display: flex; width: 100%; min-height: 550px; background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(42, 36, 33, 0.08); border: 1px solid #EBE5DF; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .catalog-row:hover { transform: translateY(-5px); box-shadow: 0 25px 70px rgba(42, 36, 33, 0.12); }
+        .catalog-list { display: flex; flex-direction: column; gap: 30px; width: 100%; max-width: 1000px; margin: 0 auto; }
+        .catalog-row { display: flex; width: 100%; min-height: 360px; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #ebe8e0; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .catalog-row:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
         .catalog-row:nth-child(even) { flex-direction: row-reverse; }
         
-        .catalog-image { flex: 0 0 60%; width: 60%; position: relative; background-color: #EBE5DF; }
+        .catalog-image { flex: 0 0 60%; width: 60%; position: relative; background-color: #f0eee6; }
         .catalog-image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
         
-        .catalog-info { flex: 0 0 40%; width: 40%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 50px 6%; background-color: #fff; }
-        .catalog-title { font-size: 46px; font-weight: 800; color: #2A2421; margin-bottom: 20px; line-height: 1.1; }
-        .catalog-price { font-size: 26px; color: #D97706; margin-bottom: 30px; font-weight: 800; }
-        .catalog-text-details { font-size: 17px; color: #554a46; line-height: 1.6; margin-bottom: 20px; font-weight: 600; }
-        .catalog-text-prices { font-size: 18px; color: #2A2421; line-height: 1.8; font-weight: 700; background: #FAF8F5; padding: 25px; border-radius: 16px; border: 1px dashed #cebcae; width: 100%; margin-bottom: 20px; }
+        .catalog-info { flex: 0 0 40%; width: 40%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px 5%; background-color: #fff; }
+        .catalog-title { font-size: 28px; font-weight: 600; color: #242b27; margin-bottom: 15px; line-height: 1.2; letter-spacing: -0.5px; }
+        .catalog-price { font-size: 20px; color: #ba8654; margin-bottom: 25px; font-weight: 600; }
+        .catalog-text-details { font-size: 14px; color: #6b6b6b; line-height: 1.6; margin-bottom: 15px; font-weight: 400; }
+        .catalog-text-prices { font-size: 15px; color: #313131; line-height: 1.8; font-weight: 500; background: #fcfbf9; padding: 15px 20px; border-radius: 8px; border: 1px solid #f0eee6; width: 100%; margin-bottom: 15px; }
         
-        .btn-catalog { background-color: #D97706; color: #fff; padding: 20px 40px; border-radius: 12px; font-size: 16px; font-weight: 800; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 12px; transition: all 0.2s ease; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 8px 25px rgba(217, 119, 6, 0.3); }
-        .btn-catalog:hover { background-color: #B45309; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(217, 119, 6, 0.4); }
+        .btn-catalog { background-color: #ba8654; color: #fff; padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease; text-decoration: none; letter-spacing: 0.5px; }
+        .btn-catalog:hover { background-color: #a07043; }
 
         /* === БЛОК КОМПЛЕКТАЦИИ === */
-        .equipment-section { background-color: #EBE5DF; padding: 100px 5%; border-top: 1px solid #dfd7d0; border-bottom: 1px solid #dfd7d0; }
-        .equipment-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .equipment-images { position: relative; width: 100%; min-height: 500px; }
-        .equipment-images .img-1 { position: absolute; top: 0; left: 0; width: 75%; height: 400px; object-fit: cover; border-radius: 16px; z-index: 1; box-shadow: 0 20px 40px rgba(42, 36, 33, 0.15); }
-        .equipment-images .img-2 { position: absolute; bottom: 0; right: 0; width: 60%; height: 300px; object-fit: cover; border-radius: 16px; z-index: 2; border: 8px solid #EBE5DF; box-shadow: 0 20px 50px rgba(42, 36, 33, 0.2); }
-        .equipment-info h2 { font-size: 42px; font-weight: 800; color: #2A2421; margin-bottom: 25px; line-height: 1.2; text-transform: uppercase; }
-        .equipment-info p { font-size: 16px; color: #554a46; line-height: 1.7; margin-bottom: 20px; font-weight: 500; }
-        .btn-outline { display: inline-flex; align-items: center; gap: 10px; padding: 16px 35px; border-radius: 10px; font-size: 16px; font-weight: 800; color: #D97706; background: transparent; border: 2px solid #D97706; cursor: pointer; transition: all 0.3s ease; margin-top: 15px; text-decoration: none; text-transform: uppercase; }
-        .btn-outline:hover { background: #D97706; color: #fff; box-shadow: 0 6px 20px rgba(217, 119, 6, 0.25); }
+        .equipment-section { background-color: #efece6; padding: 80px 5%; border-top: 1px solid #e5e1d8; border-bottom: 1px solid #e5e1d8; }
+        .equipment-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .equipment-images { position: relative; width: 100%; min-height: 400px; }
+        .equipment-images .img-1 { position: absolute; top: 0; left: 0; width: 75%; height: 320px; object-fit: cover; border-radius: 12px; z-index: 1; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .equipment-images .img-2 { position: absolute; bottom: 0; right: 0; width: 60%; height: 240px; object-fit: cover; border-radius: 12px; z-index: 2; border: 6px solid #efece6; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .equipment-info h2 { font-size: 32px; font-weight: 600; color: #242b27; margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.5px; }
+        .equipment-info p { font-size: 15px; color: #5a5a5a; line-height: 1.7; margin-bottom: 20px; font-weight: 400; }
+        .btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #ba8654; background: transparent; border: 1px solid #ba8654; cursor: pointer; transition: all 0.2s ease; margin-top: 10px; text-decoration: none; }
+        .btn-outline:hover { background: #ba8654; color: #fff; }
 
         /* === ЭТАПЫ РАБОТ === */
-        .steps-section { padding: 100px 5%; text-align: center; }
+        .steps-section { padding: 80px 5%; text-align: center; }
         .steps-container { max-width: 900px; margin: 0 auto; }
-        .steps-header h2 { font-size: 42px; font-weight: 800; color: #2A2421; margin-bottom: 15px; text-transform: uppercase; }
-        .steps-header p { font-size: 18px; color: #7a6b65; font-weight: 600; margin-bottom: 60px; }
-        .steps-list { display: flex; flex-direction: column; gap: 40px; text-align: left; }
-        .step-item { display: flex; align-items: flex-start; gap: 30px; background: #fff; padding: 40px; border-radius: 20px; border: 1px solid #EBE5DF; box-shadow: 0 10px 40px rgba(42, 36, 33, 0.05); transition: transform 0.3s; }
-        .step-item:hover { transform: translateY(-5px); border-color: #cebcae; box-shadow: 0 15px 50px rgba(42, 36, 33, 0.08); }
-        .step-number { font-size: 60px; font-weight: 800; color: #D97706; line-height: 0.8; flex-shrink: 0; text-shadow: 0 4px 15px rgba(217, 119, 6, 0.15); }
-        .step-title { font-size: 24px; font-weight: 800; color: #2A2421; margin-bottom: 15px; }
-        .step-desc { font-size: 16px; color: #554a46; line-height: 1.6; font-weight: 500; }
+        .steps-header h2 { font-size: 32px; font-weight: 600; color: #242b27; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .steps-header p { font-size: 16px; color: #6b6b6b; font-weight: 400; margin-bottom: 50px; }
+        .steps-list { display: flex; flex-direction: column; gap: 30px; text-align: left; }
+        .step-item { display: flex; align-items: flex-start; gap: 25px; background: #fff; padding: 35px; border-radius: 12px; border: 1px solid #ebe8e0; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s; }
+        .step-item:hover { transform: translateY(-3px); border-color: #d3cdbe; }
+        .step-number { font-size: 48px; font-weight: 600; color: #ba8654; line-height: 0.8; flex-shrink: 0; }
+        .step-title { font-size: 20px; font-weight: 600; color: #242b27; margin-bottom: 10px; }
+        .step-desc { font-size: 15px; color: #6b6b6b; line-height: 1.6; font-weight: 400; }
 
-        /* === ВЫСТАВКА (ТЕМНЫЙ БЛОК) === */
-        .exhibition-section { background: #2A2421; padding: 100px 5% 80px 5%; color: #FAF8F5; }
-        .exhibition-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .exhibition-info h2 { font-size: 38px; font-weight: 800; color: #fff; margin-bottom: 25px; line-height: 1.2; text-transform: uppercase; }
-        .exhibition-info p { font-size: 17px; color: #d0c5c0; line-height: 1.6; margin-bottom: 30px; }
+        /* === ВЫСТАВКА === */
+        .exhibition-section { background: #242b27; padding: 80px 5% 60px 5%; color: #f7f5f0; }
+        .exhibition-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .exhibition-info h2 { font-size: 32px; font-weight: 600; color: #fff; margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.5px; }
+        .exhibition-info p { font-size: 15px; color: #c4cdc8; line-height: 1.6; margin-bottom: 25px; font-weight: 400; }
         .exhibition-features { list-style: none; margin-bottom: 30px; }
-        .exhibition-features li { position: relative; padding-left: 35px; margin-bottom: 15px; font-weight: 600; color: #e0d5ce; font-size: 16px; }
-        .exhibition-features li::before { content: "✓"; position: absolute; left: 0; color: #D97706; font-weight: 800; font-size: 20px; }
-        .exhibition-cta { background: rgba(255, 255, 255, 0.03); border: 1px dashed #D97706; padding: 40px; border-radius: 16px; text-align: left; }
-        .exhibition-cta p { color: #e0d5ce !important; font-size: 17px; margin-bottom: 15px; line-height: 1.6; }
+        .exhibition-features li { position: relative; padding-left: 25px; margin-bottom: 12px; font-weight: 400; color: #e0e5e2; font-size: 15px; }
+        .exhibition-features li::before { content: "✓"; position: absolute; left: 0; color: #ba8654; font-weight: 600; font-size: 16px; }
+        .exhibition-cta { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(186, 134, 84, 0.3); padding: 35px; border-radius: 12px; text-align: left; }
+        .exhibition-cta p { color: #c4cdc8 !important; font-size: 15px; margin-bottom: 12px; line-height: 1.6; }
 
-        .map-section { width: 100%; height: 500px; line-height: 0; }
+        .map-section { width: 100%; height: 400px; line-height: 0; }
         
-        /* === ВОПРОСЫ (ГРАДИЕНТ) === */
-        .questions-section { background: linear-gradient(135deg, #D97706 0%, #B45309 100%); padding: 80px 20px; text-align: center; color: #fff; }
+        /* === ВОПРОСЫ (СПОКОЙНЫЙ МИНИМАЛИЗМ) === */
+        .questions-section { background: #eae6de; padding: 70px 20px; text-align: center; }
         .questions-container { max-width: 800px; margin: 0 auto; }
-        .questions-container h2 { font-size: 42px; font-weight: 800; margin-bottom: 20px; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        .questions-container p { font-size: 20px; color: rgba(255,255,255,0.9); margin-bottom: 40px; font-weight: 500; }
-        .btn-call-large { display: inline-block; background-color: #2A2421; color: #fff; padding: 22px 55px; border-radius: 12px; font-size: 24px; font-weight: 800; text-decoration: none; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;}
-        .btn-call-large:hover { background-color: #1a1513; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); }
+        .questions-container h2 { font-size: 32px; font-weight: 600; margin-bottom: 15px; color: #242b27; letter-spacing: -0.5px; }
+        .questions-container p { font-size: 16px; color: #5a5a5a; margin-bottom: 35px; font-weight: 400; }
+        .btn-call-large { display: inline-block; background-color: #ba8654; color: #fff; padding: 16px 40px; border-radius: 8px; font-size: 18px; font-weight: 500; text-decoration: none; transition: all 0.2s ease; letter-spacing: 0.5px;}
+        .btn-call-large:hover { background-color: #a07043; }
 
-        /* === ПОДВАЛ (ТЕМНЫЙ) === */
-        .site-footer { background-color: #2A2421; color: #b3a49e; padding: 60px 5% 30px 5%; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid #3d3430; padding-bottom: 40px; }
-        .footer-logo-block { display: flex; flex-direction: column; gap: 12px; }
-        .footer-logo { height: 60px; object-fit: contain; }
-        .footer-domain { font-size: 16px; font-weight: 800; color: #D97706; text-transform: uppercase; letter-spacing: 1px; }
-        .footer-socials { display: flex; gap: 15px; }
-        .footer-social-link { display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 10px; transition: all 0.3s ease; }
+        /* === ПОДВАЛ === */
+        .site-footer { background-color: #242b27; color: #c4cdc8; padding: 60px 5% 30px 5%; border-top: 1px solid #333d38; }
+        .footer-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid #333d38; padding-bottom: 40px; }
+        .footer-logo-block { display: flex; flex-direction: column; gap: 10px; }
+        .footer-logo { height: 50px; object-fit: contain; }
+        .footer-domain { font-size: 14px; font-weight: 500; color: #ba8654; letter-spacing: 0.5px; }
+        .footer-socials { display: flex; gap: 10px; }
+        .footer-social-link { display: flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-size: 13px; font-weight: 500; padding: 10px 18px; border-radius: 6px; transition: all 0.2s ease; }
         .footer-social-link.tg { background-color: rgba(30, 136, 229, 0.15); border: 1px solid #1E88E5; color: #1E88E5; }
         .footer-social-link.tg:hover { background-color: #1E88E5; color: #fff; }
         .footer-social-link.vk { background-color: rgba(0, 119, 255, 0.15); border: 1px solid #0077FF; color: #0077FF; }
         .footer-social-link.vk:hover { background-color: #0077FF; color: #fff; }
         .footer-contacts { text-align: right; }
-        .footer-phone { display: block; font-size: 26px; font-weight: 800; color: #fff; text-decoration: none; transition: color 0.3s ease; }
-        .footer-phone:hover { color: #D97706; }
-        .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 14px; color: #7a6b65; }
+        .footer-phone { display: block; font-size: 22px; font-weight: 600; color: #fff; text-decoration: none; transition: color 0.2s ease; }
+        .footer-phone:hover { color: #ba8654; }
+        .footer-bottom { max-width: 1000px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 13px; color: #7a8781; }
 
-        @media (max-width: 1100px) {
+        @media (max-width: 990px) {
             .catalog-row, .catalog-row:nth-child(even) { flex-direction: column; height: auto; }
-            .catalog-image { flex: none; width: 100%; height: 400px; }
+            .catalog-image { flex: none; width: 100%; height: 350px; }
             .catalog-info { flex: none; width: 100%; padding: 40px 20px; align-items: center; text-align: center; }
             .equipment-container { grid-template-columns: 1fr; gap: 40px; }
-            .equipment-images { max-width: 600px; margin: 0 auto; min-height: 450px; }
+            .equipment-images { max-width: 500px; margin: 0 auto; min-height: 380px; }
             .equipment-info { text-align: center; }
             .exhibition-container { grid-template-columns: 1fr; gap: 40px; }
             .exhibition-info, .exhibition-cta { text-align: center; }
@@ -164,29 +166,29 @@
             header { flex-direction: column; text-align: center; gap: 15px; }
             .header-right { flex-direction: column; gap: 15px; }
             .header-socials { border-right: none; padding-right: 0; flex-direction: row; }
-            .logo-text { border-left: none; padding-left: 0; border-top: 1px solid #3d3430; padding-top: 10px; margin-top: 5px; }
+            .logo-text { border-left: none; padding-left: 0; border-top: 1px solid #333d38; padding-top: 10px; margin-top: 5px; }
             .header-contacts { text-align: center; }
             .footer-container { flex-direction: column; text-align: center; }
             .footer-logo-block, .footer-contacts { align-items: center; text-align: center; }
         }
 
         @media (max-width: 650px) {
-            .catalog-list { width: 100%; max-width: 100%; padding: 0 15px; }
-            .catalog-image { height: 300px; }
-            .catalog-title { font-size: 32px; }
+            .catalog-list { width: 100%; max-width: 100%; padding: 0 10px; }
+            .catalog-image { height: 250px; }
+            .catalog-title { font-size: 26px; }
             .options-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 34px; }
-            .quiz-container { padding: 30px 20px; margin: -40px 15px 0 15px; width: auto; }
-            .equipment-images { min-height: 350px; }
-            .equipment-images .img-1 { height: 280px; width: 85%; }
-            .equipment-images .img-2 { height: 200px; width: 70%; }
-            .equipment-info h2 { font-size: 32px; }
+            .hero h1 { font-size: 28px; }
+            .quiz-container { padding: 30px 20px; margin: -40px 10px 0 10px; width: auto; }
+            .equipment-images { min-height: 280px; }
+            .equipment-images .img-1 { height: 220px; width: 85%; }
+            .equipment-images .img-2 { height: 160px; width: 70%; }
+            .equipment-info h2 { font-size: 26px; }
             .btn-outline { width: 100%; justify-content: center; }
             .steps-section, .exhibition-section { padding: 60px 15px; }
-            .steps-header h2 { font-size: 32px; }
-            .step-item { flex-direction: column; text-align: center; align-items: center; padding: 30px 20px; }
-            .questions-container h2 { font-size: 32px; }
-            .btn-call-large { font-size: 18px; padding: 18px 30px; width: 100%; }
+            .steps-header h2 { font-size: 26px; }
+            .step-item { flex-direction: column; text-align: center; align-items: center; padding: 25px 20px; }
+            .questions-container h2 { font-size: 26px; }
+            .btn-call-large { font-size: 16px; padding: 16px 30px; width: 100%; }
             .footer-socials { flex-direction: column; width: 100%; gap: 10px; }
             .footer-social-link { justify-content: center; }
         }
@@ -215,7 +217,7 @@
     <div class="top-bg-wrapper">
         <section class="hero fade-in-up">
             <h1>Бани-Бочки Премиум - Мы отвечаем за качество</h1>
-            <div class="badge-geo">🔥 Премиум качество из Александрова</div>
+            <div class="badge-geo">Премиум качество из Александрова</div>
         </section>
 
         <!-- КВИЗ -->
@@ -253,8 +255,8 @@
             </div>
 
             <div class="step" id="step-3">
-                <h3>Подарок успешно зафиксирован! 🎁</h3>
-                <p style="color: #7a6b65; margin-bottom: 25px; font-size: 15px; text-align: left; line-height: 1.5;">
+                <h3>Подарок успешно зафиксирован!</h3>
+                <p style="color: #6b6b6b; margin-bottom: 25px; font-size: 14px; text-align: left; line-height: 1.5;">
                     Мы закрепили за вашим номером подарок к заказу: <b>комплект профессиональных камней для печи</b>. Оставьте контакты, чтобы получить расчет стоимости изготовления бани в Александрове.
                 </p>
                 <div class="form-group">
@@ -267,7 +269,7 @@
                 </div>
                 <div class="quiz-buttons">
                     <button class="btn btn-prev" onclick="prevStep(3)">← Назад</button>
-                    <button class="btn btn-next btn-submit" onclick="submitQuiz()">Получить расчет 🔥</button>
+                    <button class="btn btn-next btn-submit" onclick="submitQuiz()">Получить расчет</button>
                 </div>
             </div>
         </div>
@@ -276,7 +278,7 @@
     <!-- КАТАЛОГ БАНЬ -->
     <section class="catalog-section" id="catalog">
         <div class="catalog-header fade-in-up">
-            <h2>Наш Премиум Каталог</h2>
+            <h2>Наш Каталог</h2>
             <div class="subtitle">Популярные модели, производимые на нашей базе в г. Александров</div>
         </div>
 
@@ -287,7 +289,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Викинг</h3>
                     <p class="catalog-price">Цена от 395 000 руб.</p>
-                    <a href="viking.html" class="btn-catalog">Посмотреть портфолио &rarr;</a>
+                    <a href="viking.html" class="btn-catalog">Смотреть фото и цены &rarr;</a>
                 </div>
             </div>
 
@@ -297,7 +299,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро-овал</h3>
                     <p class="catalog-price">Цена от 550 000 руб.</p>
-                    <a href="oval.html" class="btn-catalog">Посмотреть портфолио &rarr;</a>
+                    <a href="oval.html" class="btn-catalog">Смотреть фото и цены &rarr;</a>
                 </div>
             </div>
 
@@ -307,7 +309,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро Делюкс</h3>
                     <p class="catalog-price">Цена от 600 000 руб.</p>
-                    <a href="deluxe.html" class="btn-catalog">Посмотреть портфолио &rarr;</a>
+                    <a href="deluxe.html" class="btn-catalog">Смотреть фото и цены &rarr;</a>
                 </div>
             </div>
 
@@ -317,7 +319,7 @@
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня Квадро-бочка</h3>
                     <p class="catalog-price">Цена от 210 000 руб.</p>
-                    <a href="kvadro.html" class="btn-catalog">Посмотреть портфолио &rarr;</a>
+                    <a href="kvadro.html" class="btn-catalog">Смотреть фото и цены &rarr;</a>
                 </div>
             </div>
 
@@ -364,8 +366,8 @@
                 <h2>Комплектация</h2>
                 <p>Все бани полностью готовы к эксплуатации оснащены комплектом электрики и освещения, печью с камнями, баком для воды, сливом, дымоходом и мебелью. Все бани внутри обработаны антисептиком.</p>
                 <p>Каждая баня может оснащаться доп. опциями по желанию клиента.</p>
-                <p style="margin-bottom: 30px;">Например: увеличение мощности печи, вынос топки, душевая, защита печи от прикосновения, подспинники, шкаф вещевой, увеличение размера бани, уличное освещение, боковой вход и т.д.</p>
-                <a href="komplekt.html" class="btn-outline">Стандартная комплектация бань &rarr;</a>
+                <p style="margin-bottom: 25px;">Например: увеличение мощности печи, вынос топки, душевая, защита печи от прикосновения, подспинники, шкаф вещевой, увеличение размера бани, уличное освещение, боковой вход и т.д.</p>
+                <a href="komplekt.html" class="btn-outline">Стандартная комплектация</a>
             </div>
         </div>
     </section>
@@ -407,7 +409,7 @@
     <section class="exhibition-section">
         <div class="exhibition-container">
             <div class="exhibition-info fade-in-up">
-                <h2>Приезжайте на нашу выставочную площадку!</h2>
+                <h2>Выставочная площадка</h2>
                 <p>Выбирать баню по интернету — хорошо, но потрогать её вживую — бесценно. Мы находимся прямо в Александрове и всегда рады гостям. Приезжайте всей семьей!</p>
                 <ul class="exhibition-features">
                     <li>Все популярные модели стоят в собранном виде</li>
@@ -420,7 +422,7 @@
                 <p>🕒 <strong>Режим работы:</strong><br>Среда - Воскресенье 10:00 - 17:00</p>
                 <p>📍 <strong>Наш адрес:</strong><br>Владимирская область, д. Площево, Центральная ул., 23</p>
                 <p style="margin: 0;">
-                    📞 Телефон для связи:<br><a href="tel:+79157750909" style="color: #D97706; font-size: 20px; font-weight: 800; text-decoration: none; display: inline-block; margin-top: 5px;">+7 (915) 775-09-09</a>
+                    📞 Телефон для связи:<br><a href="tel:+79157750909" style="color: #ba8654; font-size: 18px; font-weight: 600; text-decoration: none; display: inline-block; margin-top: 5px;">+7 (915) 775-09-09</a>
                 </p>
             </div>
         </div>
@@ -430,12 +432,12 @@
         <iframe src="https://yandex.ru/map-widget/v1/?text=Владимирская+область,+деревня+Площево,+Центральная+улица,+23" width="100%" height="100%" frameborder="0" allowfullscreen="true" loading="lazy"></iframe>
     </div>
 
-    <!-- БЛОК ВОПРОСОВ -->
+    <!-- БЛОК ВОПРОСОВ (СПОКОЙНЫЙ СТИЛЬ) -->
     <section class="questions-section fade-in-up">
         <div class="questions-container">
             <h2>Остались вопросы?</h2>
-            <p>Звоните нам и мы с удовольствием на них ответим</p>
-            <a href="tel:+79157750909" class="btn-call-large">📞 +7 (915) 775-09-09</a>
+            <p>Свяжитесь с нами, и мы с удовольствием на них ответим</p>
+            <a href="tel:+79157750909" class="btn-call-large">Позвонить нам</a>
         </div>
     </section>
 
@@ -451,11 +453,11 @@
                 <a href="https://vk.com/id1087359257" class="footer-social-link vk" target="_blank">ВКонтакте</a>
             </div>
             <div class="footer-contacts">
-                <a href="contacts.html" class="btn-nav-contacts" style="margin-bottom: 15px;">Все Контакты</a>
+                <a href="contacts.html" class="btn-nav-contacts" style="margin-bottom: 12px;">Все Контакты</a>
                 <a href="tel:+79157750909" class="footer-phone">+7 (915) 775-09-09</a>
             </div>
         </div>
-        <div class="footer-bottom">&copy; 2026 Бани бочки премиум</div>
+        <div class="footer-bottom">&copy; 2026 Бани-Бочки Премиум. Все права защищены.</div>
     </footer>
 
     <script>
