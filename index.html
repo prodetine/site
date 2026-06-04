@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бани-Бочки Премиум в Александрове — Теплый уют под ключ</title>
     <style>
-        /* Элегантный шрифт Montserrat */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
         
         html { scroll-behavior: smooth; }
@@ -16,7 +15,7 @@
         .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
         .fade-in-up.in-view { opacity: 1; transform: translateY(0); }
 
-        /* === ШАПКА === */
+        /* ШАПКА */
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #242b27; position: relative; z-index: 100; border-bottom: 1px solid #333d38; }
         .logo-block { display: flex; align-items: center; gap: 15px; text-decoration: none; }
         .logo-img { height: 80px; width: auto; object-fit: contain; }
@@ -37,14 +36,14 @@
         .phone-link:hover { color: #d69f68; }
         .phone-desc { font-size: 12px; color: #9da8a3; margin-top: 4px; font-weight: 500; }
 
-        /* === ГЛАВНЫЙ ЭКРАН (HERO) === */
+        /* ГЛАВНЫЙ ЭКРАН */
         .top-bg-wrapper { position: relative; background-image: url('img/zadniyfon.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding-bottom: 80px; }
         .top-bg-wrapper::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(29, 38, 35, 0.75); z-index: 1; }
         .hero { background: transparent; color: #fff; padding: 80px 5% 100px 5%; text-align: center; position: relative; z-index: 2; }
         .hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 20px; line-height: 1.3; max-width: 900px; margin-left: auto; margin-right: auto; letter-spacing: -0.5px; }
         .badge-geo { display: inline-block; background: rgba(186, 134, 84, 0.15); padding: 8px 20px; border-radius: 30px; font-size: 13px; font-weight: 600; margin-bottom: 0; letter-spacing: 0.5px; color: #d69f68; border: 1px solid rgba(186, 134, 84, 0.3); }
 
-        /* === КВИЗ === */
+        /* КВИЗ */
         .quiz-container { max-width: 700px; background: #fff; border-radius: 12px; padding: 40px; margin: -50px auto 0 auto; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); position: relative; z-index: 10; border: 1px solid #ebe8e0; }
         .quiz-header { margin-bottom: 30px; border-bottom: 1px solid #f0eee6; padding-bottom: 20px; }
         .quiz-title { font-size: 20px; font-weight: 700; color: #242b27; }
@@ -57,7 +56,6 @@
         .option-card { border: 1px solid #e0dbce; border-radius: 8px; padding: 20px 15px; cursor: pointer; transition: all 0.2s ease; font-weight: 600; text-align: center; background: #faf9f6; font-size: 15px; color: #5a5a5a; }
         .option-card:hover { border-color: #ba8654; background: #fff; color: #313131; }
         .option-card.selected { border-color: #ba8654; background: #fdfaf7; color: #ba8654; }
-        
         .form-group { margin-bottom: 20px; text-align: left; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 13px; color: #5a5a5a; }
         .form-input { width: 100%; padding: 14px; border: 1px solid #e0dbce; border-radius: 8px; font-size: 15px; font-weight: 500; background: #faf9f6; color: #313131; transition: 0.3s; }
@@ -68,7 +66,7 @@
         .btn-next, .btn-submit { background: #ba8654; color: #fff; margin-left: auto; }
         .btn-next:hover, .btn-submit:hover { background: #a07043; }
 
-        /* === КАТАЛОГ EDGE-TO-EDGE === */
+        /* КАТАЛОГ EDGE-TO-EDGE */
         .catalog-section { width: 100%; padding: 0; margin: 0; background-color: transparent; }
         .catalog-header { text-align: center; margin: 80px auto 40px auto; padding: 0 20px; }
         .catalog-header h2 { font-size: 38px; font-weight: 700; margin-bottom: 12px; color: #242b27; letter-spacing: -0.5px; }
@@ -90,7 +88,7 @@
         .btn-catalog { background-color: #ba8654; color: #fff; padding: 16px 32px; border-radius: 8px; font-size: 15px; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease; text-decoration: none; letter-spacing: 0.5px; }
         .btn-catalog:hover { background-color: #a07043; }
 
-        /* === БЛОК КОМПЛЕКТАЦИИ === */
+        /* КОМПЛЕКТАЦИЯ */
         .equipment-section { background-color: #efece6; padding: 80px 5%; border-top: 1px solid #e5e1d8; border-bottom: 1px solid #e5e1d8; }
         .equipment-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .equipment-images { position: relative; width: 100%; min-height: 400px; }
@@ -101,7 +99,29 @@
         .btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; color: #ba8654; background: transparent; border: 1px solid #ba8654; cursor: pointer; transition: all 0.2s ease; margin-top: 10px; text-decoration: none; }
         .btn-outline:hover { background: #ba8654; color: #fff; }
 
-        /* === ЭТАПЫ РАБОТ === */
+        /* === ПОРТФОЛИО === */
+        .portfolio-header { text-align: center; padding: 80px 20px 40px 20px; background-color: #f7f5f0; }
+        .portfolio-header h2 { font-size: 38px; font-weight: 700; color: #242b27; letter-spacing: -0.5px; margin: 0; }
+        .slider-section { padding: 0; background: #000; position: relative; }
+        .slider-wrapper { width: 100%; position: relative; line-height: 0; }
+        .slider-main { position: relative; width: 100%; height: 100vh; overflow: hidden; background: #000; }
+        .slider-main::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 250px; background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); pointer-events: none; z-index: 5; }
+        .slider-main img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease; pointer-events: none; z-index: 1; }
+        .slider-main img.active { opacity: 1; pointer-events: auto; z-index: 2; }
+        
+        .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1); font-size: 24px; color: #fff; width: 60px; height: 60px; border-radius: 50%; cursor: pointer; z-index: 10; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
+        .slider-arrow:hover { background: #ba8654; border-color: #ba8654; }
+        .slider-arrow.prev { left: 30px; }
+        .slider-arrow.next { right: 30px; }
+        
+        .slider-thumbs { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 20; display: flex; gap: 15px; width: 90%; max-width: 1200px; overflow-x: auto; padding: 10px; }
+        @media (min-width: 900px) { .slider-thumbs { justify-content: center; } }
+        .slider-thumbs img { width: 120px; height: 80px; object-fit: cover; border-radius: 10px; cursor: pointer; opacity: 0.4; transition: 0.3s; border: 2px solid transparent; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
+        .slider-thumbs img:hover { opacity: 0.9; }
+        .slider-thumbs img.active { opacity: 1; border-color: #ba8654; transform: scale(1.05); box-shadow: 0 6px 20px rgba(0,0,0,0.8); }
+        .slider-thumbs::-webkit-scrollbar { height: 0px; background: transparent; }
+
+        /* ЭТАПЫ РАБОТ */
         .steps-section { padding: 80px 5%; text-align: center; }
         .steps-container { max-width: 900px; margin: 0 auto; }
         .steps-header h2 { font-size: 32px; font-weight: 700; color: #242b27; margin-bottom: 12px; letter-spacing: -0.5px; }
@@ -113,7 +133,7 @@
         .step-title { font-size: 20px; font-weight: 700; color: #242b27; margin-bottom: 10px; }
         .step-desc { font-size: 15px; color: #6b6b6b; line-height: 1.6; font-weight: 500; }
 
-        /* === ВЫСТАВКА (СВЕТЛЫЙ, ЧИСТЫЙ СТИЛЬ) === */
+        /* ВЫСТАВКА (СВЕТЛЫЙ) */
         .exhibition-section { background: #fff; padding: 80px 5% 60px 5%; border-top: 1px solid #ebe8e0; }
         .exhibition-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .exhibition-info h2 { font-size: 32px; font-weight: 700; color: #242b27; margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.5px; }
@@ -126,7 +146,7 @@
 
         .map-section { width: 100%; height: 400px; line-height: 0; }
         
-        /* === ВОПРОСЫ === */
+        /* ВОПРОСЫ */
         .questions-section { background: #eae6de; padding: 70px 20px; text-align: center; }
         .questions-container { max-width: 800px; margin: 0 auto; }
         .questions-container h2 { font-size: 32px; font-weight: 700; margin-bottom: 15px; color: #242b27; letter-spacing: -0.5px; }
@@ -134,7 +154,7 @@
         .btn-call-large { display: inline-block; background-color: #ba8654; color: #fff; padding: 16px 40px; border-radius: 8px; font-size: 18px; font-weight: 600; text-decoration: none; transition: all 0.2s ease; letter-spacing: 0.5px;}
         .btn-call-large:hover { background-color: #a07043; }
 
-        /* === ПОДВАЛ === */
+        /* ПОДВАЛ */
         .site-footer { background-color: #242b27; color: #c4cdc8; padding: 60px 5% 30px 5%; border-top: 1px solid #333d38; }
         .footer-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid #333d38; padding-bottom: 40px; }
         .footer-logo-block { display: flex; flex-direction: column; gap: 10px; }
@@ -188,6 +208,10 @@
             .btn-call-large { font-size: 16px; padding: 16px 30px; width: 100%; }
             .footer-socials { flex-direction: column; width: 100%; gap: 10px; }
             .footer-social-link { justify-content: center; }
+            .slider-thumbs img { width: 80px; height: 60px; }
+            .slider-arrow { width: 45px; height: 45px; font-size: 18px; left: 15px; }
+            .slider-arrow.next { right: 15px; left: auto; }
+            .portfolio-header h2 { font-size: 28px; }
         }
     </style>
 </head>
@@ -271,7 +295,7 @@
         </div>
     </div>
 
-    <!-- КАТАЛОГ БАНЬ -->
+    <!-- КАТАЛОГ -->
     <section class="catalog-section" id="catalog">
         <div class="catalog-header fade-in-up">
             <h2>Наш Каталог</h2>
@@ -279,7 +303,6 @@
         </div>
 
         <div class="catalog-list">
-            <!-- Викинг -->
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/viking.jpg" alt="Баня Викинг" loading="lazy"></div>
                 <div class="catalog-info">
@@ -289,7 +312,6 @@
                 </div>
             </div>
 
-            <!-- Овал -->
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/oval.jpg" alt="Баня Квадро-овал" loading="lazy"></div>
                 <div class="catalog-info">
@@ -299,7 +321,6 @@
                 </div>
             </div>
 
-            <!-- Делюкс -->
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/deluxe.jpg" alt="Баня Квадро Делюкс" loading="lazy"></div>
                 <div class="catalog-info">
@@ -309,7 +330,6 @@
                 </div>
             </div>
 
-            <!-- Квадро-бочка -->
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/kvadro.jpg" alt="Баня Квадро-бочка" loading="lazy"></div>
                 <div class="catalog-info">
@@ -319,14 +339,11 @@
                 </div>
             </div>
 
-            <!-- Круглая (Без кнопки) -->
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/round.jpg" alt="Баня-бочка Круглая" loading="lazy"></div>
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня-бочка Круглая</h3>
-                    <p class="catalog-text-details">
-                        Размеры:<br>Ширина бани от 2,1 до 2,4 м<br>Длина бани от 2 до 6 м
-                    </p>
+                    <p class="catalog-text-details">Размеры:<br>Ширина бани от 2,1 до 2,4 м<br>Длина бани от 2 до 6 м</p>
                     <div class="catalog-text-prices">
                         2x2,1 - 200 000 руб.<br>
                         3x2,1 - 280 000 руб.<br>
@@ -337,21 +354,18 @@
                 </div>
             </div>
 
-            <!-- На прицепе (Без кнопки) -->
             <div class="catalog-row fade-in-up">
                 <div class="catalog-image"><img src="img/trailer.jpg" alt="Баня на прицепе" loading="lazy"></div>
                 <div class="catalog-info">
                     <h3 class="catalog-title">Баня на прицепе</h3>
                     <p class="catalog-price" style="margin-bottom: 15px;">Цена от 350 000 руб.</p>
-                    <p class="catalog-text-details" style="margin-bottom: 0;">
-                        Размеры:<br>Ширина бани от 2,1 до 2,4 м<br>Длина бани от 2 до 4 м
-                    </p>
+                    <p class="catalog-text-details" style="margin-bottom: 0;">Размеры:<br>Ширина бани от 2,1 до 2,4 м<br>Длина бани от 2 до 4 м</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- === БЛОК КОМПЛЕКТАЦИИ === -->
+    <!-- БЛОК КОМПЛЕКТАЦИИ -->
     <section class="equipment-section" id="equipment">
         <div class="equipment-container fade-in-up">
             <div class="equipment-images">
@@ -368,7 +382,48 @@
         </div>
     </section>
 
-    <!-- === ЭТАПЫ РАБОТ === -->
+    <!-- НОВОЕ ПОРТФОЛИО НА 100VH -->
+    <div class="portfolio-header fade-in-up">
+        <h2>Наше портфолио</h2>
+    </div>
+    <section class="slider-section fade-in-up" id="portfolio">
+        <div class="slider-wrapper">
+            <div class="slider-main">
+                <img src="img/port1.jpg" class="active" loading="lazy">
+                <img src="img/port2.jpg" loading="lazy">
+                <img src="img/port3.jpg" loading="lazy">
+                <img src="img/port4.jpg" loading="lazy">
+                <img src="img/port5.jpg" loading="lazy">
+                <img src="img/port6.jpg" loading="lazy">
+                <img src="img/port7.jpg" loading="lazy">
+                <img src="img/port8.jpg" loading="lazy">
+                <img src="img/port9.jpg" loading="lazy">
+                <img src="img/port10.jpg" loading="lazy">
+                <img src="img/port11.jpg" loading="lazy">
+                <img src="img/port12.jpg" loading="lazy">
+                
+                <button class="slider-arrow prev">&#10094;</button>
+                <button class="slider-arrow next">&#10095;</button>
+                
+                <div class="slider-thumbs">
+                    <img src="img/port1.jpg" class="active" loading="lazy">
+                    <img src="img/port2.jpg" loading="lazy">
+                    <img src="img/port3.jpg" loading="lazy">
+                    <img src="img/port4.jpg" loading="lazy">
+                    <img src="img/port5.jpg" loading="lazy">
+                    <img src="img/port6.jpg" loading="lazy">
+                    <img src="img/port7.jpg" loading="lazy">
+                    <img src="img/port8.jpg" loading="lazy">
+                    <img src="img/port9.jpg" loading="lazy">
+                    <img src="img/port10.jpg" loading="lazy">
+                    <img src="img/port11.jpg" loading="lazy">
+                    <img src="img/port12.jpg" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ЭТАПЫ РАБОТ -->
     <section class="steps-section fade-in-up">
         <div class="steps-container">
             <div class="steps-header">
@@ -428,7 +483,7 @@
         <iframe src="https://yandex.ru/map-widget/v1/?text=Владимирская+область,+деревня+Площево,+Центральная+улица,+23" width="100%" height="100%" frameborder="0" allowfullscreen="true" loading="lazy"></iframe>
     </div>
 
-    <!-- БЛОК ВОПРОСОВ -->
+    <!-- ВОПРОСЫ -->
     <section class="questions-section fade-in-up">
         <div class="questions-container">
             <h2>Остались вопросы?</h2>
@@ -462,10 +517,49 @@
                 entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in-view'); });
             }, { threshold: 0.1 }); 
             document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+            // Универсальный скрипт для ВСЕХ слайдеров на странице (включая новое портфолио)
+            const sliders = document.querySelectorAll('.slider-wrapper');
+            sliders.forEach(slider => {
+                const mainImgs = slider.querySelectorAll('.slider-main > img');
+                const thumbs = slider.querySelectorAll('.slider-thumbs img');
+                const prevBtn = slider.querySelector('.slider-arrow.prev');
+                const nextBtn = slider.querySelector('.slider-arrow.next');
+                let currentIdx = 0;
+
+                function showSlide(idx) {
+                    mainImgs.forEach(img => img.classList.remove('active'));
+                    thumbs.forEach(thumb => thumb.classList.remove('active'));
+                    mainImgs[idx].classList.add('active');
+                    thumbs[idx].classList.add('active');
+                    
+                    const thumbElement = thumbs[idx];
+                    const thumbContainer = slider.querySelector('.slider-thumbs');
+                    const scrollLeft = thumbElement.offsetLeft - (thumbContainer.offsetWidth / 2) + (thumbElement.offsetWidth / 2);
+                    thumbContainer.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+                    currentIdx = idx;
+                }
+
+                if(prevBtn && nextBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        let newIdx = currentIdx - 1;
+                        if (newIdx < 0) newIdx = mainImgs.length - 1;
+                        showSlide(newIdx);
+                    });
+                    nextBtn.addEventListener('click', () => {
+                        let newIdx = currentIdx + 1;
+                        if (newIdx >= mainImgs.length) newIdx = 0;
+                        showSlide(newIdx);
+                    });
+                }
+
+                thumbs.forEach((thumb, idx) => {
+                    thumb.addEventListener('click', () => showSlide(idx));
+                });
+            });
         });
 
         let answers = { step1: '', step2: '' };
-
         function selectOption(step, value, element) {
             const stepDiv = document.getElementById(`step-${step}`);
             const cards = stepDiv.querySelectorAll('.option-card');
@@ -474,7 +568,6 @@
             answers[`step${step}`] = value;
             document.getElementById(`btn-next-${step}`).style.display = 'inline-block';
         }
-
         function nextStep(currentStep) {
             if (currentStep === 1 && !answers.step1) { alert('Пожалуйста, выберите модель бани!'); return; }
             if (currentStep === 2 && !answers.step2) { alert('Пожалуйста, укажите желаемую длину!'); return; }
@@ -482,13 +575,11 @@
             document.getElementById(`step-${currentStep + 1}`).classList.add('active');
             updateHeader(currentStep + 1);
         }
-
         function prevStep(currentStep) {
             document.getElementById(`step-${currentStep}`).classList.remove('active');
             document.getElementById(`step-${currentStep - 1}`).classList.add('active');
             updateHeader(currentStep - 1);
         }
-
         function updateHeader(step) {
             const title = document.getElementById('quiz-title');
             const fill = document.getElementById('progress-fill');
@@ -500,7 +591,6 @@
                 fill.style.width = step === 1 ? "33%" : "66%";
             }
         }
-
         function submitQuiz() {
             alert('Заявка принята! Специалисты "Бани-Бочки Премиум" из Александрова уже начали расчет.');
         }
