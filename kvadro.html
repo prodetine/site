@@ -5,107 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Баня Квадро-бочка — Бани-Бочки Премиум</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
         html { scroll-behavior: smooth; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
-        body { background-color: #fcf8f2; color: #3e2723; display: flex; flex-direction: column; min-height: 100vh; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; font-weight: 500; }
+        
+        body { background-color: #f7f5f0; color: #313131; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
 
         .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
         .fade-in-up.in-view { opacity: 1; transform: translateY(0); }
 
-        header { display: flex; justify-content: center; align-items: center; padding: 15px 5%; background: #fffdfa; box-shadow: 0 4px 15px rgba(93, 64, 55, 0.06); position: relative; z-index: 100; border-bottom: 1px solid #f1e6d8; }
-        .logo-block { display: flex; align-items: center; justify-content: center; }
-        .logo-img { height: 100px; width: auto; object-fit: contain; background-color: #26120c; padding: 10px 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #242b27; position: relative; z-index: 100; border-bottom: 1px solid #333d38; }
+        .logo-block { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-img { height: 80px; width: auto; object-fit: contain; }
+        .logo-text { font-size: 13px; color: #c4cdc8; line-height: 1.4; border-left: 1px solid #4a5751; padding-left: 15px; font-weight: 500; letter-spacing: 0.5px; }
         
-        /* === НОВЫЙ ДИЗАЙН СТРАНИЦЫ ТОВАРА === */
-        .hero-product { position: relative; background-image: url('img/kvadro1.jpg'); background-size: cover; background-position: center; padding: 140px 5%; text-align: center; color: white; }
-        .hero-product::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(38, 18, 12, 0.7); z-index: 1; }
-        .hero-product-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
-        .hero-product-content h1 { font-size: 52px; font-weight: 800; margin-bottom: 20px; line-height: 1.2; text-transform: uppercase; }
-        .hero-product-content p { font-size: 18px; line-height: 1.6; margin-bottom: 40px; font-weight: 600; color: #f5ebe0; }
+        .header-right { display: flex; align-items: center; gap: 30px; }
+        .header-socials { display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #4a5751; padding-right: 25px; justify-content: center; }
+        .social-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 7px 14px; border-radius: 6px; text-decoration: none; color: #fff; font-size: 13px; font-weight: 600; transition: all 0.2s ease; }
+        .social-btn.tg { background-color: #27A5E7; }
+        .social-btn.tg:hover { background-color: #1c8ec9; }
+        .social-btn.vk { background-color: #0077FF; }
+        .social-btn.vk:hover { background-color: #0062d6; }
         
-        .btn-main { display: inline-block; background-color: #e65100; color: #fff; padding: 18px 45px; border-radius: 10px; font-size: 18px; font-weight: 800; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(230, 81, 0, 0.3); text-transform: uppercase; letter-spacing: 1px; }
-        .btn-main:hover { background-color: #ff6d00; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(230, 81, 0, 0.4); }
+        .header-contacts { text-align: right; }
+        .btn-nav-contacts { display: inline-flex; align-items: center; justify-content: center; padding: 8px 16px; background-color: #ba8654; color: #fff !important; font-weight: 600; font-size: 13px; letter-spacing: 0.5px; border-radius: 6px; text-decoration: none; transition: 0.3s; margin-bottom: 8px; width: 100%; }
+        .btn-nav-contacts:hover { background-color: #a07043; }
+        .phone-link { font-size: 20px; font-weight: 700; color: #ba8654; text-decoration: none; transition: color 0.2s; }
+        .phone-link:hover { color: #d69f68; }
+        .phone-desc { font-size: 12px; color: #9da8a3; margin-top: 4px; font-weight: 500; }
 
-        .gallery-section { padding: 80px 5%; text-align: center; }
-        .gallery-title { font-size: 22px; font-weight: 700; color: #4e342e; margin-bottom: 30px; }
+        .hero-product { position: relative; background-image: url('img/kvadrofon.jpg'); background-size: cover; background-position: center; background-color: #000; height: 100vh; min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; }
+        .hero-product::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7); z-index: 1; }
+        .hero-product-content { position: relative; z-index: 2; max-width: 1000px; padding: 0 20px; margin-top: -40px; }
+        .hero-product-content h1 { font-size: 68px; font-weight: 800; margin-bottom: 25px; line-height: 1.1; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
+        .hero-product-content p { font-size: 22px; line-height: 1.6; font-weight: 500; color: #eee; text-shadow: 0 2px 15px rgba(0,0,0,0.8); margin: 0; }
         
-        .slider-wrapper { max-width: 1000px; margin: 0 auto; position: relative; }
-        .slider-wrapper.full-width { max-width: 1400px; } 
-        .slider-main { position: relative; width: 100%; height: 550px; border-radius: 16px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1); background: #e0d4c3; }
-        .slider-main img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
-        .slider-main img.active { opacity: 1; pointer-events: auto; }
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; margin-top: 35px; }
+        .hero-btn { padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; transition: 0.3s; letter-spacing: 0.5px; }
+        .hero-btn-primary { background: #ba8654; color: #fff; box-shadow: 0 4px 15px rgba(186, 134, 84, 0.4); }
+        .hero-btn-primary:hover { background: #a07043; transform: translateY(-2px); }
+        .hero-btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(5px); }
+        .hero-btn-secondary:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+
+        .scroll-arrow { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; color: #fff; opacity: 0.7; transition: opacity 0.3s; cursor: pointer; text-decoration: none; }
+        .scroll-arrow:hover { opacity: 1; }
+        .scroll-arrow svg { width: 50px; height: 50px; animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-15px); } 60% { transform: translateY(-7px); } }
+
+        .gallery-section { padding: 0; text-align: center; background: #000; position: relative; }
+        .slider-wrapper { width: 100%; position: relative; line-height: 0; }
+        .slider-main { position: relative; width: 100%; height: 100vh; overflow: hidden; background: #000; }
+        .slider-main::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 250px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); pointer-events: none; z-index: 5; }
+        .slider-main img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease; pointer-events: none; z-index: 1; }
+        .slider-main img.active { opacity: 1; pointer-events: auto; z-index: 2; }
         
-        .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: none; font-size: 24px; color: #3e2723; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 10; transition: 0.3s; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .slider-arrow:hover { background: #e65100; color: #fff; }
-        .slider-arrow.prev { left: 20px; }
-        .slider-arrow.next { right: 20px; }
+        .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1); font-size: 24px; color: #fff; width: 60px; height: 60px; border-radius: 50%; cursor: pointer; z-index: 10; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
+        .slider-arrow:hover { background: #ba8654; border-color: #ba8654; }
+        .slider-arrow.prev { left: 30px; }
+        .slider-arrow.next { right: 30px; }
         
-        .slider-thumbs { display: flex; gap: 12px; justify-content: center; margin-top: 20px; overflow-x: auto; padding-bottom: 10px; }
-        .slider-thumbs img { width: 120px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer; opacity: 0.5; transition: 0.3s; border: 3px solid transparent; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .slider-thumbs img:hover { opacity: 0.8; }
-        .slider-thumbs img.active { opacity: 1; border-color: #e65100; }
+        .slider-thumbs { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 20; display: flex; gap: 15px; width: 90%; max-width: 1200px; overflow-x: auto; padding: 15px 10px; }
+        @media (min-width: 900px) { .slider-thumbs { justify-content: center; } }
+        .slider-thumbs img { width: 120px; height: 80px; object-fit: cover; border-radius: 10px; cursor: pointer; opacity: 0.5; transition: 0.3s; border: 2px solid transparent; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
+        .slider-thumbs img:hover { opacity: 1; }
+        .slider-thumbs img.active { opacity: 1; border-color: #ba8654; transform: scale(1.05); box-shadow: 0 6px 20px rgba(0,0,0,0.8); }
+        .slider-thumbs::-webkit-scrollbar { height: 0px; background: transparent; }
 
-        .pricing-section { background: #fff; padding: 60px; margin: 0 auto 80px auto; max-width: 900px; border-radius: 24px; box-shadow: 0 15px 50px rgba(93, 64, 55, 0.08); border: 1px solid #f1e6d8; }
-        .pricing-content { font-size: 20px; color: #3e2723; line-height: 1.8; text-align: center; margin-bottom: 30px; font-weight: 600; }
-        .pricing-list { font-size: 22px; font-weight: 800; color: #e65100; text-align: center; line-height: 2; margin-bottom: 30px; }
-        .pricing-disclaimer { font-size: 16px; font-weight: 600; color: #8d6e63; text-align: center; padding-top: 20px; border-top: 1px dashed #e0d4c3; }
+        .pricing-section { background: #f7f5f0; padding: 80px 20px; border-top: 1px solid #ebe8e0; border-bottom: 1px solid #ebe8e0; }
+        .pricing-box { max-width: 800px; margin: 0 auto; background: #fff; padding: 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #ebe8e0; }
+        .pricing-content { font-size: 22px; color: #313131; line-height: 1.6; text-align: center; margin-bottom: 30px; font-weight: 700; }
+        .pricing-list { font-size: 20px; font-weight: 600; color: #ba8654; text-align: center; line-height: 1.8; margin-bottom: 30px; }
+        .pricing-disclaimer { font-size: 15px; font-weight: 600; color: #888; text-align: center; padding-top: 20px; border-top: 1px dashed #e0dbce; }
 
-        /* === ЭТАПЫ РАБОТ === */
-        .steps-section { background-color: transparent; padding: 80px 5%; text-align: center; margin-bottom: 0; }
-        .steps-container { max-width: 800px; margin: 0 auto; }
-        .steps-header h2 { font-size: 36px; font-weight: 800; color: #111; margin-bottom: 15px; }
-        .steps-header p { font-size: 16px; color: #666; font-weight: 600; margin-bottom: 50px; }
-        .steps-list { display: flex; flex-direction: column; gap: 40px; text-align: left; }
-        .step-item { display: flex; align-items: flex-start; gap: 25px; }
-        .step-number { font-size: 50px; font-weight: 800; color: #e65100; line-height: 0.8; flex-shrink: 0; }
-        .step-title { font-size: 22px; font-weight: 800; color: #4e342e; margin-bottom: 10px; }
-        .step-desc { font-size: 16px; color: #5d4037; line-height: 1.6; }
+        .steps-section { padding: 100px 5%; text-align: center; }
+        .steps-container { max-width: 900px; margin: 0 auto; }
+        .steps-header h2 { font-size: 32px; font-weight: 700; color: #242b27; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .steps-header p { font-size: 16px; color: #6b6b6b; font-weight: 500; margin-bottom: 50px; }
+        .steps-list { display: flex; flex-direction: column; gap: 30px; text-align: left; }
+        .step-item { display: flex; align-items: flex-start; gap: 25px; background: #fff; padding: 35px; border-radius: 12px; border: 1px solid #ebe8e0; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s; }
+        .step-item:hover { transform: translateY(-3px); border-color: #d3cdbe; }
+        .step-number { font-size: 48px; font-weight: 700; color: #ba8654; line-height: 0.8; flex-shrink: 0; }
+        .step-title { font-size: 20px; font-weight: 700; color: #242b27; margin-bottom: 10px; }
+        .step-desc { font-size: 15px; color: #6b6b6b; line-height: 1.6; font-weight: 500; }
 
-        /* Выставка */
-        .exhibition-section { background: #fffdfa; border-top: 1px solid #f1e6d8; padding: 80px 5% 60px 5%; text-align: center; }
-        .exhibition-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; text-align: left; }
-        .exhibition-info h2 { font-size: 32px; font-weight: 800; color: #4e342e; margin-bottom: 20px; line-height: 1.2; }
-        .exhibition-info p { font-size: 16px; color: #5d4037; line-height: 1.6; margin-bottom: 25px; }
-        .exhibition-features { list-style: none; margin-bottom: 30px; }
-        .exhibition-features li { position: relative; padding-left: 30px; margin-bottom: 12px; font-weight: 600; color: #3e2723; font-size: 15px; }
-        .exhibition-features li::before { content: "✓"; position: absolute; left: 0; color: #e65100; font-weight: 800; font-size: 18px; }
-        .exhibition-cta { background: #fff3e0; border: 1px dashed #ff9100; padding: 30px; border-radius: 12px; text-align: left; }
-        .map-section { width: 100%; height: 450px; border-top: 1px solid #f1e6d8; line-height: 0; }
-
-        /* Подвал */
-        .site-footer { background-color: #1a0c08; color: #ebdccb; padding: 60px 5% 30px 5%; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid rgba(235, 220, 203, 0.1); padding-bottom: 40px; }
-        .footer-logo-block { display: flex; flex-direction: column; gap: 12px; }
-        .footer-logo { height: 60px; object-fit: contain; background-color: #26120c; padding: 8px 12px; border-radius: 8px; }
-        .footer-domain { font-size: 16px; font-weight: 800; color: #ff9100; text-transform: uppercase; letter-spacing: 1px; }
-        .footer-socials { display: flex; gap: 15px; }
-        .footer-social-link { display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 10px; transition: all 0.3s ease; }
-        .footer-social-link.tg { background-color: rgba(39, 165, 231, 0.1); border: 1px solid #27A5E7; color: #27A5E7; }
-        .footer-social-link.tg:hover { background-color: #27A5E7; color: #fff; box-shadow: 0 4px 15px rgba(39, 165, 231, 0.3); }
-        .footer-social-link.vk { background-color: rgba(0, 119, 255, 0.1); border: 1px solid #0077FF; color: #0077FF; }
-        .footer-social-link.vk:hover { background-color: #0077FF; color: #fff; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3); }
+        .site-footer { background-color: #242b27; color: #c4cdc8; padding: 60px 5% 30px 5%; border-top: 1px solid #333d38; }
+        .footer-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid #333d38; padding-bottom: 40px; }
+        .footer-logo-block { display: flex; flex-direction: column; gap: 10px; }
+        .footer-logo { height: 50px; object-fit: contain; }
+        .footer-domain { font-size: 14px; font-weight: 600; color: #ba8654; letter-spacing: 0.5px; }
+        .footer-socials { display: flex; gap: 10px; }
+        .footer-social-link { display: flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 6px; transition: all 0.2s ease; }
+        .footer-social-link.tg { background-color: rgba(30, 136, 229, 0.15); border: 1px solid #1E88E5; color: #1E88E5; }
+        .footer-social-link.tg:hover { background-color: #1E88E5; color: #fff; }
+        .footer-social-link.vk { background-color: rgba(0, 119, 255, 0.15); border: 1px solid #0077FF; color: #0077FF; }
+        .footer-social-link.vk:hover { background-color: #0077FF; color: #fff; }
         .footer-contacts { text-align: right; }
-        .footer-phone { display: block; font-size: 26px; font-weight: 800; color: #fff; text-decoration: none; transition: color 0.3s ease; }
-        .footer-phone:hover { color: #ff9100; }
-        .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 14px; color: #8d6e63; }
+        .footer-phone { display: block; font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; transition: color 0.2s ease; }
+        .footer-phone:hover { color: #ba8654; }
+        .footer-bottom { max-width: 1000px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 13px; color: #7a8781; font-weight: 500; }
 
         @media (max-width: 990px) {
-            .hero-product-content h1 { font-size: 38px; }
-            .pricing-section { padding: 40px 20px; margin: 0 20px 60px 20px; }
-            .exhibition-container, .footer-container { grid-template-columns: 1fr; text-align: center; }
+            header { flex-direction: column; text-align: center; gap: 15px; }
+            .header-right { flex-direction: column; gap: 15px; }
+            .header-socials { border-right: none; padding-right: 0; flex-direction: row; }
+            .logo-text { border-left: none; padding-left: 0; border-top: 1px solid #333d38; padding-top: 10px; margin-top: 5px; }
+            .header-contacts, .footer-container { text-align: center; }
+            .footer-container { flex-direction: column; }
             .footer-logo-block, .footer-contacts { align-items: center; }
-            .exhibition-info, .exhibition-cta { text-align: left; }
+            .hero-product-content h1 { font-size: 48px; }
+            .pricing-box { padding: 40px 20px; }
         }
         @media (max-width: 650px) {
-            .hero-product { padding: 100px 20px; }
-            .hero-product-content h1 { font-size: 28px; }
-            .slider-main { height: 300px; }
+            .hero-product-content h1 { font-size: 32px; }
+            .hero-product-content p { font-size: 16px; }
+            .hero-buttons { flex-direction: column; gap: 15px; }
             .slider-thumbs img { width: 80px; height: 60px; }
+            .slider-arrow { width: 45px; height: 45px; font-size: 18px; left: 15px; }
+            .slider-arrow.next { right: 15px; left: auto; }
             .pricing-content, .pricing-list { font-size: 18px; }
-            .steps-item { flex-direction: row; gap: 15px; }
-            .step-number { font-size: 40px; }
-            .step-title { font-size: 18px; }
+            .step-item { flex-direction: column; text-align: center; align-items: center; padding: 30px 20px; }
+            .step-number { font-size: 40px; margin-bottom: 0; }
             .footer-socials { flex-direction: column; width: 100%; gap: 10px; }
             .footer-social-link { justify-content: center; }
         }
@@ -113,8 +132,20 @@
 </head>
 <body>
     <header>
-        <div class="logo-block">
-            <a href="index.html#catalog"><img src="img/logo.png" alt="Бани-Бочки Премиум" class="logo-img"></a>
+        <a href="index.html" class="logo-block">
+            <img src="img/logo.png" alt="Бани-Бочки Премиум" class="logo-img">
+            <div class="logo-text">Собственное производство<br>бань-бочек в г. Александров</div>
+        </a>
+        <div class="header-right">
+            <div class="header-socials">
+                <a href="https://t.me/banibothki" class="social-btn tg" target="_blank">Telegram</a>
+                <a href="https://vk.com/id1087359257" class="social-btn vk" target="_blank">ВКонтакте</a>
+            </div>
+            <div class="header-contacts">
+                <a href="contacts.html" class="btn-nav-contacts">Все Контакты</a>
+                <a href="tel:+79157750909" class="phone-link">+7 (915) 775-09-09</a>
+                <div class="phone-desc">Производство в Александрове</div>
+            </div>
         </div>
     </header>
 
@@ -122,14 +153,17 @@
         <div class="hero-product-content">
             <h1>Баня Квадро-бочка</h1>
             <p>Выполнена из ели камерной сушки, лунный паз толщиной 45мм, мебель вручную изготовлена из осины</p>
-            <a href="tel:+79157750909" class="btn-main">Связаться с нами</a>
+            <div class="hero-buttons">
+                <a href="tel:+79157750909" class="hero-btn hero-btn-primary">Связаться с нами</a>
+                <a href="index.html#catalog" class="hero-btn hero-btn-secondary">Вернуться в каталог</a>
+            </div>
         </div>
+        <a href="#gallery" class="scroll-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
     </div>
 
-    <section class="gallery-section fade-in-up">
-        <h2 class="gallery-title">Данный экземпляр - это один из вариантов как может выглядеть ваша баня</h2>
-        
-        <!-- ВЕРХНЯЯ ГАЛЕРЕЯ (5 фото) -->
+    <section id="gallery" class="gallery-section fade-in-up">
         <div class="slider-wrapper">
             <div class="slider-main">
                 <img src="img/kvadro1.jpg" class="active" loading="lazy">
@@ -137,7 +171,6 @@
                 <img src="img/kvadro3.jpg" loading="lazy">
                 <img src="img/kvadro4.jpg" loading="lazy">
                 <img src="img/kvadro5.jpg" loading="lazy">
-                
                 <button class="slider-arrow prev">&#10094;</button>
                 <button class="slider-arrow next">&#10095;</button>
             </div>
@@ -151,28 +184,26 @@
         </div>
     </section>
 
-    <!-- РАЗМЕРЫ И ЦЕНЫ -->
     <div class="pricing-section fade-in-up">
-        <div class="pricing-content">
-            Размеры:<br>
-            Ширина бани от 2,1 до 2,4 м<br>
-            Длина бани от 2 до 6 м
-        </div>
-        <div class="pricing-list">
-            2x2,1 - 210 000 руб.<br>
-            3x2,1 - 280 000 руб.<br>
-            4x2,1 - 335 000 руб.<br>
-            5x2,1 - 405 000 руб.<br>
-            6x2,1 - 450 000 руб.
-        </div>
-        <div class="pricing-disclaimer">
-            *В стоимость входит сборка бани на участке
+        <div class="pricing-box">
+            <div class="pricing-content">
+                Размеры:<br>
+                Ширина бани от 2,1 до 2,4 м<br>
+                Длина бани от 2 до 6 м
+            </div>
+            <div class="pricing-list">
+                2x2,1 - 210 000 руб.<br>
+                3x2,1 - 280 000 руб.<br>
+                4x2,1 - 335 000 руб.<br>
+                5x2,1 - 405 000 руб.<br>
+                6x2,1 - 450 000 руб.
+            </div>
+            <div class="pricing-disclaimer">*В стоимость входит сборка бани на участке</div>
         </div>
     </div>
 
-    <!-- НИЖНЯЯ ГАЛЕРЕЯ НА ВЕСЬ ЭКРАН (8 фото) -->
-    <section class="gallery-section fade-in-up" style="padding-top: 0;">
-        <div class="slider-wrapper full-width">
+    <section class="gallery-section fade-in-up">
+        <div class="slider-wrapper">
             <div class="slider-main">
                 <img src="img/kvadro6.jpg" class="active" loading="lazy">
                 <img src="img/kvadro7.jpg" loading="lazy">
@@ -182,7 +213,8 @@
                 <img src="img/kvadro11.jpg" loading="lazy">
                 <img src="img/kvadro12.jpg" loading="lazy">
                 <img src="img/kvadro13.jpg" loading="lazy">
-                
+                <img src="img/kvadro14.jpg" loading="lazy">
+                <img src="img/kvadro15.jpg" loading="lazy">
                 <button class="slider-arrow prev">&#10094;</button>
                 <button class="slider-arrow next">&#10095;</button>
             </div>
@@ -195,11 +227,12 @@
                 <img src="img/kvadro11.jpg" loading="lazy">
                 <img src="img/kvadro12.jpg" loading="lazy">
                 <img src="img/kvadro13.jpg" loading="lazy">
+                <img src="img/kvadro14.jpg" loading="lazy">
+                <img src="img/kvadro15.jpg" loading="lazy">
             </div>
         </div>
     </section>
 
-    <!-- === ЭТАПЫ РАБОТ === -->
     <section class="steps-section fade-in-up">
         <div class="steps-container">
             <div class="steps-header">
@@ -232,39 +265,6 @@
         </div>
     </section>
 
-    <!-- БЛОК ВЫСТАВКИ -->
-    <section class="exhibition-section">
-        <div class="exhibition-container">
-            <div class="exhibition-info fade-in-up">
-                <h2>Приезжайте на нашу выставочную площадку!</h2>
-                <p>Выбирать баню по интернету — хорошо, но потрогать её вживую — бесценно. Мы находимся прямо в Александрове и всегда рады гостям. Приезжайте всей семьей!</p>
-                <ul class="exhibition-features">
-                    <li>Все популярные модели (Викинг, Квадро, Классика) стоят в собранном виде</li>
-                    <li>Можно зайти внутрь, оценить качество сборки, ширину полков и запах кедра</li>
-                    <li>Консультация от технолога производства прямо на месте</li>
-                    <li>Честные цены без накруток посредников</li>
-                </ul>
-            </div>
-            <div class="exhibition-cta fade-in-up">
-                <p style="margin: 0 0 15px 0; font-size: 16px; color: #5d4037; font-weight: 600; line-height: 1.5;">
-                    🕒 <strong>Режим работы:</strong><br>Среда - Воскресенье 10:00 - 17:00
-                </p>
-                <p style="margin: 0 0 15px 0; font-size: 16px; color: #5d4037; font-weight: 600; line-height: 1.5;">
-                    📍 <strong>Наш адрес:</strong><br>Владимирская область, д. Площево, Центральная ул., 23
-                </p>
-                <p style="margin: 0; font-size: 14px; color: #5d4037; font-weight: 600;">
-                    📞 Телефон для связи:<br><a href="tel:+79157750909" style="color: #e65100; font-size: 18px; text-decoration: none; display: inline-block; margin-top: 5px;">+7 (915) 775-09-09</a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- КАРТА -->
-    <div class="map-section fade-in-up">
-        <iframe src="https://yandex.ru/map-widget/v1/?text=Владимирская+область,+деревня+Площево,+Центральная+улица,+23" width="100%" height="100%" frameborder="0" allowfullscreen="true" loading="lazy"></iframe>
-    </div>
-
-    <!-- ПОДВАЛ -->
     <footer class="site-footer fade-in-up">
         <div class="footer-container">
             <div class="footer-logo-block">
@@ -272,28 +272,27 @@
                 <div class="footer-domain">банипремиум.рф</div>
             </div>
             <div class="footer-socials">
-                <a href="https://t.me/banibothki" class="footer-social-link tg" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>Telegram</a>
-                <a href="https://vk.com/id1087359257" class="footer-social-link vk" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.077 23.994c-8.91 0-14.07-6.147-14.24-16.51h4.48c.115 7.822 3.633 11.134 6.398 11.782v-11.78h4.286v6.721c2.723-.298 5.626-3.411 6.556-6.722h4.286c-.732 4.14-3.766 7.21-5.836 8.243 2.07 1.034 5.405 3.86 6.442 8.266h-4.664c-.818-3.08-3.435-5.556-6.784-5.88v5.88h-1.024z"/></svg>ВКонтакте</a>
+                <a href="https://t.me/banibothki" class="footer-social-link tg" target="_blank">Telegram</a>
+                <a href="https://vk.com/id1087359257" class="footer-social-link vk" target="_blank">ВКонтакте</a>
             </div>
             <div class="footer-contacts">
+                <a href="contacts.html" class="btn-nav-contacts" style="margin-bottom: 15px;">Все Контакты</a>
                 <a href="tel:+79157750909" class="footer-phone">+7 (915) 775-09-09</a>
             </div>
         </div>
-        <div class="footer-bottom">&copy; 2026 Бани бочки премиум</div>
+        <div class="footer-bottom">&copy; 2026 Бани-Бочки Премиум. Все права защищены.</div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Анимации при скролле
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in-view'); });
             }, { threshold: 0.1 }); 
             document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
-            // Логика слайдеров
             const sliders = document.querySelectorAll('.slider-wrapper');
             sliders.forEach(slider => {
-                const mainImgs = slider.querySelectorAll('.slider-main img');
+                const mainImgs = slider.querySelectorAll('.slider-main > img');
                 const thumbs = slider.querySelectorAll('.slider-thumbs img');
                 const prevBtn = slider.querySelector('.slider-arrow.prev');
                 const nextBtn = slider.querySelector('.slider-arrow.next');
@@ -304,6 +303,11 @@
                     thumbs.forEach(thumb => thumb.classList.remove('active'));
                     mainImgs[idx].classList.add('active');
                     thumbs[idx].classList.add('active');
+                    
+                    const thumbElement = thumbs[idx];
+                    const thumbContainer = slider.querySelector('.slider-thumbs');
+                    const scrollLeft = thumbElement.offsetLeft - (thumbContainer.offsetWidth / 2) + (thumbElement.offsetWidth / 2);
+                    thumbContainer.scrollTo({ left: scrollLeft, behavior: 'smooth' });
                     currentIdx = idx;
                 }
 
