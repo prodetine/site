@@ -5,95 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Наши Контакты — Бани-Бочки Премиум</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
         html { scroll-behavior: smooth; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
-        body { background-color: #fcf8f2; color: #3e2723; display: flex; flex-direction: column; min-height: 100vh; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; font-weight: 500; }
+        
+        body { background-color: #f7f5f0; color: #313131; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
 
         .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
         .fade-in-up.in-view { opacity: 1; transform: translateY(0); }
 
-        /* === ШАПКА === */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fffdfa; box-shadow: 0 4px 15px rgba(93, 64, 55, 0.06); position: relative; z-index: 100; border-bottom: 1px solid #f1e6d8; }
-        .logo-block { display: flex; align-items: center; gap: 15px; }
-        .logo-img { height: 100px; width: auto; object-fit: contain; background-color: #26120c; padding: 10px 15px; border-radius: 12px; }
-        .logo-text { font-size: 13px; color: #6d4c41; line-height: 1.3; border-left: 2px solid #e0d4c3; padding-left: 15px; font-weight: 600; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #242b27; position: relative; z-index: 100; border-bottom: 1px solid #333d38; }
+        .logo-block { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-img { height: 80px; width: auto; object-fit: contain; }
+        .logo-text { font-size: 13px; color: #c4cdc8; line-height: 1.4; border-left: 1px solid #4a5751; padding-left: 15px; font-weight: 500; letter-spacing: 0.5px; }
         
         .header-right { display: flex; align-items: center; gap: 30px; }
-        .header-socials { display: flex; flex-direction: column; gap: 8px; border-right: 2px solid #e0d4c3; padding-right: 25px; justify-content: center; }
-        .social-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 16px; border-radius: 20px; text-decoration: none; color: #fff; font-size: 13px; font-weight: 700; transition: all 0.3s ease; }
+        .header-socials { display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #4a5751; padding-right: 25px; justify-content: center; }
+        .social-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 7px 14px; border-radius: 6px; text-decoration: none; color: #fff; font-size: 13px; font-weight: 600; transition: all 0.2s ease; }
         .social-btn.tg { background-color: #27A5E7; }
-        .social-btn.tg:hover { background-color: #1c8ec9; transform: translateY(-2px); }
+        .social-btn.tg:hover { background-color: #1c8ec9; }
         .social-btn.vk { background-color: #0077FF; }
-        .social-btn.vk:hover { background-color: #0062d6; transform: translateY(-2px); }
-        .header-contacts { text-align: right; }
-        .phone-link { font-size: 22px; font-weight: 800; color: #e65100; text-decoration: none; transition: color 0.2s; }
-        .phone-link:hover { color: #ff6d00; }
-        .phone-desc { font-size: 12px; color: #8d6e63; margin-top: 3px; font-weight: 600; }
+        .social-btn.vk:hover { background-color: #0062d6; }
         
-        /* Кнопка навигации в шапке */
-        .btn-nav-contacts { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; background-color: #ff9100; color: #fff !important; font-weight: 800; font-size: 14px; text-transform: uppercase; border-radius: 10px; text-decoration: none; transition: 0.3s; box-shadow: 0 4px 15px rgba(255, 145, 0, 0.3); margin-bottom: 10px; width: 100%; }
-        .btn-nav-contacts:hover { background-color: #e68200; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 145, 0, 0.4); }
+        .header-contacts { text-align: right; }
+        .btn-nav-contacts { display: inline-flex; align-items: center; justify-content: center; padding: 8px 16px; background-color: #ba8654; color: #fff !important; font-weight: 600; font-size: 13px; letter-spacing: 0.5px; border-radius: 6px; text-decoration: none; transition: 0.3s; margin-bottom: 8px; width: 100%; }
+        .btn-nav-contacts:hover { background-color: #a07043; }
+        .phone-link { font-size: 20px; font-weight: 700; color: #ba8654; text-decoration: none; transition: color 0.2s; }
+        .phone-link:hover { color: #d69f68; }
+        .phone-desc { font-size: 12px; color: #9da8a3; margin-top: 4px; font-weight: 500; }
 
-        /* === СТРАНИЦА КОНТАКТОВ === */
-        .contacts-bg { background-image: url('img/zadniyfon.jpg'); background-size: cover; background-position: center; position: relative; flex: 1; padding: 80px 5%; }
-        .contacts-bg::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(252, 248, 242, 0.95); z-index: 1; }
+        .contacts-bg { background-image: url('img/zadniyfon.jpg'); background-size: cover; background-position: center; position: relative; flex: 1; padding: 60px 5%; }
+        .contacts-bg::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(247, 245, 240, 0.95); z-index: 1; }
         
         .contacts-wrapper { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
-        .page-title { font-size: 46px; font-weight: 800; color: #3e2723; margin-bottom: 50px; text-align: center; }
+        .btn-back-main { display: inline-flex; justify-content: center; align-items: center; padding: 12px 25px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; background: transparent; border: 2px solid #ba8654; color: #ba8654; border-radius: 8px; text-decoration: none; transition: 0.3s; margin-bottom: 30px; }
+        .btn-back-main:hover { background: #ba8654; color: #fff; }
         
-        .contacts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 60px; }
-        .contact-card { background: #fff; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 40px rgba(93, 64, 55, 0.08); border: 1px solid #f1e6d8; text-align: center; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; }
-        .contact-card:hover { transform: translateY(-5px); box-shadow: 0 15px 45px rgba(93, 64, 55, 0.12); }
-        .contact-card h3 { font-size: 22px; font-weight: 800; color: #4e342e; margin-bottom: 15px; }
-        .contact-card p { font-size: 15px; color: #8d6e63; font-weight: 600; margin-bottom: 25px; line-height: 1.5; }
+        .page-title { font-size: 46px; font-weight: 800; color: #242b27; margin-bottom: 50px; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
         
-        .contact-phone { font-size: 28px; font-weight: 800; color: #e65100; text-decoration: none; margin-bottom: 20px; display: block; }
+        .contacts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 80px; }
+        .contact-card { background: #fff; padding: 50px 30px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); border: 1px solid #ebe8e0; text-align: center; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; }
+        .contact-card:hover { transform: translateY(-5px); border-color: #ba8654; }
+        .contact-card h3 { font-size: 24px; font-weight: 700; color: #242b27; margin-bottom: 15px; }
+        .contact-card p { font-size: 16px; color: #5a5a5a; font-weight: 600; margin-bottom: 30px; line-height: 1.6; }
         
-        .btn-action { display: block; padding: 16px; border-radius: 12px; font-size: 16px; font-weight: 800; color: #fff; text-decoration: none; transition: 0.3s; width: 100%; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .btn-action.call { background: #e65100; box-shadow: 0 4px 15px rgba(230, 81, 0, 0.25); }
-        .btn-action.call:hover { background: #bf4300; }
-        .btn-action.tg { background: #27A5E7; box-shadow: 0 4px 15px rgba(39, 165, 231, 0.25); }
-        .btn-action.max { background: #333; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
-        .btn-action.vk { background: #0077FF; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.25); }
-        .btn-action:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        .contact-phone { font-size: 32px; font-weight: 800; color: #ba8654; text-decoration: none; margin-bottom: 25px; display: block; }
+        
+        .btn-action { display: block; padding: 18px; border-radius: 12px; font-size: 16px; font-weight: 700; color: #fff; text-decoration: none; transition: 0.3s; width: 100%; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn-action.call { background: #ba8654; box-shadow: 0 4px 15px rgba(186, 134, 84, 0.3); }
+        .btn-action.call:hover { background: #a07043; transform: translateY(-2px); }
+        .btn-action.tg { background: #1E88E5; }
+        .btn-action.max { background: #444; }
+        .btn-action.vk { background: #0077FF; }
+        .btn-action:hover { transform: translateY(-2px); filter: brightness(1.1); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
 
-        /* Карта */
-        .address-section { background: #fffdfa; border-radius: 24px; padding: 50px; text-align: center; box-shadow: 0 10px 40px rgba(93, 64, 55, 0.05); border: 1px solid #f1e6d8; }
-        .address-section h2 { font-size: 32px; font-weight: 800; color: #4e342e; margin-bottom: 20px; }
-        .address-text { font-size: 18px; color: #5d4037; font-weight: 600; margin-bottom: 10px; }
-        .map-container { width: 100%; height: 450px; border-radius: 16px; overflow: hidden; margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 4px solid #fff; }
+        .address-section { background: #fff; border-radius: 24px; padding: 60px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #ebe8e0; margin-bottom: 40px; }
+        .address-section h2 { font-size: 36px; font-weight: 800; color: #242b27; margin-bottom: 25px; text-transform: uppercase; }
+        .address-text { font-size: 20px; color: #5a5a5a; font-weight: 600; margin-bottom: 15px; }
+        .map-container { width: 100%; height: 500px; border-radius: 16px; overflow: hidden; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 4px solid #fff; }
 
-        /* === ПОДВАЛ === */
-        .site-footer { background-color: #1a0c08; color: #ebdccb; padding: 60px 5% 30px 5%; margin-top: auto; position: relative; z-index: 10; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid rgba(235, 220, 203, 0.1); padding-bottom: 40px; }
-        .footer-logo-block { display: flex; flex-direction: column; gap: 12px; }
-        .footer-logo { height: 60px; object-fit: contain; background-color: #26120c; padding: 8px 12px; border-radius: 8px; }
-        .footer-domain { font-size: 16px; font-weight: 800; color: #ff9100; text-transform: uppercase; letter-spacing: 1px; }
-        .footer-socials { display: flex; gap: 15px; }
-        .footer-social-link { display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 10px; transition: all 0.3s ease; }
-        .footer-social-link.tg { background-color: rgba(39, 165, 231, 0.1); border: 1px solid #27A5E7; color: #27A5E7; }
-        .footer-social-link.tg:hover { background-color: #27A5E7; color: #fff; box-shadow: 0 4px 15px rgba(39, 165, 231, 0.3); }
-        .footer-social-link.vk { background-color: rgba(0, 119, 255, 0.1); border: 1px solid #0077FF; color: #0077FF; }
-        .footer-social-link.vk:hover { background-color: #0077FF; color: #fff; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3); }
+        .site-footer { background-color: #242b27; color: #c4cdc8; padding: 60px 5% 30px 5%; margin-top: auto; position: relative; z-index: 10; border-top: 1px solid #333d38; }
+        .footer-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid #333d38; padding-bottom: 40px; }
+        .footer-logo-block { display: flex; flex-direction: column; gap: 10px; }
+        .footer-logo { height: 50px; object-fit: contain; }
+        .footer-domain { font-size: 14px; font-weight: 600; color: #ba8654; letter-spacing: 0.5px; }
+        .footer-socials { display: flex; gap: 10px; }
+        .footer-social-link { display: flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 6px; transition: all 0.2s ease; }
+        .footer-social-link.tg { background-color: rgba(30, 136, 229, 0.15); border: 1px solid #1E88E5; color: #1E88E5; }
+        .footer-social-link.tg:hover { background-color: #1E88E5; color: #fff; }
+        .footer-social-link.vk { background-color: rgba(0, 119, 255, 0.15); border: 1px solid #0077FF; color: #0077FF; }
+        .footer-social-link.vk:hover { background-color: #0077FF; color: #fff; }
         .footer-contacts { text-align: right; }
-        .footer-phone { display: block; font-size: 26px; font-weight: 800; color: #fff; text-decoration: none; transition: color 0.3s ease; }
-        .footer-phone:hover { color: #ff9100; }
-        .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 14px; color: #8d6e63; }
+        .footer-phone { display: block; font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; transition: color 0.2s ease; }
+        .footer-phone:hover { color: #ba8654; }
+        .footer-bottom { max-width: 1000px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 13px; color: #7a8781; font-weight: 500; }
 
         @media (max-width: 990px) {
             .contacts-grid { grid-template-columns: 1fr; }
             header { flex-direction: column; text-align: center; gap: 15px; }
             .header-right { flex-direction: column; gap: 15px; }
             .header-socials { border-right: none; padding-right: 0; flex-direction: row; }
-            .logo-text { border-left: none; padding-left: 0; border-top: 1px solid #e0d4c3; padding-top: 10px; margin-top: 5px; }
+            .logo-text { border-left: none; padding-left: 0; border-top: 1px solid #333d38; padding-top: 10px; margin-top: 5px; }
             .header-contacts { text-align: center; }
             .footer-container { flex-direction: column; text-align: center; }
             .footer-logo-block, .footer-contacts { align-items: center; }
         }
         @media (max-width: 650px) {
-            .address-section { padding: 30px 20px; }
-            .page-title { font-size: 32px; }
+            .address-section { padding: 40px 20px; }
+            .page-title { font-size: 38px; }
             .map-container { height: 300px; }
             .footer-socials { flex-direction: column; width: 100%; gap: 10px; }
             .footer-social-link { justify-content: center; }
@@ -103,10 +102,10 @@
 <body>
 
     <header>
-        <div class="logo-block">
-            <a href="index.html#catalog"><img src="img/logo.png" alt="Бани-Бочки Премиум" class="logo-img"></a>
+        <a href="index.html" class="logo-block">
+            <img src="img/logo.png" alt="Бани-Бочки Премиум" class="logo-img">
             <div class="logo-text">Собственное производство<br>бань-бочек в г. Александров</div>
-        </div>
+        </a>
         <div class="header-right">
             <div class="header-socials">
                 <a href="https://t.me/banibothki" class="social-btn tg" target="_blank">Telegram</a>
@@ -122,6 +121,9 @@
 
     <div class="contacts-bg">
         <div class="contacts-wrapper fade-in-up">
+            <div style="text-align: center;">
+                <a href="index.html" class="btn-back-main">← Вернуться в каталог</a>
+            </div>
             <h1 class="page-title">Свяжитесь с нами</h1>
             
             <div class="contacts-grid">
@@ -185,7 +187,7 @@
                 <a href="tel:+79157750909" class="footer-phone">+7 (915) 775-09-09</a>
             </div>
         </div>
-        <div class="footer-bottom">&copy; 2026 Бани бочки премиум</div>
+        <div class="footer-bottom">&copy; 2026 Бани-Бочки Премиум. Все права защищены.</div>
     </footer>
 
     <script>
