@@ -99,13 +99,13 @@
         .btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; color: #ba8654; background: transparent; border: 1px solid #ba8654; cursor: pointer; transition: all 0.2s ease; margin-top: 10px; text-decoration: none; }
         .btn-outline:hover { background: #ba8654; color: #fff; }
 
-        /* === ПОРТФОЛИО === */
+        /* ПОРТФОЛИО */
         .portfolio-header { text-align: center; padding: 80px 20px 40px 20px; background-color: #f7f5f0; }
         .portfolio-header h2 { font-size: 38px; font-weight: 700; color: #242b27; letter-spacing: -0.5px; margin: 0; }
         .slider-section { padding: 0; background: #000; position: relative; }
         .slider-wrapper { width: 100%; position: relative; line-height: 0; }
         .slider-main { position: relative; width: 100%; height: 100vh; overflow: hidden; background: #000; }
-        .slider-main::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 250px; background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); pointer-events: none; z-index: 5; }
+        .slider-main::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 250px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); pointer-events: none; z-index: 5; }
         .slider-main img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease; pointer-events: none; z-index: 1; }
         .slider-main img.active { opacity: 1; pointer-events: auto; z-index: 2; }
         
@@ -114,10 +114,11 @@
         .slider-arrow.prev { left: 30px; }
         .slider-arrow.next { right: 30px; }
         
-        .slider-thumbs { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 20; display: flex; gap: 15px; width: 90%; max-width: 1200px; overflow-x: auto; padding: 10px; }
+        /* ВЫНЕСЕННЫЕ МИНИАТЮРЫ (РЕШЕНИЕ ПРОБЛЕМЫ) */
+        .slider-thumbs { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 20; display: flex; gap: 15px; width: 90%; max-width: 1200px; overflow-x: auto; padding: 15px 10px; }
         @media (min-width: 900px) { .slider-thumbs { justify-content: center; } }
-        .slider-thumbs img { width: 120px; height: 80px; object-fit: cover; border-radius: 10px; cursor: pointer; opacity: 0.4; transition: 0.3s; border: 2px solid transparent; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
-        .slider-thumbs img:hover { opacity: 0.9; }
+        .slider-thumbs img { width: 120px; height: 80px; object-fit: cover; border-radius: 10px; cursor: pointer; opacity: 0.5; transition: 0.3s; border: 2px solid transparent; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .slider-thumbs img:hover { opacity: 1; }
         .slider-thumbs img.active { opacity: 1; border-color: #ba8654; transform: scale(1.05); box-shadow: 0 6px 20px rgba(0,0,0,0.8); }
         .slider-thumbs::-webkit-scrollbar { height: 0px; background: transparent; }
 
@@ -133,7 +134,7 @@
         .step-title { font-size: 20px; font-weight: 700; color: #242b27; margin-bottom: 10px; }
         .step-desc { font-size: 15px; color: #6b6b6b; line-height: 1.6; font-weight: 500; }
 
-        /* ВЫСТАВКА (СВЕТЛЫЙ) */
+        /* ВЫСТАВКА */
         .exhibition-section { background: #fff; padding: 80px 5% 60px 5%; border-top: 1px solid #ebe8e0; }
         .exhibition-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .exhibition-info h2 { font-size: 32px; font-weight: 700; color: #242b27; margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.5px; }
@@ -176,7 +177,6 @@
             .catalog-image { flex: none; width: 100%; height: 50vh; }
             .catalog-info { flex: none; width: 100%; height: 50vh; padding: 30px 20px; align-items: center; text-align: center; }
             .catalog-title { font-size: 28px; }
-            
             .equipment-container { grid-template-columns: 1fr; gap: 40px; }
             .equipment-images { max-width: 500px; margin: 0 auto; min-height: 380px; }
             .equipment-info { text-align: center; }
@@ -382,7 +382,7 @@
         </div>
     </section>
 
-    <!-- НОВОЕ ПОРТФОЛИО НА 100VH -->
+    <!-- ПОРТФОЛИО -->
     <div class="portfolio-header fade-in-up">
         <h2>Наше портфолио</h2>
     </div>
@@ -401,24 +401,22 @@
                 <img src="img/port10.jpg" loading="lazy">
                 <img src="img/port11.jpg" loading="lazy">
                 <img src="img/port12.jpg" loading="lazy">
-                
                 <button class="slider-arrow prev">&#10094;</button>
                 <button class="slider-arrow next">&#10095;</button>
-                
-                <div class="slider-thumbs">
-                    <img src="img/port1.jpg" class="active" loading="lazy">
-                    <img src="img/port2.jpg" loading="lazy">
-                    <img src="img/port3.jpg" loading="lazy">
-                    <img src="img/port4.jpg" loading="lazy">
-                    <img src="img/port5.jpg" loading="lazy">
-                    <img src="img/port6.jpg" loading="lazy">
-                    <img src="img/port7.jpg" loading="lazy">
-                    <img src="img/port8.jpg" loading="lazy">
-                    <img src="img/port9.jpg" loading="lazy">
-                    <img src="img/port10.jpg" loading="lazy">
-                    <img src="img/port11.jpg" loading="lazy">
-                    <img src="img/port12.jpg" loading="lazy">
-                </div>
+            </div>
+            <div class="slider-thumbs">
+                <img src="img/port1.jpg" class="active" loading="lazy">
+                <img src="img/port2.jpg" loading="lazy">
+                <img src="img/port3.jpg" loading="lazy">
+                <img src="img/port4.jpg" loading="lazy">
+                <img src="img/port5.jpg" loading="lazy">
+                <img src="img/port6.jpg" loading="lazy">
+                <img src="img/port7.jpg" loading="lazy">
+                <img src="img/port8.jpg" loading="lazy">
+                <img src="img/port9.jpg" loading="lazy">
+                <img src="img/port10.jpg" loading="lazy">
+                <img src="img/port11.jpg" loading="lazy">
+                <img src="img/port12.jpg" loading="lazy">
             </div>
         </div>
     </section>
@@ -456,7 +454,7 @@
         </div>
     </section>
 
-    <!-- БЛОК ВЫСТАВКИ И КАРТА -->
+    <!-- ВЫСТАВКА И КАРТА -->
     <section class="exhibition-section">
         <div class="exhibition-container">
             <div class="exhibition-info fade-in-up">
@@ -518,7 +516,7 @@
             }, { threshold: 0.1 }); 
             document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
-            // Универсальный скрипт для ВСЕХ слайдеров на странице (включая новое портфолио)
+            // Универсальный скрипт для ВСЕХ слайдеров
             const sliders = document.querySelectorAll('.slider-wrapper');
             sliders.forEach(slider => {
                 const mainImgs = slider.querySelectorAll('.slider-main > img');
