@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бани-Бочки Премиум в Александрове — Теплый уют под ключ</title>
     <style>
-        /* Элегантный шрифт Inter */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        /* Более интересный и плотный шрифт Montserrat */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
         
         html { scroll-behavior: smooth; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        /* Базовая жирность теперь 500 вместо 400 */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; font-weight: 500; }
         
         body { background-color: #f7f5f0; color: #313131; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
 
@@ -20,49 +21,49 @@
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #242b27; position: relative; z-index: 100; border-bottom: 1px solid #333d38; }
         .logo-block { display: flex; align-items: center; gap: 15px; text-decoration: none; }
         .logo-img { height: 80px; width: auto; object-fit: contain; }
-        .logo-text { font-size: 13px; color: #c4cdc8; line-height: 1.4; border-left: 1px solid #4a5751; padding-left: 15px; font-weight: 400; letter-spacing: 0.5px; }
+        .logo-text { font-size: 13px; color: #c4cdc8; line-height: 1.4; border-left: 1px solid #4a5751; padding-left: 15px; font-weight: 500; letter-spacing: 0.5px; }
         
         .header-right { display: flex; align-items: center; gap: 30px; }
         .header-socials { display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #4a5751; padding-right: 25px; justify-content: center; }
-        .social-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 7px 14px; border-radius: 6px; text-decoration: none; color: #fff; font-size: 13px; font-weight: 500; transition: all 0.2s ease; }
+        .social-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 7px 14px; border-radius: 6px; text-decoration: none; color: #fff; font-size: 13px; font-weight: 600; transition: all 0.2s ease; }
         .social-btn.tg { background-color: #27A5E7; }
         .social-btn.tg:hover { background-color: #1c8ec9; }
         .social-btn.vk { background-color: #0077FF; }
         .social-btn.vk:hover { background-color: #0062d6; }
         
         .header-contacts { text-align: right; }
-        .btn-nav-contacts { display: inline-flex; align-items: center; justify-content: center; padding: 8px 16px; background-color: #ba8654; color: #fff !important; font-weight: 500; font-size: 13px; letter-spacing: 0.5px; border-radius: 6px; text-decoration: none; transition: 0.3s; margin-bottom: 8px; width: 100%; }
+        .btn-nav-contacts { display: inline-flex; align-items: center; justify-content: center; padding: 8px 16px; background-color: #ba8654; color: #fff !important; font-weight: 600; font-size: 13px; letter-spacing: 0.5px; border-radius: 6px; text-decoration: none; transition: 0.3s; margin-bottom: 8px; width: 100%; }
         .btn-nav-contacts:hover { background-color: #a07043; }
-        .phone-link { font-size: 20px; font-weight: 600; color: #ba8654; text-decoration: none; transition: color 0.2s; }
+        .phone-link { font-size: 20px; font-weight: 700; color: #ba8654; text-decoration: none; transition: color 0.2s; }
         .phone-link:hover { color: #d69f68; }
-        .phone-desc { font-size: 12px; color: #9da8a3; margin-top: 4px; font-weight: 400; }
+        .phone-desc { font-size: 12px; color: #9da8a3; margin-top: 4px; font-weight: 500; }
 
         /* === ГЛАВНЫЙ ЭКРАН (HERO) === */
         .top-bg-wrapper { position: relative; background-image: url('img/zadniyfon.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding-bottom: 80px; }
         .top-bg-wrapper::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(29, 38, 35, 0.75); z-index: 1; }
         .hero { background: transparent; color: #fff; padding: 80px 5% 100px 5%; text-align: center; position: relative; z-index: 2; }
-        .hero h1 { font-size: 40px; font-weight: 600; margin-bottom: 20px; line-height: 1.3; max-width: 900px; margin-left: auto; margin-right: auto; letter-spacing: -0.5px; }
-        .badge-geo { display: inline-block; background: rgba(186, 134, 84, 0.15); padding: 8px 20px; border-radius: 30px; font-size: 13px; font-weight: 500; margin-bottom: 0; letter-spacing: 0.5px; color: #d69f68; border: 1px solid rgba(186, 134, 84, 0.3); }
+        .hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 20px; line-height: 1.3; max-width: 900px; margin-left: auto; margin-right: auto; letter-spacing: -0.5px; }
+        .badge-geo { display: inline-block; background: rgba(186, 134, 84, 0.15); padding: 8px 20px; border-radius: 30px; font-size: 13px; font-weight: 600; margin-bottom: 0; letter-spacing: 0.5px; color: #d69f68; border: 1px solid rgba(186, 134, 84, 0.3); }
 
         /* === КВИЗ === */
         .quiz-container { max-width: 700px; background: #fff; border-radius: 12px; padding: 40px; margin: -50px auto 0 auto; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); position: relative; z-index: 10; border: 1px solid #ebe8e0; }
         .quiz-header { margin-bottom: 30px; border-bottom: 1px solid #f0eee6; padding-bottom: 20px; }
-        .quiz-title { font-size: 20px; font-weight: 600; color: #242b27; }
+        .quiz-title { font-size: 20px; font-weight: 700; color: #242b27; }
         .progress-bar { height: 6px; background: #f0eee6; border-radius: 3px; margin-top: 15px; overflow: hidden; }
         .progress-fill { height: 100%; background: #ba8654; width: 33%; transition: width 0.4s ease; }
         .step { display: none; }
         .step.active { display: block; }
-        .step h3 { font-size: 17px; margin-bottom: 20px; font-weight: 500; color: #313131; }
+        .step h3 { font-size: 17px; margin-bottom: 20px; font-weight: 600; color: #313131; }
         .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
-        .option-card { border: 1px solid #e0dbce; border-radius: 8px; padding: 20px 15px; cursor: pointer; transition: all 0.2s ease; font-weight: 500; text-align: center; background: #faf9f6; font-size: 15px; color: #5a5a5a; }
+        .option-card { border: 1px solid #e0dbce; border-radius: 8px; padding: 20px 15px; cursor: pointer; transition: all 0.2s ease; font-weight: 600; text-align: center; background: #faf9f6; font-size: 15px; color: #5a5a5a; }
         .option-card:hover { border-color: #ba8654; background: #fff; color: #313131; }
         .option-card.selected { border-color: #ba8654; background: #fdfaf7; color: #ba8654; }
         
         .form-group { margin-bottom: 20px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 13px; color: #5a5a5a; }
-        .form-input { width: 100%; padding: 14px; border: 1px solid #e0dbce; border-radius: 8px; font-size: 15px; font-weight: 400; background: #faf9f6; color: #313131; transition: 0.3s; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 13px; color: #5a5a5a; }
+        .form-input { width: 100%; padding: 14px; border: 1px solid #e0dbce; border-radius: 8px; font-size: 15px; font-weight: 500; background: #faf9f6; color: #313131; transition: 0.3s; }
         .form-input:focus { border-color: #ba8654; outline: none; background: #fff; }
-        .btn { padding: 14px 28px; border-radius: 8px; border: none; font-size: 15px; font-weight: 500; cursor: pointer; transition: all 0.2s ease; text-decoration: none; display: inline-block; }
+        .btn { padding: 14px 28px; border-radius: 8px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; text-decoration: none; display: inline-block; }
         .btn-prev { background: #e0dbce; color: #5a5a5a; }
         .btn-prev:hover { background: #d3cdbe; }
         .btn-next, .btn-submit { background: #ba8654; color: #fff; margin-left: auto; }
@@ -71,8 +72,8 @@
         /* === КАТАЛОГ EDGE-TO-EDGE (100% ширина, 50vh высота, пропорция 60/40) === */
         .catalog-section { width: 100%; padding: 0; margin: 0; background-color: transparent; }
         .catalog-header { text-align: center; margin: 80px auto 40px auto; padding: 0 20px; }
-        .catalog-header h2 { font-size: 38px; font-weight: 600; margin-bottom: 12px; color: #242b27; letter-spacing: -0.5px; }
-        .catalog-header .subtitle { font-size: 16px; color: #6b6b6b; font-weight: 400; }
+        .catalog-header h2 { font-size: 38px; font-weight: 700; margin-bottom: 12px; color: #242b27; letter-spacing: -0.5px; }
+        .catalog-header .subtitle { font-size: 16px; color: #6b6b6b; font-weight: 500; }
         
         .catalog-list { display: flex; flex-direction: column; width: 100%; max-width: 100%; gap: 0; }
         .catalog-row { display: flex; width: 100%; height: 50vh; min-height: 400px; background: #fff; overflow: hidden; border-bottom: 1px solid #ebe8e0; border-radius: 0; }
@@ -82,12 +83,12 @@
         .catalog-image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
         
         .catalog-info { flex: 0 0 40%; width: 40%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px 6%; }
-        .catalog-title { font-size: 36px; font-weight: 600; color: #242b27; margin-bottom: 15px; line-height: 1.1; letter-spacing: -0.5px; }
-        .catalog-price { font-size: 22px; color: #ba8654; margin-bottom: 25px; font-weight: 600; }
-        .catalog-text-details { font-size: 15px; color: #6b6b6b; line-height: 1.6; margin-bottom: 15px; font-weight: 400; }
-        .catalog-text-prices { font-size: 16px; color: #313131; line-height: 1.8; font-weight: 500; background: #fff; padding: 15px 20px; border-radius: 8px; border: 1px solid #f0eee6; width: 100%; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .catalog-title { font-size: 36px; font-weight: 700; color: #242b27; margin-bottom: 15px; line-height: 1.1; letter-spacing: -0.5px; }
+        .catalog-price { font-size: 22px; color: #ba8654; margin-bottom: 25px; font-weight: 700; }
+        .catalog-text-details { font-size: 15px; color: #6b6b6b; line-height: 1.6; margin-bottom: 15px; font-weight: 500; }
+        .catalog-text-prices { font-size: 16px; color: #313131; line-height: 1.8; font-weight: 600; background: #fff; padding: 15px 20px; border-radius: 8px; border: 1px solid #f0eee6; width: 100%; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
         
-        .btn-catalog { background-color: #ba8654; color: #fff; padding: 16px 32px; border-radius: 8px; font-size: 15px; font-weight: 500; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease; text-decoration: none; letter-spacing: 0.5px; }
+        .btn-catalog { background-color: #ba8654; color: #fff; padding: 16px 32px; border-radius: 8px; font-size: 15px; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease; text-decoration: none; letter-spacing: 0.5px; }
         .btn-catalog:hover { background-color: #a07043; }
 
         /* === БЛОК КОМПЛЕКТАЦИИ === */
@@ -96,42 +97,42 @@
         .equipment-images { position: relative; width: 100%; min-height: 400px; }
         .equipment-images .img-1 { position: absolute; top: 0; left: 0; width: 75%; height: 320px; object-fit: cover; border-radius: 12px; z-index: 1; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .equipment-images .img-2 { position: absolute; bottom: 0; right: 0; width: 60%; height: 240px; object-fit: cover; border-radius: 12px; z-index: 2; border: 6px solid #efece6; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-        .equipment-info h2 { font-size: 32px; font-weight: 600; color: #242b27; margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.5px; }
-        .equipment-info p { font-size: 15px; color: #5a5a5a; line-height: 1.7; margin-bottom: 20px; font-weight: 400; }
-        .btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #ba8654; background: transparent; border: 1px solid #ba8654; cursor: pointer; transition: all 0.2s ease; margin-top: 10px; text-decoration: none; }
+        .equipment-info h2 { font-size: 32px; font-weight: 700; color: #242b27; margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.5px; }
+        .equipment-info p { font-size: 15px; color: #5a5a5a; line-height: 1.7; margin-bottom: 20px; font-weight: 500; }
+        .btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; color: #ba8654; background: transparent; border: 1px solid #ba8654; cursor: pointer; transition: all 0.2s ease; margin-top: 10px; text-decoration: none; }
         .btn-outline:hover { background: #ba8654; color: #fff; }
 
         /* === ЭТАПЫ РАБОТ === */
         .steps-section { padding: 80px 5%; text-align: center; }
         .steps-container { max-width: 900px; margin: 0 auto; }
-        .steps-header h2 { font-size: 32px; font-weight: 600; color: #242b27; margin-bottom: 12px; letter-spacing: -0.5px; }
-        .steps-header p { font-size: 16px; color: #6b6b6b; font-weight: 400; margin-bottom: 50px; }
+        .steps-header h2 { font-size: 32px; font-weight: 700; color: #242b27; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .steps-header p { font-size: 16px; color: #6b6b6b; font-weight: 500; margin-bottom: 50px; }
         .steps-list { display: flex; flex-direction: column; gap: 30px; text-align: left; }
         .step-item { display: flex; align-items: flex-start; gap: 25px; background: #fff; padding: 35px; border-radius: 12px; border: 1px solid #ebe8e0; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s; }
         .step-item:hover { transform: translateY(-3px); border-color: #d3cdbe; }
-        .step-number { font-size: 48px; font-weight: 600; color: #ba8654; line-height: 0.8; flex-shrink: 0; }
-        .step-title { font-size: 20px; font-weight: 600; color: #242b27; margin-bottom: 10px; }
-        .step-desc { font-size: 15px; color: #6b6b6b; line-height: 1.6; font-weight: 400; }
+        .step-number { font-size: 48px; font-weight: 700; color: #ba8654; line-height: 0.8; flex-shrink: 0; }
+        .step-title { font-size: 20px; font-weight: 700; color: #242b27; margin-bottom: 10px; }
+        .step-desc { font-size: 15px; color: #6b6b6b; line-height: 1.6; font-weight: 500; }
 
         /* === ВЫСТАВКА === */
         .exhibition-section { background: #242b27; padding: 80px 5% 60px 5%; color: #f7f5f0; }
         .exhibition-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .exhibition-info h2 { font-size: 32px; font-weight: 600; color: #fff; margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.5px; }
-        .exhibition-info p { font-size: 15px; color: #c4cdc8; line-height: 1.6; margin-bottom: 25px; font-weight: 400; }
+        .exhibition-info h2 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.5px; }
+        .exhibition-info p { font-size: 15px; color: #c4cdc8; line-height: 1.6; margin-bottom: 25px; font-weight: 500; }
         .exhibition-features { list-style: none; margin-bottom: 30px; }
-        .exhibition-features li { position: relative; padding-left: 25px; margin-bottom: 12px; font-weight: 400; color: #e0e5e2; font-size: 15px; }
-        .exhibition-features li::before { content: "✓"; position: absolute; left: 0; color: #ba8654; font-weight: 600; font-size: 16px; }
+        .exhibition-features li { position: relative; padding-left: 25px; margin-bottom: 12px; font-weight: 500; color: #e0e5e2; font-size: 15px; }
+        .exhibition-features li::before { content: "✓"; position: absolute; left: 0; color: #ba8654; font-weight: 700; font-size: 16px; }
         .exhibition-cta { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(186, 134, 84, 0.3); padding: 35px; border-radius: 12px; text-align: left; }
-        .exhibition-cta p { color: #c4cdc8 !important; font-size: 15px; margin-bottom: 12px; line-height: 1.6; }
+        .exhibition-cta p { color: #c4cdc8 !important; font-size: 15px; margin-bottom: 12px; line-height: 1.6; font-weight: 500; }
 
         .map-section { width: 100%; height: 400px; line-height: 0; }
         
         /* === ВОПРОСЫ (СПОКОЙНЫЙ МИНИМАЛИЗМ) === */
         .questions-section { background: #eae6de; padding: 70px 20px; text-align: center; }
         .questions-container { max-width: 800px; margin: 0 auto; }
-        .questions-container h2 { font-size: 32px; font-weight: 600; margin-bottom: 15px; color: #242b27; letter-spacing: -0.5px; }
-        .questions-container p { font-size: 16px; color: #5a5a5a; margin-bottom: 35px; font-weight: 400; }
-        .btn-call-large { display: inline-block; background-color: #ba8654; color: #fff; padding: 16px 40px; border-radius: 8px; font-size: 18px; font-weight: 500; text-decoration: none; transition: all 0.2s ease; letter-spacing: 0.5px;}
+        .questions-container h2 { font-size: 32px; font-weight: 700; margin-bottom: 15px; color: #242b27; letter-spacing: -0.5px; }
+        .questions-container p { font-size: 16px; color: #5a5a5a; margin-bottom: 35px; font-weight: 500; }
+        .btn-call-large { display: inline-block; background-color: #ba8654; color: #fff; padding: 16px 40px; border-radius: 8px; font-size: 18px; font-weight: 600; text-decoration: none; transition: all 0.2s ease; letter-spacing: 0.5px;}
         .btn-call-large:hover { background-color: #a07043; }
 
         /* === ПОДВАЛ === */
@@ -139,17 +140,17 @@
         .footer-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid #333d38; padding-bottom: 40px; }
         .footer-logo-block { display: flex; flex-direction: column; gap: 10px; }
         .footer-logo { height: 50px; object-fit: contain; }
-        .footer-domain { font-size: 14px; font-weight: 500; color: #ba8654; letter-spacing: 0.5px; }
+        .footer-domain { font-size: 14px; font-weight: 600; color: #ba8654; letter-spacing: 0.5px; }
         .footer-socials { display: flex; gap: 10px; }
-        .footer-social-link { display: flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-size: 13px; font-weight: 500; padding: 10px 18px; border-radius: 6px; transition: all 0.2s ease; }
+        .footer-social-link { display: flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 6px; transition: all 0.2s ease; }
         .footer-social-link.tg { background-color: rgba(30, 136, 229, 0.15); border: 1px solid #1E88E5; color: #1E88E5; }
         .footer-social-link.tg:hover { background-color: #1E88E5; color: #fff; }
         .footer-social-link.vk { background-color: rgba(0, 119, 255, 0.15); border: 1px solid #0077FF; color: #0077FF; }
         .footer-social-link.vk:hover { background-color: #0077FF; color: #fff; }
         .footer-contacts { text-align: right; }
-        .footer-phone { display: block; font-size: 22px; font-weight: 600; color: #fff; text-decoration: none; transition: color 0.2s ease; }
+        .footer-phone { display: block; font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; transition: color 0.2s ease; }
         .footer-phone:hover { color: #ba8654; }
-        .footer-bottom { max-width: 1000px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 13px; color: #7a8781; }
+        .footer-bottom { max-width: 1000px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 13px; color: #7a8781; font-weight: 500; }
 
         @media (max-width: 990px) {
             .catalog-row, .catalog-row:nth-child(even) { flex-direction: column; height: 100vh; min-height: auto; }
@@ -418,7 +419,7 @@
                 <p>🕒 <strong>Режим работы:</strong><br>Среда - Воскресенье 10:00 - 17:00</p>
                 <p>📍 <strong>Наш адрес:</strong><br>Владимирская область, д. Площево, Центральная ул., 23</p>
                 <p style="margin: 0;">
-                    📞 Телефон для связи:<br><a href="tel:+79157750909" style="color: #ba8654; font-size: 18px; font-weight: 600; text-decoration: none; display: inline-block; margin-top: 5px;">+7 (915) 775-09-09</a>
+                    📞 Телефон для связи:<br><a href="tel:+79157750909" style="color: #ba8654; font-size: 18px; font-weight: 700; text-decoration: none; display: inline-block; margin-top: 5px;">+7 (915) 775-09-09</a>
                 </p>
             </div>
         </div>
