@@ -5,48 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Комплектация — Бани-Бочки Премиум</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
-        body { background-color: #fcf8f2; color: #3e2723; display: flex; flex-direction: column; min-height: 100vh; }
-
-        header { display: flex; justify-content: center; align-items: center; padding: 15px 5%; background: #fffdfa; box-shadow: 0 4px 15px rgba(93, 64, 55, 0.06); border-bottom: 1px solid #f1e6d8; }
-        .logo-block { display: flex; align-items: center; justify-content: center; }
-        .logo-img { height: 100px; width: auto; object-fit: contain; background-color: #26120c; padding: 10px 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
+        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; font-weight: 500; }
         
-        .page-container { flex: 1; max-width: 900px; margin: 60px auto; padding: 40px; background: #fff; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); border: 1px solid #f1e6d8; width: 90%; }
-        .page-title { font-size: 32px; font-weight: 800; color: #4e342e; margin-bottom: 30px; text-transform: uppercase; text-align: center; border-bottom: 2px solid #fcf8f2; padding-bottom: 20px; }
+        body { background-color: #f7f5f0; color: #313131; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #242b27; position: relative; z-index: 100; border-bottom: 1px solid #333d38; }
+        .logo-block { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-img { height: 80px; width: auto; object-fit: contain; }
+        .logo-text { font-size: 13px; color: #c4cdc8; line-height: 1.4; border-left: 1px solid #4a5751; padding-left: 15px; font-weight: 500; letter-spacing: 0.5px; }
+        
+        .header-right { display: flex; align-items: center; gap: 30px; }
+        .header-socials { display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #4a5751; padding-right: 25px; justify-content: center; }
+        .social-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 7px 14px; border-radius: 6px; text-decoration: none; color: #fff; font-size: 13px; font-weight: 600; transition: all 0.2s ease; }
+        .social-btn.tg { background-color: #27A5E7; }
+        .social-btn.tg:hover { background-color: #1c8ec9; }
+        .social-btn.vk { background-color: #0077FF; }
+        .social-btn.vk:hover { background-color: #0062d6; }
+        
+        .header-contacts { text-align: right; }
+        .btn-nav-contacts { display: inline-flex; align-items: center; justify-content: center; padding: 8px 16px; background-color: #ba8654; color: #fff !important; font-weight: 600; font-size: 13px; letter-spacing: 0.5px; border-radius: 6px; text-decoration: none; transition: 0.3s; margin-bottom: 8px; width: 100%; }
+        .btn-nav-contacts:hover { background-color: #a07043; }
+        .phone-link { font-size: 20px; font-weight: 700; color: #ba8654; text-decoration: none; transition: color 0.2s; }
+        .phone-link:hover { color: #d69f68; }
+        .phone-desc { font-size: 12px; color: #9da8a3; margin-top: 4px; font-weight: 500; }
+
+        .page-container { flex: 1; max-width: 900px; margin: 60px auto; padding: 50px; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #ebe8e0; width: 90%; }
+        .page-title { font-size: 36px; font-weight: 700; color: #242b27; margin-bottom: 40px; text-transform: uppercase; text-align: center; border-bottom: 2px solid #f0eee6; padding-bottom: 20px; }
         
         .komplekt-list { list-style: none; }
-        .komplekt-list li { position: relative; padding-left: 30px; margin-bottom: 15px; font-size: 18px; color: #5d4037; font-weight: 600; line-height: 1.5; }
-        .komplekt-list li::before { content: "✓"; position: absolute; left: 0; color: #e65100; font-weight: 800; font-size: 20px; }
+        .komplekt-list li { position: relative; padding-left: 35px; margin-bottom: 18px; font-size: 18px; color: #313131; font-weight: 600; line-height: 1.5; }
+        .komplekt-list li::before { content: "✓"; position: absolute; left: 0; color: #ba8654; font-weight: 800; font-size: 22px; top: -2px; }
 
-        .btn-back { display: inline-block; margin-top: 40px; background-color: #e65100; color: #fff; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 700; text-decoration: none; text-align: center; width: 100%; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(230, 81, 0, 0.25); }
-        .btn-back:hover { background-color: #bf4300; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(230, 81, 0, 0.35); }
+        .btn-back { display: inline-block; margin-top: 40px; background-color: #ba8654; color: #fff; padding: 18px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; text-align: center; width: 100%; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(186, 134, 84, 0.4); }
+        .btn-back:hover { background-color: #a07043; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(186, 134, 84, 0.5); }
 
-        .site-footer { background-color: #1a0c08; color: #ebdccb; padding: 60px 5% 30px 5%; margin-top: 60px; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid rgba(235, 220, 203, 0.1); padding-bottom: 40px; }
-        .footer-logo-block { display: flex; flex-direction: column; gap: 12px; }
-        .footer-logo { height: 60px; object-fit: contain; background-color: #26120c; padding: 8px 12px; border-radius: 8px; }
-        .footer-domain { font-size: 16px; font-weight: 800; color: #ff9100; text-transform: uppercase; letter-spacing: 1px; }
-        .footer-socials { display: flex; gap: 15px; }
-        .footer-social-link { display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 10px; transition: all 0.3s ease; }
-        .footer-social-link.tg { background-color: rgba(39, 165, 231, 0.1); border: 1px solid #27A5E7; color: #27A5E7; }
-        .footer-social-link.tg:hover { background-color: #27A5E7; color: #fff; box-shadow: 0 4px 15px rgba(39, 165, 231, 0.3); }
-        .footer-social-link.vk { background-color: rgba(0, 119, 255, 0.1); border: 1px solid #0077FF; color: #0077FF; }
-        .footer-social-link.vk:hover { background-color: #0077FF; color: #fff; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3); }
+        .site-footer { background-color: #242b27; color: #c4cdc8; padding: 60px 5% 30px 5%; margin-top: 60px; border-top: 1px solid #333d38; }
+        .footer-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid #333d38; padding-bottom: 40px; }
+        .footer-logo-block { display: flex; flex-direction: column; gap: 10px; }
+        .footer-logo { height: 50px; object-fit: contain; }
+        .footer-domain { font-size: 14px; font-weight: 600; color: #ba8654; letter-spacing: 0.5px; }
+        .footer-socials { display: flex; gap: 10px; }
+        .footer-social-link { display: flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 6px; transition: all 0.2s ease; }
+        .footer-social-link.tg { background-color: rgba(30, 136, 229, 0.15); border: 1px solid #1E88E5; color: #1E88E5; }
+        .footer-social-link.tg:hover { background-color: #1E88E5; color: #fff; }
+        .footer-social-link.vk { background-color: rgba(0, 119, 255, 0.15); border: 1px solid #0077FF; color: #0077FF; }
+        .footer-social-link.vk:hover { background-color: #0077FF; color: #fff; }
         .footer-contacts { text-align: right; }
-        .footer-phone { display: block; font-size: 26px; font-weight: 800; color: #fff; text-decoration: none; transition: color 0.3s ease; }
-        .footer-phone:hover { color: #ff9100; }
-        .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 14px; color: #8d6e63; }
+        .footer-phone { display: block; font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; transition: color 0.2s ease; }
+        .footer-phone:hover { color: #ba8654; }
+        .footer-bottom { max-width: 1000px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 13px; color: #7a8781; font-weight: 500; }
 
         @media (max-width: 990px) {
-            .footer-container { flex-direction: column; text-align: center; }
-            .footer-logo-block, .footer-contacts { align-items: center; text-align: center; }
+            header { flex-direction: column; text-align: center; gap: 15px; }
+            .header-right { flex-direction: column; gap: 15px; }
+            .header-socials { border-right: none; padding-right: 0; flex-direction: row; }
+            .logo-text { border-left: none; padding-left: 0; border-top: 1px solid #333d38; padding-top: 10px; margin-top: 5px; }
+            .header-contacts, .footer-container { text-align: center; }
+            .footer-container { flex-direction: column; }
+            .footer-logo-block, .footer-contacts { align-items: center; }
         }
         @media (max-width: 650px) {
-            .page-container { margin: 20px auto; padding: 20px; }
-            .page-title { font-size: 22px; }
-            .komplekt-list li { font-size: 15px; }
+            .page-container { margin: 20px auto; padding: 30px 20px; }
+            .page-title { font-size: 26px; }
+            .komplekt-list li { font-size: 16px; }
             .footer-socials { flex-direction: column; width: 100%; gap: 10px; }
             .footer-social-link { justify-content: center; }
         }
@@ -55,13 +78,25 @@
 <body>
 
     <header>
-        <div class="logo-block">
+        <a href="index.html" class="logo-block">
             <img src="img/logo.png" alt="Бани-Бочки Премиум" class="logo-img">
+            <div class="logo-text">Собственное производство<br>бань-бочек в г. Александров</div>
+        </a>
+        <div class="header-right">
+            <div class="header-socials">
+                <a href="https://t.me/banibothki" class="social-btn tg" target="_blank">Telegram</a>
+                <a href="https://vk.com/id1087359257" class="social-btn vk" target="_blank">ВКонтакте</a>
+            </div>
+            <div class="header-contacts">
+                <a href="contacts.html" class="btn-nav-contacts">Все Контакты</a>
+                <a href="tel:+79157750909" class="phone-link">+7 (915) 775-09-09</a>
+                <div class="phone-desc">Производство в Александрове</div>
+            </div>
         </div>
     </header>
 
     <div class="page-container">
-        <h1 class="page-title">Стандартная комплектация бань бочек</h1>
+        <h1 class="page-title">Стандартная комплектация бань</h1>
         <ul class="komplekt-list">
             <li>Вход с торца</li>
             <li>Печь дровяная Термофор ОСА на 20 кг. камней с топкой, внутри парной</li>
@@ -83,24 +118,25 @@
             <li>Баня снаружи пропитана защитным составом в два слоя (цвет по желанию клиента)</li>
             <li>Форточка в парном отделении 30x40 см</li>
         </ul>
-        <a href="index.html" class="btn-back">← Вернуться на главную страницу</a>
+        <a href="index.html#equipment" class="btn-back">← Вернуться в каталог</a>
     </div>
 
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-logo-block">
-                <img src="img/logo.png" alt="Бани-Бочки Премиум" class="footer-logo" loading="lazy">
+                <a href="index.html#catalog"><img src="img/logo.png" alt="Бани-Бочки Премиум" class="footer-logo" loading="lazy"></a>
                 <div class="footer-domain">банипремиум.рф</div>
             </div>
             <div class="footer-socials">
-                <a href="https://t.me/banibothki" class="footer-social-link tg" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>Telegram</a>
-                <a href="https://vk.com/id1087359257" class="footer-social-link vk" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.077 23.994c-8.91 0-14.07-6.147-14.24-16.51h4.48c.115 7.822 3.633 11.134 6.398 11.782v-11.78h4.286v6.721c2.723-.298 5.626-3.411 6.556-6.722h4.286c-.732 4.14-3.766 7.21-5.836 8.243 2.07 1.034 5.405 3.86 6.442 8.266h-4.664c-.818-3.08-3.435-5.556-6.784-5.88v5.88h-1.024z"/></svg>ВКонтакте</a>
+                <a href="https://t.me/banibothki" class="footer-social-link tg" target="_blank">Telegram</a>
+                <a href="https://vk.com/id1087359257" class="footer-social-link vk" target="_blank">ВКонтакте</a>
             </div>
             <div class="footer-contacts">
+                <a href="contacts.html" class="btn-nav-contacts" style="margin-bottom: 15px;">Все Контакты</a>
                 <a href="tel:+79157750909" class="footer-phone">+7 (915) 775-09-09</a>
             </div>
         </div>
-        <div class="footer-bottom">&copy; 2026 Бани бочки премиум</div>
+        <div class="footer-bottom">&copy; 2026 Бани-Бочки Премиум. Все права защищены.</div>
     </footer>
 
 </body>
