@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бани-Бочки Премиум в Александрове — Теплый уют под ключ</title>
     <style>
-        /* Новый элегантный шрифт Inter */
+        /* Элегантный шрифт Inter */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
         html { scroll-behavior: smooth; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         
-        /* === ПРЕМИУМ СКАНДИ-ПАЛИТРА === */
         body { background-color: #f7f5f0; color: #313131; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
 
         .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -69,27 +68,26 @@
         .btn-next, .btn-submit { background: #ba8654; color: #fff; margin-left: auto; }
         .btn-next:hover, .btn-submit:hover { background: #a07043; }
 
-        /* === КАТАЛОГ (УМЕНЬШЕННЫЙ, АККУРАТНЫЙ) === */
-        .catalog-section { width: 100%; padding: 0 5%; margin: 80px 0; background-color: transparent; }
-        .catalog-header { text-align: center; margin-bottom: 50px; }
-        .catalog-header h2 { font-size: 32px; font-weight: 600; margin-bottom: 12px; color: #242b27; letter-spacing: -0.5px; }
+        /* === КАТАЛОГ EDGE-TO-EDGE (100% ширина, 50vh высота, пропорция 60/40) === */
+        .catalog-section { width: 100%; padding: 0; margin: 0; background-color: transparent; }
+        .catalog-header { text-align: center; margin: 80px auto 40px auto; padding: 0 20px; }
+        .catalog-header h2 { font-size: 38px; font-weight: 600; margin-bottom: 12px; color: #242b27; letter-spacing: -0.5px; }
         .catalog-header .subtitle { font-size: 16px; color: #6b6b6b; font-weight: 400; }
         
-        .catalog-list { display: flex; flex-direction: column; gap: 30px; width: 100%; max-width: 1000px; margin: 0 auto; }
-        .catalog-row { display: flex; width: 100%; min-height: 360px; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #ebe8e0; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .catalog-row:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
-        .catalog-row:nth-child(even) { flex-direction: row-reverse; }
+        .catalog-list { display: flex; flex-direction: column; width: 100%; max-width: 100%; gap: 0; }
+        .catalog-row { display: flex; width: 100%; height: 50vh; min-height: 400px; background: #fff; overflow: hidden; border-bottom: 1px solid #ebe8e0; border-radius: 0; }
+        .catalog-row:nth-child(even) { flex-direction: row-reverse; background: #faf9f6; }
         
         .catalog-image { flex: 0 0 60%; width: 60%; position: relative; background-color: #f0eee6; }
         .catalog-image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
         
-        .catalog-info { flex: 0 0 40%; width: 40%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px 5%; background-color: #fff; }
-        .catalog-title { font-size: 28px; font-weight: 600; color: #242b27; margin-bottom: 15px; line-height: 1.2; letter-spacing: -0.5px; }
-        .catalog-price { font-size: 20px; color: #ba8654; margin-bottom: 25px; font-weight: 600; }
-        .catalog-text-details { font-size: 14px; color: #6b6b6b; line-height: 1.6; margin-bottom: 15px; font-weight: 400; }
-        .catalog-text-prices { font-size: 15px; color: #313131; line-height: 1.8; font-weight: 500; background: #fcfbf9; padding: 15px 20px; border-radius: 8px; border: 1px solid #f0eee6; width: 100%; margin-bottom: 15px; }
+        .catalog-info { flex: 0 0 40%; width: 40%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px 6%; }
+        .catalog-title { font-size: 36px; font-weight: 600; color: #242b27; margin-bottom: 15px; line-height: 1.1; letter-spacing: -0.5px; }
+        .catalog-price { font-size: 22px; color: #ba8654; margin-bottom: 25px; font-weight: 600; }
+        .catalog-text-details { font-size: 15px; color: #6b6b6b; line-height: 1.6; margin-bottom: 15px; font-weight: 400; }
+        .catalog-text-prices { font-size: 16px; color: #313131; line-height: 1.8; font-weight: 500; background: #fff; padding: 15px 20px; border-radius: 8px; border: 1px solid #f0eee6; width: 100%; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
         
-        .btn-catalog { background-color: #ba8654; color: #fff; padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease; text-decoration: none; letter-spacing: 0.5px; }
+        .btn-catalog { background-color: #ba8654; color: #fff; padding: 16px 32px; border-radius: 8px; font-size: 15px; font-weight: 500; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease; text-decoration: none; letter-spacing: 0.5px; }
         .btn-catalog:hover { background-color: #a07043; }
 
         /* === БЛОК КОМПЛЕКТАЦИИ === */
@@ -154,9 +152,11 @@
         .footer-bottom { max-width: 1000px; margin: 0 auto; text-align: center; padding-top: 30px; font-size: 13px; color: #7a8781; }
 
         @media (max-width: 990px) {
-            .catalog-row, .catalog-row:nth-child(even) { flex-direction: column; height: auto; }
-            .catalog-image { flex: none; width: 100%; height: 350px; }
-            .catalog-info { flex: none; width: 100%; padding: 40px 20px; align-items: center; text-align: center; }
+            .catalog-row, .catalog-row:nth-child(even) { flex-direction: column; height: 100vh; min-height: auto; }
+            .catalog-image { flex: none; width: 100%; height: 50vh; }
+            .catalog-info { flex: none; width: 100%; height: 50vh; padding: 30px 20px; align-items: center; text-align: center; }
+            .catalog-title { font-size: 28px; }
+            
             .equipment-container { grid-template-columns: 1fr; gap: 40px; }
             .equipment-images { max-width: 500px; margin: 0 auto; min-height: 380px; }
             .equipment-info { text-align: center; }
@@ -173,9 +173,6 @@
         }
 
         @media (max-width: 650px) {
-            .catalog-list { width: 100%; max-width: 100%; padding: 0 10px; }
-            .catalog-image { height: 250px; }
-            .catalog-title { font-size: 26px; }
             .options-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 28px; }
             .quiz-container { padding: 30px 20px; margin: -40px 10px 0 10px; width: auto; }
@@ -220,7 +217,6 @@
             <div class="badge-geo">Премиум качество из Александрова</div>
         </section>
 
-        <!-- КВИЗ -->
         <div class="quiz-container fade-in-up">
             <div class="quiz-header">
                 <div class="quiz-title" id="quiz-title">Конфигуратор бани (Шаг 1 из 3)</div>
